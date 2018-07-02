@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="225" height="247" viewBox="0 0 225 247">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="225" height="225" fill="#F6F6F6" rx="18"/>
+        <path fill="#484F59" d="M83.748 57.117c-.69 0-1.248-.558-1.248-1.245v-6.626a1.246 1.246 0 1 1 2.495 0v6.626c0 .687-.558 1.245-1.248 1.245"/>
+        <path fill="#484F59" d="M87.05 53.819h-6.636a1.245 1.245 0 1 1 0-2.49h6.637c.687 0 1.247.556 1.247 1.245 0 .688-.56 1.245-1.247 1.245"/>
+        <path fill="#D5E962" stroke="#484F59" stroke-linejoin="round" stroke-width="3" d="M90 155.907h11V139H90z"/>
+        <path fill="#FFF" stroke="#484F59" stroke-linejoin="round" stroke-width="3" d="M109 155.593h11V124h-11z"/>
+        <path fill="#D5E962" stroke="#484F59" stroke-linejoin="round" stroke-width="3" d="M128 155.908h11V111h-11z"/>
+        <path fill="#FFF" stroke="#484F59" stroke-linejoin="round" stroke-width="3" d="M147 156.082h11V92h-11z"/>
+        <path stroke="#484F59" stroke-linecap="round" stroke-width="3" d="M156.813 78.934l-.005-8.932-8.943-.002M155.858 70.467L78.5 145.5"/>
+        <path stroke="#484F59" stroke-width="3" d="M65.833 156.175h10.398M65.833 146.652h6.655M65.833 137.129h6.655M65.833 127.606h10.398M65.833 118.083h6.655M65.833 108.56h6.655M65.833 99.036h10.398M65.833 89.513h6.655M65.833 79.99h6.655M65.833 70.467h10.398"/>
+        <path stroke="#484F59" stroke-linecap="round" stroke-width="3" d="M65 161.168h94.47"/>
+        <g stroke="#484F59" stroke-linejoin="round" stroke-width="3">
+            <path d="M89 57h30v26.5h-10V94H89z"/>
+            <path fill="#FFF" stroke-linecap="round" d="M119 83.5L109 94"/>
+        </g>
+        <path fill="#FFF" stroke="#484F59" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M94 70.5h19M94 77h10.512M94 64.5h19"/>
+        <g transform="translate(91 201)">
+            <circle cx="22" cy="22" r="22" fill="#FFF" stroke="#484F59" stroke-width="3"/>
+            <text fill="#484F59" font-family="OpenSans-Semibold, Open Sans" font-size="22" font-weight="500">
+                <tspan x="15.221" y="29">1</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
