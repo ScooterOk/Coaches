@@ -1,6 +1,8 @@
 var steps = {};
 
-$(document).ready(function(e) {
+$(document).ready(function(e) {	
+
+	// Leanding scripts
 	if($('body').hasClass('leanding')){
 		initLeanding();
 		$(document).scroll(function(e) {
@@ -41,6 +43,25 @@ $(document).ready(function(e) {
 			};	
 		});
 	}	
+
+	// Admin scripts
+	if($('body').hasClass('admin')){
+		$('.gotop-buttom').click(function(e) {
+			var body = $("html, body");
+			body.stop().animate({scrollTop:0}, 300, 'swing');
+		});
+		$('.admin .tooltip').mouseenter(function(e) {
+			$(this).find('.tooltip__body').fadeIn(150);
+		});
+		$('.admin .tooltip').mouseleave(function(e) {
+			$(this).find('.tooltip__body').fadeOut(150);
+		});
+		$('.admin .scholarships-detiles .requests__nav_years a').click(function(e) {
+			$('.admin .scholarships-detiles .requests__nav_years a').removeClass('current');
+			$(this).addClass('current');
+			e.preventDefault();
+		});		
+	}
 });
 
 function initLeanding(){

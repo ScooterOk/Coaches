@@ -230,8 +230,7 @@ header {
     margin-top: 10px;
 }
 .header__logo img {
-    width: 121px;
-    height: 40px;
+    width: 120px;    
 }
 .header__nav {
     display: flex;
@@ -1177,4 +1176,1508 @@ footer .wrapper {
 }
 .contacts__bottom-text a:hover {
     color: #0e9ee3;
+}
+
+
+/* ==========================================================================
+            Scholarships Page styles
+   ========================================================================== */
+
+.admin {
+    background-color: #3a4969;
+}
+.admin header {
+    height: 64px;
+}
+.admin .header__logo {
+    margin-left: 20px;
+}
+.header__menu {
+    display: inline-flex;
+    align-items: center;
+}
+.header__notifications {
+    width: 40px;
+    height: 40px;
+    background: url('../img/notification.svg') no-repeat center;
+    cursor: pointer;
+    margin-right: 16px;
+}
+.header__user_photo {
+    margin-right: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header__user_photo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+.header__user_name {
+    margin-right: 8px;
+}
+.header__user_name b {
+    display: block;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.header__user_name span {
+    display: block;    
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(255, 255, 255, 0.5);
+}
+.header__user_arrow {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: url('../img/arrow-dropdown.svg') no-repeat center;    
+}
+.admin-wrapper {
+    display: flex;
+    min-width: 1080px;
+}
+.admin__nav {
+    width: 70px;
+    min-height: calc(100vh - 64px - 72px);
+}
+.admin__nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.admin__nav ul li {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.admin__nav ul li.current {
+    background-color: #00acff;
+    cursor: default;
+}
+.admin__nav ul li.scholarships {    
+    background-image: url('../img/icon-scholarship.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.admin__nav ul li.messenger {
+    
+}
+.admin__nav ul li .icon {
+    margin-top: 14px;
+    height: 25px;
+    text-align: center;    
+}
+.admin__nav ul li.messenger .icon {    
+    background: url('../img/icon-messager.svg') no-repeat center;
+}
+.admin__nav ul li.network .icon {    
+    background: url('../img/icon-coaches.svg') no-repeat center;
+}
+.admin__nav ul li.profile .icon {
+    background: url('../img/icon-profile.svg') no-repeat center;
+}
+.admin__nav ul li.messenger .icon i {
+    height: 17px;
+    display: inline-block;
+    background-color: #00acff;
+    border-radius: 8px;
+    text-align: center;   
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 17px;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 0 6px;
+    position: relative;
+    top: -9px;
+    right: -12px;    
+}
+.admin__nav ul li .title {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+.admin__body {
+    background-color: #f5f6f7;
+    flex-grow: 1;
+}
+.scholarships__title {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: #fff;
+}
+.scholarships__title_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.scholarships__title_left h1 {
+    margin: 28px 0 0 0;
+    padding: 0;    
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.scholarships__title_tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+.scholarships__title_tabs li {
+    padding: 0 25px 10px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3a3a3a;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.scholarships__title_tabs li.current {    
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    cursor: default;
+    border-bottom: 2px solid #002767;
+}
+.scholarships__create {
+    margin-top: 20px;
+}
+.scholarships__create a {
+    display: block;
+    width: 164px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 48px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.scholarships__create a:hover {
+    background-color: #0e9ee3;
+}
+.scholarships__list {
+    padding: 20px 20px 40px 20px;
+}
+.scholarships__list_item {
+    height: 180px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+.scholarships__list_item .item__head {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 13px 0 20px;
+    align-items: center;
+}
+.scholarships__list_item .item__head_id {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.scholarships .item__head_edit {    
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center; 
+    text-transform: uppercase;   
+}
+.scholarships .item__head_edit a {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding-right: 28px;
+    color: #00acff;
+    background: url('../img/icon-edit.svg') no-repeat right center;
+    transition: all 200ms ease;
+}
+.scholarships .item__head_edit a:hover {
+    color: #0e9ee3;
+    background: url('../img/icon-edit-hover.svg') no-repeat right center;
+}
+
+.scholarships .item__body {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;    
+    padding: 0 20px;
+}
+.scholarships .item__body_info {
+    flex-grow: 2;
+}
+.scholarships .item__body_info .title {    
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #484f59;
+    margin-bottom: 2px;
+}
+.scholarships .item__body_info .school {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00acff;
+}
+.scholarships .item__body_info .school a {
+    color: #00acff;
+    transition: all 200ms ease;
+}
+.scholarships .item__body_info .school a:hover {
+    color: #0e9ee3;
+}
+.scholarships .item__body_info .descrition {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 14px 0 0 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    width: 390px;
+}
+.scholarships .item__body_info .descrition .sport {
+    background: url('../img/position.svg') no-repeat left center;
+    padding-left: 26px;    
+    height: 24px;
+    margin-bottom: 4px;
+}
+.scholarships .item__body_info .descrition .gender {
+    background: url('../img/sex.svg') no-repeat left center;
+    padding-left: 26px;    
+    height: 24px;
+    width: 165px;
+    margin-bottom: 4px;
+}
+.scholarships .item__body_info .descrition .rewards {
+    background: url('../img/devision.svg') no-repeat left center;
+    padding-left: 26px;    
+    height: 24px;
+    width: 100%;    
+}
+
+
+
+.scholarships .item__body_status {
+    flex-grow: 1;
+}
+.scholarships .item__body_status .title {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    margin: -19px 0 6px 0;
+}
+.scholarships .item__body_status .status__item {
+    margin-bottom: 8px;    
+    display: flex;
+}
+.scholarships .item__body_status .status__item_year {
+    width: 64px;
+    height: 24px;
+    border-radius: 15.8px;
+    background-color: #018800;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 8px;
+}
+.scholarships .item__body_status .status__item_year.full {
+    background-color: #f82b2b;
+}
+.scholarships .item__body_status .status__item_available {    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3a3a3a;  
+}
+.scholarships .item__body_status .status__item_available span {
+    color: #229707;
+}
+.scholarships .item__body_status .status__more {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;    
+    color: #04a1f4;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    margin-left: 9px;
+}
+.scholarships .item__body_status .status__more a {
+    color: #04a1f4;
+}
+.scholarships .item__body_status .status__more a:hover {
+    color: #0e9ee3;
+}
+
+
+
+.scholarships .item__body_actions {
+    width: 164px;
+    text-align: center;
+}
+.scholarships .item__body_actions .actions__requests {
+    margin-bottom: 7px;
+}
+.scholarships .item__body_actions .actions__requests b {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+}
+.scholarships .item__body_actions .actions__requests span {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #d2d2d2;
+}
+.scholarships .item__body_actions .actions__newrequests {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #cfcfcf;
+    margin-bottom: 18px;
+}
+.scholarships .item__body_actions .actions__close a {
+    display: inline-block;
+    width: 164px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+}
+.scholarships .item__body_actions .actions__close a:hover {
+    background-color: #0e9ee3;
+}
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+.scholarships .tooltip__body {
+    max-width: 210px;    
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 9px 7px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    bottom: 35px;
+    display: none;
+}
+.scholarships .item__body_actions .tooltip__body {
+    bottom: 30px;
+}
+.tooltip__body::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.75);
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.tooltip__body::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -30px;
+}
+.tooltip__body p {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+.status__item_available .tooltip__body {
+
+}
+.scholarships-detiles__title {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 0 20px 0 15px;
+    align-items: center;
+}
+.scholarships-detiles__title_left {
+    display: flex;
+    align-items: center;
+}
+.scholarships-detiles__title .title__back {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../img/arrow-back.svg') no-repeat center;
+    margin-right: 3px;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__title .title__back:hover {
+    background: url('../img/arrow-back-hover.svg') no-repeat center;
+}
+.scholarships-detiles__title h1 {
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+    margin: 2px 0 0 0;
+    padding: 0;
+}
+.scholarships-detiles__title_right {
+    display: flex;
+    align-items: center;
+}
+.scholarships-detiles__title .title__edit {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: #00acff url('../img/icon-edit-white.svg') no-repeat center / 32px 32px;
+    display: block;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__title .title__edit:hover {
+    background-color: #0e9ee3;
+}
+.scholarships-detiles__title .title__close {
+    width: 180px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;    
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 48px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-left: 16px;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__title .title__close:hover {
+    background-color: #0e9ee3;
+}
+.scholarships-detiles__body {
+    margin: 20px 20px 0 20px;    
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+.scholarships-detiles__body_title {
+    display: flex;
+    justify-content: space-between;
+}
+.scholarships-detiles__body_title .body__title_name {
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.scholarships-detiles__body_title .body__title_id {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.scholarships-detiles__body_description {
+    display: flex;
+    margin-top: 29px;
+}
+.scholarships-detiles__body_description .body__description_list {        
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    width: 40%;
+}
+.scholarships-detiles__body_description .body__description_list .sport {
+    background: url(../img/position.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px;
+    margin-bottom: 6px;
+}
+.scholarships-detiles__body_description .body__description_list .gender {
+    background: url(../img/devision.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px; 
+    margin-bottom: 6px;   
+}
+.scholarships-detiles__body_description .body__description_list .rewards {
+    background: url(../img/sex.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px;    
+}
+.scholarships-detiles__body_description .body__description_status {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    max-height: 110px;
+}
+.scholarships-detiles__body_description .body__description_status .title {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    position: absolute;
+    left: 0;
+    top: -28px;
+}
+.scholarships-detiles__body_description .status__item {
+    margin-bottom: 8px;
+    display: flex;
+    margin-right: 32px;
+}
+.scholarships-detiles__body_description .status__item .status__item_year {
+    width: 64px;
+    height: 24px;
+    border-radius: 15.8px;
+    background-color: #018800;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 8px;
+}
+.scholarships-detiles__body_description .status__item .status__item_year.full {
+    background-color: #f82b2b;
+}
+.scholarships-detiles__body_description .status__item .status__item_available {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3a3a3a;
+}
+.scholarships-detiles__body_description .status__item .status__item_available span {
+    color: #229707;
+}
+.scholarships-detiles__body_description .tooltip__body {
+    max-width: 210px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 9px 7px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    bottom: 35px;
+    display: none;
+}
+.scholarships-detiles__body_description .tooltip__body::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.75);
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.scholarships-detiles__body_description .tooltip__body::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -30px;
+}
+.scholarships-detiles__body_text {
+    margin-top: 28px;
+}
+.scholarships-detiles__body_text .body_text_title {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    margin-bottom: 6px;
+}
+.scholarships-detiles__body_text .body_text_section {    
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.scholarships-detiles__requests {
+    margin: 40px 0 0 0;
+}
+.scholarships-detiles__requests .requests__title {
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+    margin: 0 20px 12px 20px;
+}
+.scholarships-detiles__requests .requests__body {
+    background-color: #ffffff;
+    padding: 37px 0 40px 0;
+}
+.scholarships-detiles__requests .requests__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 44px 0 26px;
+}
+.scholarships-detiles__requests .requests__nav .requests__nav_years { 
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.scholarships-detiles__requests .requests__nav .requests__nav_years a {
+    width: 64px;
+    height: 24px;
+    border-radius: 15.8px;
+    border: solid 2px #04a1f4;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    margin-right: 24px;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__requests .requests__nav .requests__nav_years a.current {
+    background-color: #00acff;
+    color: #fff;
+}
+.scholarships-detiles__requests .requests__nav select {
+    width: 341px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    padding: 0 36px 0 14px;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    background: url('../img/arrow-dropdown.svg') no-repeat center right 11px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.scholarships-detiles__requests .requests__nav_select {
+    position: relative;
+}
+.scholarships-detiles__requests .requests__nav_select span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    position: absolute;
+    left: 0;
+    top: -21px;
+}
+.scholarships-detiles__requests .requests__nav select::before {
+    content: "Show";
+}
+.scholarships-detiles__requests .requests__table {
+    margin-top: 30px;
+}
+.scholarships-detiles__requests .requests__table .requests__table_head {
+    display: table;
+    width: 100%;
+    padding: 0 39px 0 25px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.scholarships-detiles__requests .requests__table .df {
+    display: flex;
+    align-items: center;
+}
+.scholarships-detiles__requests .requests__table .athlete {
+    display: table-cell;  
+    width: 28%;
+    vertical-align: middle;
+}
+.scholarships-detiles__requests .requests__table .coach {
+    display: table-cell;    
+    width: 40%;
+    vertical-align: middle;
+} 
+.scholarships-detiles__requests .requests__table .organisation {
+    display: table-cell; 
+    width: 19.5%;
+    vertical-align: middle;
+} 
+.scholarships-detiles__requests .requests__table .status {
+    display: table-cell;
+    vertical-align: middle;
+} 
+.scholarships-detiles__requests .requests__table_item {
+    display: table;
+    width: 100%;
+    padding: 0 39px 0 25px;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__requests .requests__table_item:hover {
+    background-color: #f6f6f6;
+}
+.scholarships-detiles__requests .requests__table_item:hover .athlete .athlete__share a {
+    opacity: 1;
+}
+.scholarships-detiles__requests .requests__table_item .athlete {    
+    align-items: center;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 20px 0;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__photo {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__title {
+    margin-right: 28px;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__title b {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    display: block;
+    margin-bottom: 2px;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__title span {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    display: block;
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__share {
+    width: 48px;
+    height: 48px;    
+}
+.scholarships-detiles__requests .requests__table_item .athlete .athlete__share a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url('../img/icon-share.svg') no-repeat center / 48px 48px;
+    opacity: 0;
+    transition: all 200ms ease;
+}
+.scholarships-detiles__requests .requests__table_item .coach {
+    display: table-cell;
+    border-bottom: 1px solid #d8d8d8;    
+    padding: 20px 0;
+}
+.scholarships-detiles__requests .requests__table_item .coach .coach__pfoto {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.scholarships-detiles__requests .requests__table_item .coach .coach__pfoto img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;    
+}
+.scholarships-detiles__requests .requests__table_item .coach .coach__title {
+
+}
+.scholarships-detiles__requests .requests__table_item .coach__title_name {
+    display: flex;
+    align-items: center;  
+    margin-bottom: 2px;  
+}
+.scholarships-detiles__requests .requests__table_item .coach__title_name span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 16px;
+}
+.scholarships-detiles__requests .requests__table_item .coach__title_name a {
+    display: block;
+    width: 21px;
+    height: 18px;
+    background: url('../img/icon-messager-blue.svg') no-repeat center;
+    margin-top: 3px;
+}
+.scholarships-detiles__requests .requests__table_item .coach__title_sub {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+}
+.scholarships-detiles__requests .requests__table_item .organisation {    
+    padding: 20px 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+.scholarships-detiles__requests .requests__table_item .organisation b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 2px;
+}
+.scholarships-detiles__requests .requests__table_item .organisation span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    padding-left: 20px;
+    background: url('../img/icon-location.svg') no-repeat left center;
+}
+.scholarships-detiles__requests .requests__table_item .status {
+    padding: 20px 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+.scholarships-detiles__requests .requests__table_item .status button {
+    width: 97px;
+    height: 32px;
+    border-radius: 17.6px;
+    border: none;
+    outline: none;
+    font-size: 13.6px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+.scholarships-detiles__requests .requests__table_item .status button.declined {
+    background-color: #f88f2b;
+}
+.scholarships-detiles__requests .requests__table_item .status button.interested {
+    background-color: #67ae19;
+}
+.scholarships-detiles__requests .requests__pagination {
+    margin-top: 34px;
+}
+
+
+/* ==========================================================================
+   Pagination styles
+   ========================================================================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination a.prev {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../img/arrow-back.svg') no-repeat center;
+    transition: all 200ms ease;
+    margin-right: 86px;
+}
+.pagination a.next {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../img/arrow-back.svg') no-repeat center;
+    transform: rotate(180deg);
+    transition: all 200ms ease;
+    margin-left: 86px;
+}
+.pagination a.prev:hover,
+.pagination a.next:hover {
+    background: url('../img/arrow-back-hover.svg') no-repeat center;
+}
+.pagination a.prev.disabled,
+.pagination a.next.disabled {
+    background: url('../img/arrow-back-disabled.svg') no-repeat center;
+}
+.pagination a {
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    margin: 0 10px;
+}
+.pagination a.disabled {
+    pointer-events: none;
+    color: rgba(72, 79, 89, 0.2);
+}
+.requests__pagination_info {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #cfcfcf;
+}
+
+/* ==========================================================================
+   College styles
+   ========================================================================== */
+.coach-network__title {
+    height: 88px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;        
+}
+.coach-network__title h1 {
+    margin: 0 28px 0 0;
+    padding: 0;    
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.coach-network__title input {
+    width: 437px;
+    height: 48px;
+    border-radius: 4px;    
+    border: solid 1px #c8c9c9;
+    outline: none;
+    color: #2c333e;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 0 48px 0 16px;
+    display: inline-block;
+    margin-right: 38px;
+    background: #fff url('../img/icon-search-grey.svg') no-repeat center right 11px / 24px 24px;
+}
+.coach-network__title a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-network__title a:hover {
+    color: #001a46;
+}
+.coach-network__title input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cfcfcf;
+}
+.coach-network__title input::-moz-placeholder { /* Firefox 19+ */
+  color: #cfcfcf;
+}
+.coach-network__title input:-ms-input-placeholder { /* IE 10+ */
+  color: #cfcfcf;
+}
+.coach-network__title input:-moz-placeholder { /* Firefox 18- */
+  color: #cfcfcf;
+}
+.coach-network__body {
+    margin: 20px 0 0 0;
+    padding: 0 20px;
+}
+.coach-network__body h2 {
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    text-align: left;
+}
+.coach-network__list {
+    margin-bottom: 32px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    overflow: hidden;
+}
+.coach-network__item {
+    width: 100%;
+    height: 128px;    
+    display: table;
+    border-bottom: 1px solid #dbdddf;
+}
+.coach-network__item:last-child {
+    border-bottom: none;
+}
+.coach-network__item .coache {
+    display: table-cell;
+    vertical-align: middle;
+    width: 40%;
+}
+.coach-network__item .df {
+    display: flex;
+    align-items: center;
+}
+.coach-network__item .item__coache_photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.coach-network__item .item__coache_photo img {
+    width: 100%;
+    height: 100%;
+}
+.coach-network__item .item__coache_title {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+.coach-network__item .item__coache_title b {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 11px;
+}
+.coach-network__item .item__coache_title span {
+    display: inline-block;
+    height: 16px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 0 8px;
+}
+.coach-network__item .item__coache_title span.college {
+    background-color: #9c68b7;
+}
+.coach-network__item .item__coache_title span.athletes {
+    background-color: #dd8307;
+}
+.coach-network__item .item__coache_title .msg {
+    display: block;
+    width: 21px;
+    height: 18px;
+    background: url(../img/icon-messager-blue.svg) no-repeat center;
+    margin-top: 1px;
+    margin-left: 20px;
+}
+.coach-network__item .item__coache_info {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9b9b9b;
+}
+.coach-network__item .organisation {
+    display: table-cell;
+    vertical-align: middle;
+    width: 18%;
+}
+.coach-network__item .organisation b {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 3px;
+}
+.coach-network__item .organisation span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    padding-left: 20px;
+    background: url(../img/icon-location.svg) no-repeat left center;
+}
+.coach-network__item .nominations {
+    display: table-cell;
+    vertical-align: middle;
+}
+.coach-network__item .nominations .nominations__requests {
+    position: relative;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.coach-network__item .nominations .nominations__requests.tooltip .tooltip__body {
+    max-width: 210px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 9px 7px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    bottom: 35px;
+    display: none;
+}
+.coach-network__item .nominations .nominations__requests b {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002d47;
+}
+.coach-network__item .nominations .nominations__requests span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9b9b9b;
+}
+.coach-network__item .nominations .nominations__text {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #9b9b9b;
+}
+.coach-network__item .actions {
+    display: table-cell;
+    vertical-align: middle;
+    width: 164px;
+}
+.coach-network__item .actions .actions__ignore {
+    display: block;
+    width: 164px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    margin-bottom: 16px;
+}
+.coach-network__item .actions .actions__ignore:hover {
+    background-color: #0e9ee3;
+}
+.coach-network__item .actions .actions__connect {
+    display: block;
+    width: 164px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #002767;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-network__item .actions .actions__connect:hover {
+    background-color: #001a46;
+}
+.coach-network__item .actions .actions__unlink {
+    display: block;
+    width: 164px;
+    height: 32px;    
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-network__item .actions .actions__unlink:hover {
+    color: #001a46;
+}
+
+.gotop-buttom {
+    width: 120px;
+    height: 40px;
+    padding-right: 45px;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: normal;    
+    color: #002767;
+    margin: -12px 0 13px auto;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.gotop-buttom::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #002767 url('../img/icon-gotop.svg') no-repeat center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.gotop-buttom:hover {
+    color: #001a46;
+}
+.gotop-buttom:hover::after {
+    background: #001a46 url('../img/icon-gotop.svg') no-repeat center;
 }
