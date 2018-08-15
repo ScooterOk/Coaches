@@ -1,0 +1,842 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="search">
+   <div class="search__header">
+      <div class="wrapper">
+         <header>
+            <div class="header__logo">
+               <a href="">
+                  <img src="./img/logo.svg" alt="">
+               </a>               
+            </div>
+            <ul class="header__nav">
+               <li class="current">
+                  <a href="">Home page</a>
+               </li>
+               <li>
+                  <a href="">Contact us</a>
+               </li>
+            </ul>
+            <ul class="header__login">
+               <li class="sign-in">
+                  <a href="">Sign In</a>
+               </li>
+               <li class="sign-up">
+                  <a href="">Sign Up</a>
+               </li>
+            </ul>
+         </header>
+      </div>
+   </div>
+   <div class="search__form">
+      <div class="wrapper">
+         <section class="search__form_block">
+            <h1>Search</h1>
+            <div class="search__form_input">
+               <input type="text" name="search" placeholder="What are you looking for?" value="USA">
+               <i class="search__form_clear"></i>
+            </div>
+            <a href="" class="search__form_filter-but">Filters</a>
+         </section>
+         <ul class="search__tabs">
+            <li class="current" data-name="scholarships">Scholarships 256</li>
+            <li class="" data-name="coaches">Coaches 1234</li>
+         </ul>
+         <section class="search__filters">
+            <h2>Filters:</h2>
+            <div class="search__filters_close"></div>            
+            <div class="search__filters_list scholarships">
+               <ul>
+                  <li>
+                     <label>Kind of sport</label>
+                     <div data-value="" class="custom-select">
+                        <span data-placeholder="Choose the Sport">Choose the Sport</span>
+                        <div class="custom-select__list">
+                           <div class="custom-select__option" data-option="">Basketball</div>
+                           <div class="custom-select__option" data-option="">Boxing</div>
+                           <div class="custom-select__option" data-option="">Karate</div>
+                           <div class="custom-select__option" data-option="">Rowing</div>
+                           <div class="custom-select__option" data-option="">Soccer / football</div>
+                           <div class="custom-select__option" data-option="">Taekwondo</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <label>Location</label>
+                     <input type="text" placeholder="Enter the country, state or city">
+                  </li>
+                  <li>
+                     <label>College</label>
+                     <input type="text" placeholder="Enter the College Name">
+                  </li>
+                  <li>
+                     <label>Sex</label>
+                     <div data-value="" class="custom-select">
+                        <span data-placeholder="Choose the Sex">Choose the Sex</span>
+                        <div class="custom-select__list">
+                           <div class="custom-select__option" data-option="">Male</div>
+                           <div class="custom-select__option" data-option="">Female</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <label>Year</label>
+                     <div data-value="" class="custom-select">
+                        <span data-placeholder="Choose the year of scholarship">Choose the year of scholarship</span>
+                        <div class="custom-select__list">
+                           <div class="custom-select__option" data-option="">2018</div>
+                           <div class="custom-select__option" data-option="">2019</div>
+                           <div class="custom-select__option" data-option="">2020</div>
+                           <div class="custom-select__option" data-option="">2021</div>
+                           <div class="custom-select__option" data-option="">2022</div>
+                           <div class="custom-select__option" data-option="">2023</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="search__filters_submit">
+                        <a href="" class="clear">Clean filters</a>
+                        <a href="" class="apply">Apply</a>
+                     </div>
+                  </li>
+               </ul>   
+            </div>
+            <div class="search__filters_list coaches">
+               <ul>
+                  <li>
+                     <label>Kind of sport</label>
+                     <div data-value="" class="custom-select">
+                        <span data-placeholder="Choose the Sport">Choose the Sport</span>
+                        <div class="custom-select__list">
+                           <div class="custom-select__option" data-option="">Basketball</div>
+                           <div class="custom-select__option" data-option="">Boxing</div>
+                           <div class="custom-select__option" data-option="">Karate</div>
+                           <div class="custom-select__option" data-option="">Rowing</div>
+                           <div class="custom-select__option" data-option="">Soccer / football</div>
+                           <div class="custom-select__option" data-option="">Taekwondo</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <label>Location</label>
+                     <input type="text" placeholder="Enter the country, state or city">
+                  </li>
+                  <li>
+                     <label>Organisation</label>
+                     <input type="text" placeholder="Enter the Organisation Name">
+                  </li>
+                  <li>                  
+                     <label>Type of coach</label>
+                     <div data-value="" class="custom-select">
+                        <span data-placeholder="Choose the coach type">Choose the coach type</span>
+                        <div class="custom-select__list">                        
+                           <div class="custom-select__option" data-option="">College coach</div>
+                           <div class="custom-select__option" data-option="">Athletes coach</div>                        
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="search__filters_submit">
+                        <a href="" class="clear">Clean filters</a>
+                        <a href="" class="apply">Apply</a>
+                     </div>
+                  </li>
+               </ul>
+            </div>            
+         </section>
+         <section class="search__filters-selected">
+            <div class="df">
+               <h2>Filters:</h2>
+               <ul class="search__filters-selected_list">
+                  <li class="search__filters-selected-item">
+                     <div class="search__filters-selected-item_click">
+                        <span>Kind of Sport:</span>
+                        <i>3</i>
+                     </div>                     
+                     <ul class="selects__list">
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>Basketball</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>Boxing</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>Karate</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>Rowing</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>Soccer / football</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>Taekwondo</span>
+                           </label>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="search__filters-selected-item">
+                     <div class="search__filters-selected-item_click">
+                        <span>Year:</span>
+                        <i>2</i>   
+                     </div>                     
+                     <ul class="selects__list">
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>2018</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>2019</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>2020</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>2021</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>2022</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>2023</span>
+                           </label>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="search__filters-selected-item">
+                     <div class="search__filters-selected-item_click">
+                        <span>Sex:</span>
+                        <a href="">Male</a>   
+                     </div>                     
+                     <ul class="selects__list">
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox" checked="">
+                              <i></i>
+                              <span>Male</span>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="custom-checkbox">
+                              <input type="checkbox">
+                              <i></i>
+                              <span>Female</span>
+                           </label>
+                        </li>                        
+                     </ul>
+                  </li>
+               </ul>
+               <span class="search__filters-selected_number">23 results</span>
+               <a href="" class="search__filters-selected_clear">Clean filters</a>
+            </div>            
+         </section>
+      </div>
+   </div>
+   <main class="wrapper">
+      <!-- The value of the attribute "data-current" indicates which tab is active when the page is loaded -->
+      <div class="search__results" data-current="scholarships">
+         <article class="search__results_tab scholarships">
+            <ul class="search__results_scholarships">               
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>New Cityland, CA USA</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+            </ul>
+         </article>
+         <article class="search__results_tab coaches">
+            <section class="coach-network__list">          
+          <div class="coach-network__item">
+            <div class="coache">
+              <div class="df">
+                <div class="item__coache_photo">
+                  <img src="./img/user.jpg" alt="">
+                </div>
+                <div>
+                  <div class="item__coache_title">
+                    <b>Caleb Morales</b>
+                    <span class="college">college coach</span>                    
+                  </div>
+                  <div class="item__coache_info">Softball and Baseball Athletic Coach</div>
+                </div>
+              </div>
+            </div>
+            <div class="organisation">
+              <b>Catholic High School</b>
+              <span>New Cityland, CA USA</span>
+            </div>
+            <div class="nominations"></div>
+            <div class="actions">
+              <a href="" class="actions__ignore">Send Message</a>
+              <a href="" class="actions__unlink">Unlink</a>
+            </div>
+          </div>          
+          <!-- /.coach-network__item -->
+          <div class="coach-network__item">
+            <div class="coache">
+              <div class="df">
+                <div class="item__coache_photo">
+                  <img src="./img/user.jpg" alt="">
+                </div>
+                <div>
+                  <div class="item__coache_title">
+                    <b>Caleb Morales</b>
+                    <span class="athletes">Athletes coach</span>                    
+                  </div>
+                  <div class="item__coache_info">Softball and Baseball Athletic Coach</div>
+                </div>
+              </div>
+            </div>
+            <div class="organisation">
+              <b>Catholic High School</b>
+              <span>New Cityland, CA USA</span>
+            </div>
+            <div class="nominations">
+              <div class="nominations__requests">
+                <b>2</b>
+                <span>/ 5</span>                
+              </div>
+              <div class="nominations__text">Nominated Athletes</div>
+            </div>
+            <div class="actions">
+              <a href="" class="actions__ignore">Send Message</a>
+              <a href="" class="actions__unlink">Unlink</a>
+            </div>
+          </div>          
+          <!-- /.coach-network__item -->
+          <div class="coach-network__item">
+            <div class="coache">
+              <div class="df">
+                <div class="item__coache_photo">
+                  <img src="./img/user.jpg" alt="">
+                </div>
+                <div>
+                  <div class="item__coache_title">
+                    <b>Caleb Morales</b>
+                    <span class="athletes">Athletes coach</span>                    
+                  </div>
+                  <div class="item__coache_info">Softball and Baseball Athletic Coach</div>
+                </div>
+              </div>
+            </div>
+            <div class="organisation">
+              <b>Catholic High School</b>
+              <span>New Cityland, CA USA</span>
+            </div>
+            <div class="nominations">
+              <div class="nominations__requests">
+                <b>2</b>
+                <span>/ 5</span>                
+              </div>
+              <div class="nominations__text">Nominated Athletes</div>
+            </div>
+            <div class="actions">
+              <a href="" class="actions__ignore">Send Message</a>
+              <a href="" class="actions__unlink">Connect</a>
+            </div>
+          </div>          
+          <!-- /.coach-network__item -->
+          <div class="coach-network__item">
+            <div class="coache">
+              <div class="df">
+                <div class="item__coache_photo">
+                  <img src="./img/user.jpg" alt="">
+                </div>
+                <div>
+                  <div class="item__coache_title">
+                    <b>Caleb Morales</b>
+                    <span class="athletes">Athletes coach</span>                    
+                  </div>
+                  <div class="item__coache_info">Softball and Baseball Athletic Coach</div>
+                </div>
+              </div>
+            </div>
+            <div class="organisation">
+              <b>Catholic High School</b>
+              <span>New Cityland, CA USA</span>
+            </div>
+            <div class="nominations">
+              <div class="nominations__requests">
+                <b>2</b>
+                <span>/ 5</span>                
+              </div>
+              <div class="nominations__text">Nominated Athletes</div>
+            </div>
+            <div class="actions">
+              <a href="" class="actions__ignore">Send Message</a>
+              <a href="" class="actions__unlink">Connect</a>
+            </div>
+          </div>          
+          <!-- /.coach-network__item -->
+          <div class="coach-network__item">
+            <div class="coache">
+              <div class="df">
+                <div class="item__coache_photo">
+                  <img src="./img/user.jpg" alt="">
+                </div>
+                <div>
+                  <div class="item__coache_title">
+                    <b>Caleb Morales</b>
+                    <span class="college">college coach</span>                    
+                  </div>
+                  <div class="item__coache_info">Softball and Baseball Athletic Coach</div>
+                </div>
+              </div>
+            </div>
+            <div class="organisation">
+              <b>Catholic High School</b>
+              <span>New Cityland, CA USA</span>
+            </div>
+            <div class="nominations"></div>
+            <div class="actions">
+              <a href="" class="actions__ignore">Send Message</a>
+              <a href="" class="actions__unlink">Unlink</a>
+            </div>
+          </div>          
+          <!-- /.coach-network__item -->
+        </section>
+         </article>
+      </div>
+      <div class="gotop-buttom">Back to top</div>
+   </main>  
+
+   <footer>
+      <div class="wrapper">
+         <div class="footer__copyright">2018  ©  Coaches Trust - All Rights Reserved</div>
+         <ul class="footer__list">
+            <li>
+               <a href="">Terms & Conditons</a>
+            </li>
+            <li>
+               <a href="">Privacy Policy</a>
+            </li>
+            <li>
+               <a href="">Contact us</a>
+            </li>
+         </ul>
+      </div>
+   </footer>
+
+
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>  
+   <script src="js/main.js"></script>
+  
+</body>
+
+</html>

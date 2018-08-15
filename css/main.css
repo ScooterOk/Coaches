@@ -182,16 +182,191 @@ a {
 }
 
 
+.custom-select {
+    position: relative;
+    height: 48px;
+    border-radius: 4px;    
+    border: solid 1px #b0b0b0;
+    background: #ffffff url(../img/arrow-dropdown.svg) no-repeat center right 11px;
+    display: flex;
+    align-items: center;
+    padding: 0 34px 0 14px;
+}
+.custom-select > span {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;    
+}
+.custom-select.selected > span {
+    color: #2c333e;
+}
+.custom-select__list {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    min-width: calc(100% + 2px);
+    top: 46px;
+    left: -1px;
+    z-index: 5;
+    display: none;
+}
+.custom-select__option {
+    font-size: 15px;
+    padding: 0 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.67;
+    letter-spacing: normal;
+    color: #2c333e;
+    overflow: hidden;
+    transition: all 200ms;
+}
+.custom-select__option:hover,
+.custom-select__option.selected {
+    background-color: #eee;
+}
 
 
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  position: relative;
+  padding-left: 36px;
+}
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;  
+  opacity: 0;
+  visibility: hidden;
+}
+.custom-checkbox input[type="checkbox"] + i {
+  width: 20px;
+  height: 20px;  
+  background: url('../img/bg-checkbox.svg') no-repeat center;
+  display: block;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 150ms ease;
+}
+.custom-checkbox input[type="checkbox"]:checked + i {
+  background: url('../img/bg-checkbox-active.svg') no-repeat center;
+}
 
+.custom-checkbox input[type="checkbox"]:disabled + i {
+  opacity: 0.5;
+}
+.custom-checkbox input[type="checkbox"]:disabled ~ * {
+  color: #c8ced3;
+}
+.custom-checkbox input[type="checkbox"]:disabled:checked + i {
+  
+}
+.custom-checkbox input[type="checkbox"]:disabled:checked + i::after {
+  
+}
+.custom-checkbox span {  
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.67;
+  letter-spacing: normal;
+  color: #2c333e;
+}
 
-
-
-
-
-
-
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    min-height: 100%;    
+    padding: 72px 58px;
+    display: none;
+}
+.modal__body {
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 30px 40px;
+}
+.modal__head {
+    display: flex;
+    justify-content: space-between;
+}
+.modal__head_title {
+    font-family: 'SoccerLeague';
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.modal__head_buts {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.modal__head_buts .cancel,
+.modal__footer_buts .cancel {
+    width: 85px;
+    height: 48px;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;    
+}
+.modal__head_buts .save,
+.modal__footer_buts .save {
+    margin-left: 30px;
+    width: 93px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.modal__head_buts .save:hover {
+    background-color: #0e9ee3;
+}
+.modal__footer {
+    margin-top: 30px;
+}
+.modal__footer_buts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 
 /* ==========================================================================
@@ -1196,7 +1371,7 @@ footer .wrapper {
     display: inline-flex;
     align-items: center;
 }
-.header__notifications {
+.header__notifications_but {
     width: 40px;
     height: 40px;
     background: url('../img/notification.svg') no-repeat center;
@@ -1245,6 +1420,146 @@ footer .wrapper {
     cursor: pointer;
     background: url('../img/arrow-dropdown.svg') no-repeat center;    
 }
+.header__menu .header__user_menu {
+    list-style: none;
+    margin: 0;    
+    padding: 16px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    display: none;
+}
+.header__menu .header__user_menu li {
+    white-space: nowrap;
+    height: 47px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 47px;
+    letter-spacing: normal;
+    color: #2c333e;    
+    transition: background-color 200ms ease;
+}
+.header__menu .header__user_menu li:hover {
+    background-color: #eee;
+}
+.header__menu .header__user_menu li a {
+    color: #2c333e;    
+    display: block;
+}
+.header__notifications {
+    width: 358px;    
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 56px;
+    right: 187px;
+    z-index: 10;
+    display: none;
+}
+.header__notifications_header {
+    height: 40px;
+    padding: 0 11px 0 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d2d2d2;
+}
+.header__notifications_header .new {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.header__notifications_header .markread {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.header__notifications_header .markread:hover {
+    color: #001a46;
+}
+.header__notifications_list {
+    max-height: 310px;
+    overflow: hidden;
+}
+.notifications__list_item {
+    padding: 16px 38px 16px 58px;
+    position: relative;
+    border-bottom: 1px solid #d2d2d2;
+}
+.notifications__list_item.new {
+    background-color: #eee;
+}
+.notifications__list_item:last-child {
+    border-bottom: none;
+}
+.notifications__list_item .icon {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 16px;
+    left: 15px;
+}
+.notifications__list_item .message {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 4px;
+}
+.notifications__list_item .message a {
+    color: #2c333e;
+}
+.notifications__list_item .date {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+}
+.header__notifications_all {
+    border-top: 1px solid #d2d2d2;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__notifications_all a {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.header__notifications_all a:hover {
+    color: #001a46;
+}
+
 .admin-wrapper {
     display: flex;
     min-width: 1080px;
@@ -1268,6 +1583,12 @@ footer .wrapper {
     background-color: #00acff;
     cursor: default;
 }
+.admin__nav ul li.current .title {
+    display: none;
+}
+.admin__nav ul li.current .icon {
+    margin-top: 21px;
+}
 .admin__nav ul li.scholarships {    
     background-image: url('../img/icon-scholarship.svg');
     background-repeat: no-repeat;
@@ -1286,6 +1607,9 @@ footer .wrapper {
 }
 .admin__nav ul li.network .icon {    
     background: url('../img/icon-coaches.svg') no-repeat center;
+}
+.admin__nav ul li.athletes .icon {
+    background: url('../img/icon-athletes.svg') no-repeat center;
 }
 .admin__nav ul li.profile .icon {
     background: url('../img/icon-profile.svg') no-repeat center;
@@ -2680,4 +3004,1839 @@ footer .wrapper {
 }
 .gotop-buttom:hover::after {
     background: #001a46 url('../img/icon-gotop.svg') no-repeat center;
+}
+
+/* ==========================================================================
+   Login styles
+   ========================================================================== */
+
+body.login {
+    background-color: #3a4969;
+}
+.login header {        
+    display: flex;
+    justify-content: center;
+    height: 37px;
+    align-items: flex-end;
+}
+.login header a {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 28px;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.login header a:hover {
+    color: #00acff;
+}
+.login main {
+    min-height: calc(100vh - 37px - 72px);
+    padding-top: 53px;
+    padding-bottom: 73px;
+}
+.login__logo {    
+    text-align: center;
+}
+.login__logo img {
+    width: 160px;
+}
+.login h1 {
+    margin: 21px 0 0 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+.login__form {
+    width: 400px;
+    margin: 24px auto 0 auto;
+}
+.login__form_item {
+    margin-bottom: 19px;
+}
+.login__form_item > label {
+    display: block;
+}
+.login__form_item > label > span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.login__form_item > label > input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    padding-left: 14px;
+    padding-right: 36px;
+    transition: all 200ms ease;
+}
+.login__form_item > label > input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.25);
+}
+.login__form_item > label > input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.login__form_item > label > input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.login__form_item > label > input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.25);
+}
+.login__form_item .error-text {
+    height: 40px;    
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding-left: 48px;
+    background: #ff2828 url('../img/icon-error-white.svg') no-repeat 9px center;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    display: none;
+}
+.login__form_item .error .error-text {
+    display: flex;
+}
+.login__form_item > .error > input {
+    background: #ffffff url('../img/icon-error-red.svg') no-repeat center right 16px;
+}
+.login__form_submit {
+    margin-top: 43px;
+}
+.login__form_submit button {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.login__form_submit button:hover {
+    background-color: #0e9ee3;
+}
+.login__form_signin {
+    margin-top: 24px;    
+}
+.login__form_signin a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 2px #04a1f4;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.login__form_signin a:hover {
+    background-color: #00acff;
+}
+.login__signup_buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+.login__signup_buttons a {
+    display: block;
+    width: 320px;
+    height: 165px;
+    border-radius: 4px;
+    background-color: #00acff;
+    margin: 0 16px;
+    text-align: center;
+    padding-top: 104px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.login__signup_buttons .college-coach {
+    background-image: url('../img/bg-button-college.svg');
+    background-repeat: no-repeat;
+    background-position: center 24px;
+}
+.login__signup_buttons .athletes-coach {
+    background-image: url('../img/bg-button-athlete.svg');
+    background-repeat: no-repeat;
+    background-position: center 24px;
+}
+.login__signup_buttons a:hover {
+    background-color: #0e9ee3;
+}
+.login__signin_button {
+    margin-top: 46px;    
+}
+.login__signin_button a {
+    display: flex;
+    margin: auto;
+    width: 400px;    
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 2px #04a1f4;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.login__signin_button a:hover {
+    background-color: #00acff;
+}
+.login__comfirm_password {
+    margin-top: 43px;
+    background: url('../img/bg-comfirm-password.svg') no-repeat center top / 72px 72px;
+    padding-top: 96px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+.login__comfirm_email {
+    margin-top: 43px;
+    background: url('../img/bg-comfirm-mail.svg') no-repeat center top / 131px 50px;
+    padding-top: 96px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;   
+}
+.login__form.reset-password .login__form_submit {
+    margin-top: 35px;
+}
+.reset-password__login {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.reset-password__login a {
+    display: flex;
+    width: 188px;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 2px #04a1f4;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.reset-password__login a:hover {
+    background-color: #00acff;
+}
+.login__form.login {
+    margin-top: 41px;
+}
+.login__form_item .forgot-password {
+    text-align: right;
+    margin-top: 7px;
+}
+.login__form_item .forgot-password a {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+}
+
+
+/* ==========================================================================
+   Search styles
+   ========================================================================== */
+body.search {
+    background-color: #f5f6f7;
+}
+.search__header {
+    background-color: #3a4969;
+    height: 64px;
+}
+.search__form {
+    background-color: #fff;
+    padding: 18px 0 0 0;    
+}
+.search__form .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.search__form_block {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search__form_block h1 {
+    margin: 3px 36px 0 0;
+    padding: 0;
+    font-family: 'SoccerLeague';
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.search__form_input {
+    flex-grow: 1;
+    position: relative;
+}
+.search__form_input input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    outline: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    padding: 0 16px 0 41px;
+    transition: all 100ms ease;
+}
+.search__form_clear {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: url('../img/bg-button-clear.svg') no-repeat center;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+.search__form_input.value input {
+    /*padding-left: 41px;*/
+}
+.search__form_input.value .search__form_clear {
+    opacity: 1;
+    visibility: visible;
+}
+.search__form_input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__form_input input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__form_input input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__form_input input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__form_filter-but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #002767;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    margin-left: 24px;    
+}
+.search__form_filter-but:hover {
+    background-color: #001a46;
+}
+.search__form .search__tabs {
+    list-style: none;
+    margin: 23px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+}
+.search__form .search__tabs li {
+    padding: 0 41px 10px 41px;
+    font-size: 14px;    
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3a3a3a;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: border-color 200ms ease;
+    border-bottom: 2px solid transparent;
+}
+.search__form .search__tabs li:last-child {
+    margin-right: 0;
+}
+.search__form .search__tabs li.current {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    cursor: default;
+    border-color: #002767;
+}
+.search main {
+    min-height: calc(100vh - 64px - 120px - 72px);
+}
+.search__results {
+
+}
+.search__results_tab {
+    
+}
+.search__results_tab {
+    margin-top: 20px;
+}
+.search__results_scholarships {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.search__results .scholarships__item {
+    height: 180px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;    
+    padding: 16px 20px 0 20px;    
+}
+.search__results .scholarships__item:last-child {
+    margin-bottom: 0;
+}
+.search__results .scholarships__item .item__id {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.search__results .scholarships__item .df {
+    display: flex;    
+}
+.search__results .scholarships__item .item__info {
+    margin-top: 8px;
+    width: 477px;
+}
+.search__results .scholarships__item .item__info .title {
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #484f59;
+    margin-bottom: 2px;
+}
+.search__results .scholarships__item .item__info .school {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00acff;
+}
+.search__results .scholarships__item .item__info .school a {
+    color: #00acff;
+    transition: all 200ms ease;
+}
+.search__results .scholarships__item .item__info .school a:hover {
+    color: #0e9ee3;
+}
+.search__results .scholarships__item .item__info .descrition {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 14px 0 0 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    width: 390px;
+}
+.search__results .scholarships__item .item__info .descrition .sport {
+    background: url(../img/position.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px;
+    margin-bottom: 4px;
+}
+.search__results .scholarships__item .item__info .descrition .gender {
+    background: url(../img/sex.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px;
+    width: 165px;
+    margin-bottom: 4px;
+}
+.search__results .scholarships__item .item__info .descrition .rewards {
+    background: url(../img/devision.svg) no-repeat left center;
+    padding-left: 26px;
+    height: 24px;
+    width: 100%;
+}
+.search__results .scholarships__item .item__status {
+    width: 250px;
+}
+.search__results .scholarships__item .item__status .title,
+.search__results .scholarships__item .item__created .title {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    margin: -10px 0 6px 0;
+}
+.search__results .scholarships__item .item__status .years {
+    display: flex;
+    margin-top: 12px;
+}
+.search__results .scholarships__item .item__status .years__item {
+    width: 64px;
+    height: 27px;
+    border-radius: 15.8px;
+    background-color: #018800;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 27px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 8px;
+}
+.search__results .scholarships__item .item__status .years__item.full {
+    background-color: #f82b2b;
+}
+.search__results .scholarships__item .item__status .years .more {
+    position: relative;
+}
+.search__results .scholarships__item .item__status .years .more > span {
+    height: 27px;
+    background-color: #00acff;    
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 27px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 13px;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 0 6px;
+}
+.search__results .scholarships__item .item__status .years .more .tooltip__body {
+    white-space: nowrap;
+    max-width: none;
+    padding: 9px 13px;
+}
+.search__results .scholarships__item .item__status .years .more .tooltip__body span {
+    width: 64px;
+    height: 27px;
+    border-radius: 15.8px;
+    background-color: #018800;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 27px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 8px;
+    display: inline-block;
+}
+.search__results .scholarships__item .item__status .years .more .tooltip__body span:last-child {
+    margin-right: 0;
+}
+.search__results .scholarships__item .item__created {
+    width: 235px;
+}
+.search__results .scholarships__item .item__created .item__created_flex {
+    display: flex;
+}
+.search__results .scholarships__item .item__created .created__photo {
+    margin-right: 20px;
+}
+.search__results .scholarships__item .item__created .created__photo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.search__results .scholarships__item .item__created .created__info {
+    margin-top: 4px;
+}
+.search__results .scholarships__item .item__created .created__info b {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;    
+    color: #3a3a3a;
+    display: block;
+    
+}
+.search__results .scholarships__item .item__created .created__info i {
+    margin-top: 4px;
+    display: block;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #b0b0b0;
+}
+.search__results .scholarships__item .item__created .created__info span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    padding-left: 20px;
+    background: url(../img/icon-location.svg) no-repeat left 3px;
+    margin-top: 10px;
+    max-width: 140px;
+}
+.search__results_tab.coaches {
+    display: none;
+}
+.search__results .coach-network__item .coache {
+    width: 405px;
+}
+.search__results .coach-network__item .organisation {
+
+}
+.search__results .coach-network__item .organisation span {
+    width: 150px;
+    background-position: left 3px;
+    padding-left: 18px;
+}
+.search__results .coach-network__item .nominations .nominations__requests {
+    margin-top: -8px;
+}
+.search__filters {
+    padding-top: 16px;
+    position: relative;
+    display: none;
+}
+.search__filters h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.search__filters_close {
+    background: url('../img/button-cencel-filter.svg') no-repeat center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 0;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.search__filters_close:hover {
+    background: url('../img/button-cencel-filter-hover.svg') no-repeat center;
+}
+.search__filters_list {
+    display: none;
+}
+.search__filters_list ul {
+    list-style: none;
+    margin: 14px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.search__filters_list li {
+    width: 320px;
+    margin-bottom: 20px;    
+}
+.search__filters_list li label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.search__filters_list input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    transition: all 200ms ease;
+    outline: none;
+    padding: 0 14px;
+}
+.search__filters_list input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__filters_list input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__filters_list input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__filters_list input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.25);
+}
+.search__filters_submit {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.search__filters_submit .clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 48px;
+    border-radius: 4px;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    margin-right: 29px;
+}
+.search__filters_submit .clear:hover {
+    color: #001a46;
+}
+.search__filters_submit .apply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #002767;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;    
+}
+.search__filters_submit .apply:hover {
+    background-color: #001a46;
+}
+.search__filters-selected {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    display: none;
+}
+.search__filters-selected .df {
+    display: flex;
+    align-items: center;
+}
+.search__filters-selected h2 {
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.search__filters-selected_list {
+    list-style: none;
+    margin: 0 24px 0 0;
+    padding: 0 28px 0 0;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    border-right: 1px solid #dddddd;
+}
+.search__filters-selected_list .search__filters-selected-item {
+    margin-right: 34px;
+    display: flex;
+    align-items: center;    
+    margin-right: 34px;
+    position: relative;
+    cursor: pointer;
+}
+.search__filters-selected_list .search__filters-selected-item_click {
+    background: #ffffff url(../img/arrow-dropdown.svg) no-repeat center right;
+    padding-right: 19px;
+}
+.search__filters-selected_list .search__filters-selected-item:last-child {
+    margin-right: 0;
+}
+.search__filters-selected_list .search__filters-selected-item_click > span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 3px;
+}
+.search__filters-selected_list .search__filters-selected-item_click > i {
+    height: 17px;
+    background-color: #00acff;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 17px;
+    white-space: nowrap;
+    letter-spacing: normal;
+    color: #ffffff;    
+    align-items: center;
+    border-radius: 8px;
+    padding: 0 5px;
+}
+.search__filters-selected_list .search__filters-selected-item_click > a {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    pointer-events: none;
+    color: #00acff;
+}
+.search__filters-selected_list .search__filters-selected-item .selects__list {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 29px 20px 0px 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 27px;
+    list-style: none;
+    margin: 0;
+    display: none;
+}
+.search__filters-selected_list .search__filters-selected-item .selects__list > li {
+    margin-bottom: 20px;
+}
+.search__filters-selected_list .search__filters-selected-item .selects__list .custom-checkbox {
+    white-space: nowrap;
+}
+.search__filters-selected_number {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    margin-right: 28px;
+}
+.search__filters-selected_clear {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.search__filters-selected_clear:hover {
+    color: #001a46;
+}
+.search .coach-network__list {
+    margin-bottom: 0;
+}
+.search .gotop-buttom {
+    margin-top: 32px;
+    margin-bottom: 83px;
+}
+
+
+.admin__body__title {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.admin__body__title h1 {
+    margin: 0;
+    padding: 0;
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.coach-profile .admin__body__title {
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 40px 0 20px;
+}
+.coach-profile .admin__body__title a.edit-profile {
+    display: block;
+    width: 164px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 48px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-profile .admin__body__title a.edit-profile:hover {
+    background-color: #0e9ee3;
+}
+
+.coach-profile .admin__article {
+    margin: 20px 20px 77px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.coach-profile__info {
+    width: 34%;
+    border-right: 2px solid #d2d2d2;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 57px;
+}
+.coach-profile__info_pfoto {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto -12px auto;
+}
+.coach-profile__info_pfoto img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.coach-profile__info_type {
+    display: inline-block;
+    margin: 0;    
+    height: 16px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    padding: 0 7px;
+    text-transform: uppercase;
+}
+.coach-profile__info_type.college {
+    background-color: #9c68b7;    
+}
+.coach-profile__info_type.athletes {
+    background-color: #dd8307;
+}
+.coach-profile__info_name {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.coach-profile__info_ststus {
+    margin-top: 9px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.coach-profile__info_rewards {
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.coach-profile__info_school {
+    margin-top: 24px;
+}
+.coach-profile__info_school b {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+    display: block;
+}
+.coach-profile__info_school span {
+    margin-top: 4px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    padding-left: 20px;
+    background: url(../img/icon-location.svg) no-repeat left center;
+}
+.coach-profile__info_numbers {
+    list-style: none;
+    margin: 37px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.coach-profile__info_numbers li {
+    width: 146px;
+}
+.coach-profile__info_numbers li b {
+    display: block;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.88;
+    letter-spacing: normal;
+    color: #00acff;
+}
+.coach-profile__info_numbers li span {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #cfcfcf;
+    margin-top: 5px;
+}
+.coach-profile__description {
+    width: 66%;
+    padding: 0 32px 22px 32px;
+}
+.coach-profile__description_title {
+    margin: 9px 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.coach-profile__description_text {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu .admin__body__title {
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 40px 0 20px;
+}
+.athletes-menu .admin__body__title h1 {
+    display: flex;
+    align-items: center;
+}
+.athletes-menu .admin__body__title h1 b {
+    font-weight: normal;
+    margin-top: 3px;
+}
+.athletes-menu .admin__body__title h1 span {
+    font-family: 'Open Sans';
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-left: 18px;
+}
+.athletes-menu .admin__body__title .add-new {
+    display: block;
+    width: 164px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 48px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.athletes-menu .admin__body__title .add-new:hover {
+    background-color: #0e9ee3;
+}
+.athletes-menu__list {
+    list-style: none;
+    margin: 20px 0px 88px 20px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.athletes-menu__list .athletes-menu__list_item {
+    width: 310px;
+    height: 174px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 24px 24px 0 0;
+    display: flex;
+    margin: 0 20px 20px 0;
+}
+.athletes-menu__list .list__item_menu-but {
+    width: 23px;
+    height: 23px;    
+    position: absolute;
+    top: 6px;
+    right: 0;
+    cursor: pointer;
+}
+.athletes-menu__list .list__item_menu-but i {
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #3a4969;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 200ms ease;
+    pointer-events: none;
+}
+.athletes-menu__list .list__item_menu-but i::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #3a4969;
+    position: absolute;
+    left: 0;
+    top: -6px;
+    transition: all 200ms ease;
+}
+.athletes-menu__list .list__item_menu-but i::after {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #3a4969;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    transition: all 200ms ease;
+}
+.athletes-menu__list .list__item_menu-but:hover i,
+.athletes-menu__list .list__item_menu-but:hover i::before,
+.athletes-menu__list .list__item_menu-but:hover i::after {
+    background-color: #001a46;
+}
+.athletes-menu__list .list__item_photo {
+    width: 107px;
+    text-align: center;
+}
+.athletes-menu__list .list__item_photo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.athletes-menu__list .list__item_photo .nominated {
+    display: inline-block;
+    height: 16px;    
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 2px;
+    background-color: #47be89;
+    padding: 0 5px;
+}
+.athletes-menu__list .list__item_info {
+
+}
+.athletes-menu__list .list__item_info .name {
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__list .list__item_info .age {
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__list .list__item_info .sports {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__list .list__item_info .params {
+    list-style: none;
+    margin: 18px 0 0 0;
+    padding: 0;
+    display: flex;
+}
+.athletes-menu__list .list__item_info .params li {
+    margin-right: 32px;
+}
+.athletes-menu__list .list__item_info .params li:last-child {
+    margin-right: 0;
+}
+.athletes-menu__list .list__item_info .params li b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__list .list__item_info .params li span {
+    display: block;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.athletes-menu__list .list__item_menu {
+    list-style: none;
+    margin: 0;
+    padding: 16px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 56px;
+    right: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100px;
+    display: none;
+}
+.athletes-menu__list .list__item_menu li {
+    white-space: nowrap;
+    height: 47px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 47px;
+    letter-spacing: normal;
+    color: #2c333e;
+    transition: background-color 200ms ease;
+    cursor: pointer;
+}
+.athletes-menu__list .list__item_menu li:hover {
+    background-color: #eee;
+}
+.athletes-menu__edit-modal .edit-photo {
+    display: flex;
+    margin-bottom: 20px;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__img {
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__img img {
+    width: 180px;
+    height: 180px;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts {
+    text-align: center;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload {
+    overflow: hidden;    
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload input {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+    visibility: hidden;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 201px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;    
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload span:hover {
+    background-color: #0e9ee3;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_delete {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_delete:hover {
+    color: #001a46;
+}
+.athletes-menu__edit-modal .edit-form {
+
+}
+.athletes-menu__edit-modal .edit-form__row {
+    display: flex;
+    justify-content: space-between;    
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__row_left {
+    padding-right: 10px;
+    width: 54%;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__input {
+    position: relative;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__input.optional::after {
+    content: "Optional";
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #cfcfcf;
+    position: absolute;
+    right: 3px;
+    bottom: -16px;
+}
+.athletes-menu__edit-modal .edit-form__input label:not(.custom-checkbox) {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.athletes-menu__edit-modal .edit-form__input input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    transition: all 200ms ease;
+    outline: none;
+    padding: 0 14px;
+}
+.athletes-menu__edit-modal .edit-form__input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, 0.25);
+}
+.athletes-menu__edit-modal .edit-form__input input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.athletes-menu__edit-modal .edit-form__input input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(0, 0, 0, 0.25);
+}
+.athletes-menu__edit-modal .edit-form__input input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0, 0, 0, 0.25);
+}
+.athletes-menu__edit-modal .edit-form__input.last-position {
+    margin-top: 19px;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__input.date {
+    margin-top: 27px;
+    margin-bottom: 48px;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__input.sex {
+    margin-top: 59px;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__input.sex label {
+    margin-right: 45px;
+}
+.athletes-menu__edit-modal .edit-form__row .edit-form__row_right {
+    padding-left: 10px;
+    width: 46%;
+}
+.athletes-menu__edit-modal h3 {
+    margin: 0 0 16px 0;
+    padding: 0;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__edit-modal h3 i {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+    margin-left: 5px;
+}
+.athletes-menu__edit-modal .edit-form__input_weight {
+    margin: 0 0 24px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.athletes-menu__edit-modal .edit-form__input_weight li {
+    width: 50%;
+}
+.athletes-menu__edit-modal .edit-form__input_weight li.left {
+    padding-right: 13px;
+}
+.athletes-menu__edit-modal .edit-form__input_weight li.right {
+    padding-left: 13px;
+}
+.athletes-menu__edit-modal .edit-form__description label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.athletes-menu__edit-modal .edit-form__description .scrollbar-inner {
+    height: 375px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;    
+}
+.athletes-menu__edit-modal .edit-form__description .scrollbar-inner .scrollbar-inner__wrapper {
+    padding: 11px 50px 11px 14px;
+}
+.athletes-menu__edit-modal .edit-form__description textarea {
+    width: 100%;
+    height: auto;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-menu__edit-modal .edit-form__characteristics {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.athletes-menu__edit-modal .edit-form__characteristics li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.athletes-menu__edit-modal .edit-form__characteristics li:last-child {
+    margin-bottom: 0;
+}
+.athletes-menu__edit-modal .edit-form__characteristics .edit-form__characteristics_slik {
+    flex-grow: 1;
+}
+.athletes-menu__edit-modal .edit-form__characteristics .edit-form__characteristics_value {
+    margin-left: 20px;
+    width: 25%;
+}
+.athletes-menu__edit-modal .edit-form__characteristics_remove {
+    margin-left: 16px;
+}
+.athletes-menu__edit-modal .edit-form__characteristics_remove i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url('../img/icon-close.svg') no-repeat center / 30px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.athletes-menu__edit-modal li:first-child .edit-form__characteristics_remove i {
+    visibility: hidden;
+}
+.athletes-menu__edit-modal .edit-form__characteristics_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: dashed 1px #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+    margin: 24px 56px 0 0;
+}
+.athletes-menu__edit-modal .edit-form__characteristics_add:hover {
+    color: #0e9ee3;
+    border-color: #0e9ee3;
+}
+.athletes-menu__edit-modal .edit-form__notable-achievements {
+    margin-top: 32px;
+}
+.athletes-menu__edit-modal .notable-achievements__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.athletes-menu__edit-modal .notable-achievements__list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.athletes-menu__edit-modal .notable-achievements__list li:last-child {
+    margin-bottom: 0;
+}
+.athletes-menu__edit-modal .notable-achievements__list li .year {
+    flex-grow: 1;
+}
+.athletes-menu__edit-modal .notable-achievements__list li .title {
+    margin-left: 20px;
+    width: 40%;
+}
+.athletes-menu__edit-modal .notable-achievements__list li .achievement {
+    margin-left: 20px;
+    width: 40%;
+}
+.athletes-menu__edit-modal .notable-achievements__list li .remove {
+    margin-left: 16px;
+}
+.athletes-menu__edit-modal .notable-achievements__list li .remove i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url('../img/icon-close.svg') no-repeat center / 30px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.athletes-menu__edit-modal .notable-achievements__list li:first-child .remove i {
+    visibility: hidden;
+}
+.athletes-menu__edit-modal .edit-form__notable-achievements_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: dashed 1px #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+    margin: 24px 56px 0 0;
+}
+.athletes-menu__edit-modal .edit-form__notable-achievements_add:hover {
+    color: #0e9ee3;
+    border-color: #0e9ee3;
+}
+.athletes-menu__edit-modal .edit-form__video {
+    margin-top: 40px;    
+}
+.athletes-menu__edit-modal .edit-form__video .edit-form__video_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: dashed 1px #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+    margin: 24px 56px 0 0;
+}
+.athletes-menu__edit-modal .edit-form__video .edit-form__video_add:hover {
+    color: #0e9ee3;
+    border-color: #0e9ee3;   
+}
+.athletes-menu__edit-modal .edit-form__video_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.athletes-menu__edit-modal .edit-form__video_list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.athletes-menu__edit-modal .edit-form__video_list li .edit-form__input {
+    flex-grow: 1;
+}
+.athletes-menu__edit-modal .edit-form__video .remove {
+    margin-left: 16px;
+}
+.athletes-menu__edit-modal .edit-form__video .remove i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/icon-close.svg) no-repeat center / 30px 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.athletes-menu__edit-modal .edit-form__video li:first-child .remove i {
+    visibility: hidden;
+}
+.coach-profile__edit-modal .modal__body {
+    margin-top: 8px;
 }
