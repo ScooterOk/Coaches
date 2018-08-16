@@ -16,7 +16,8 @@ $(document).ready(function(e) {
 			autoUpdate : true
 		});
 	}	
-	if($('.athletes-menu__edit-modal').length)autosize($('.athletes-menu__edit-modal textarea'));
+	if($('.athletes-menu__modal').length)autosize($('.athletes-menu__modal textarea'));
+	if($('.coach-profile__edit-modal').length)autosize($('.coach-profile__edit-modal textarea'));
 	if($('.datepicker').length)$( ".datepicker" ).datepicker({
 		dateFormat: "dd M yy",
 	    changeMonth: true,
@@ -47,11 +48,15 @@ $(document).ready(function(e) {
 	$('.modal').click(function(e) {
 		if($(e.target).closest('.modal__body').length) return;
 		$(this).fadeOut(200);
+		$('body').removeClass('no-scroll');
 	});
 	$('.modal .modal__head_buts .cancel, .modal .modal__footer_buts .cancel').click(function(e) {
 		$('.modal').fadeOut(200);
+		$('body').removeClass('no-scroll');
 		e.preventDefault();
 	});
+
+	
 
 	/*******************************************************************************
 								 Leanding scripts
@@ -135,46 +140,69 @@ $(document).ready(function(e) {
 		$('.athletes-menu .list__item_menu li').click(function(e) {
 			var action = $(this).attr('data-action');
 			if(action == 'edit'){
-				$('.athletes-menu__edit-modal').fadeIn(200, function(e){
+				$('body').addClass('no-scroll');
+				$('#athletes-menu__edit-modal').fadeIn(200, function(e){
 					autosize.update($('textarea'));
 				});
 			}
 			if(action == 'delete'){
+				$('body').addClass('no-scroll');
 				$(this).closest('.athletes-menu__list_item').fadeOut(200, function() {
 					$(this).remove();
 				});
 			}
 		});
+		$('.athletes-menu .add-new').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#athletes-menu__new-modal').fadeIn(200, function(e){
+				autosize.update($('textarea'));
+			});
+			e.preventDefault();
+		});
+
+		$('.admin .coach-profile a.edit-profile').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('.coach-profile__edit-modal').fadeIn(200, function(e){
+				autosize.update($('textarea'));
+			});
+			e.preventDefault();
+		});
+		$('.admin .athletes-details a.edit').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#athletes-details__edit-modal').fadeIn(200, function(e){
+				autosize.update($('textarea'));
+			});
+			e.preventDefault();
+		});		
 
 
 		// Athletes-menu__edit-modal scripts
-		$('.admin').on('click', '.athletes-menu__edit-modal .edit-form__characteristics_add', function(){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__characteristics_add', function(){
 			var item = '<li style="display : none;"><div class="edit-form__characteristics_slik edit-form__input"><label>Skill</label><input type="text" value=""></div><div class="edit-form__characteristics_value edit-form__input"><label>Value</label><input type="text" value=""></div><div class="edit-form__characteristics_remove"><i></i></div></li>'			
 			$('.edit-form__characteristics').append(item);
 			$('.edit-form__characteristics li:last-child').slideDown(150);
 		});
-		$('.admin').on('click', '.athletes-menu__edit-modal .edit-form__characteristics_remove i', function(e){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__characteristics_remove i', function(e){
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
-
 			});
 		});
-		$('.admin').on('click', '.athletes-menu__edit-modal .edit-form__notable-achievements_add', function(){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__notable-achievements_add', function(){
 			var item = '<li style="display: none;"><div class="year edit-form__input"><label>Year</label><input type="text" value=""></div><div class="title edit-form__input"><label>Title</label><input type="text" value=""></div><div class="achievement edit-form__input"><label>Achievement</label><input type="text" value=""></div><div class="remove"><i></i></div></li>';
-			$('.athletes-menu__edit-modal .notable-achievements__list').append(item);
-			$('.athletes-menu__edit-modal .notable-achievements__list li:last-child').slideDown(150);
+			$('.athletes-menu__modal .notable-achievements__list').append(item);
+			$('.athletes-menu__modal .notable-achievements__list li:last-child').slideDown(150);
 		});
-		$('.admin').on('click', '.athletes-menu__edit-modal .notable-achievements__list .remove i', function(e){
+		$('.admin').on('click', '.athletes-menu__modal .notable-achievements__list .remove i', function(e){
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
 			});
 		});
-		$('.admin').on('click', '.athletes-menu__edit-modal .edit-form__video_add', function(){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__video_add', function(){
 			var item = '<li style="display: none;"><div class="edit-form__input"><label>Links</label><input type="text" value=""></div><div class="remove"><i></i></div></li>';
-			$('.athletes-menu__edit-modal .edit-form__video_list').append(item);
-			$('.athletes-menu__edit-modal .edit-form__video_list li:last-child').slideDown(150);
+			$('.athletes-menu__modal .edit-form__video_list').append(item);
+			$('.athletes-menu__modal .edit-form__video_list li:last-child').slideDown(150);
 		});
-		$('.admin').on('click', '.athletes-menu__edit-modal .edit-form__video_list .remove i', function(e){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__video_list .remove i', function(e){
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
 			});
@@ -229,8 +257,7 @@ $(document).ready(function(e) {
 			e.preventDefault();
 		});
 
-		$('.search__filters-selected .search__filters-selected-item_click').click(function(e) {
-			console.log(e.target);
+		$('.search__filters-selected .search__filters-selected-item_click').click(function(e) {			
 			$('.search__filters-selected .selects__list').slideUp(70);
 			if($(this).closest('.search__filters-selected-item').find('.selects__list').is(':hidden')){
 				$(this).closest('.search__filters-selected-item').find('.selects__list').slideDown(70);

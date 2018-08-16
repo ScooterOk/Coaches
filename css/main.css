@@ -33,7 +33,11 @@ html {
 }
 
 
-
+body.no-scroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 
 /* ==========================================================================
@@ -191,6 +195,7 @@ a {
     display: flex;
     align-items: center;
     padding: 0 34px 0 14px;
+    cursor: default;
 }
 .custom-select > span {
     font-size: 15px;
@@ -199,7 +204,7 @@ a {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #cfcfcf;    
+    color: #2c333e;
 }
 .custom-select.selected > span {
     color: #2c333e;
@@ -211,7 +216,7 @@ a {
     min-width: calc(100% + 2px);
     top: 46px;
     left: -1px;
-    z-index: 5;
+    z-index: 20;
     display: none;
 }
 .custom-select__option {
@@ -283,12 +288,13 @@ a {
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    min-height: 100%;    
+    height: 100vh;
+    overflow: auto;
     padding: 72px 58px;
     display: none;
 }
@@ -298,6 +304,8 @@ a {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     padding: 30px 40px;
+    max-width: 965px;
+    margin: auto;  
 }
 .modal__head {
     display: flex;
@@ -1978,7 +1986,9 @@ footer .wrapper {
     position: relative;
     cursor: pointer;
 }
-.scholarships .tooltip__body {
+.scholarships .tooltip__body,
+.coach-college .tooltip__body,
+.athletes-details .tooltip__body {
     max-width: 210px;    
     background-color: rgba(0, 0, 0, 0.75);
     padding: 9px 7px;
@@ -2043,7 +2053,7 @@ footer .wrapper {
     display: flex;
     align-items: center;
 }
-.scholarships-detiles__title .title__back {
+.admin__body__title .title__back {
     display: block;
     width: 32px;
     height: 32px;
@@ -3137,7 +3147,8 @@ body.login {
 }
 .login__form_submit button {
     display: block;
-    width: 100%;
+    margin: auto;
+    width: 400px;
     height: 48px;
     border-radius: 4px;
     background-color: #00acff;
@@ -3253,6 +3264,19 @@ body.login {
 .login__comfirm_password {
     margin-top: 43px;
     background: url('../img/bg-comfirm-password.svg') no-repeat center top / 72px 72px;
+    padding-top: 96px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+.login__error_password {
+    margin-top: 43px;
+    background: url('../img/bg-error.svg') no-repeat center top / 72px 72px;
     padding-top: 96px;
     font-size: 17px;
     font-weight: 600;
@@ -4043,7 +4067,10 @@ body.search {
     background-color: #0e9ee3;
 }
 
-.coach-profile .admin__article {
+.coach-profile .admin__article,
+.coach-athlete .admin__article,
+.coach-college .admin__article,
+.athletes-details .admin__article {
     margin: 20px 20px 77px 20px;
     border-radius: 4px;
     background-color: #ffffff;
@@ -4126,6 +4153,10 @@ body.search {
 }
 .coach-profile__info_school {
     margin-top: 24px;
+    width: 200px;
+}
+.coach-athlete .coach-profile__info_school {
+    margin: 53px auto 0 auto;
 }
 .coach-profile__info_school b {
     font-size: 14px;
@@ -4147,7 +4178,7 @@ body.search {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #cfcfcf;
+    color: #2c333e;
     padding-left: 20px;
     background: url(../img/icon-location.svg) no-repeat left center;
 }
@@ -4170,6 +4201,16 @@ body.search {
     line-height: 0.88;
     letter-spacing: normal;
     color: #00acff;
+}
+.coach-profile__info_numbers li b i {
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    color: #9b9b9b;
+    font-style: normal;
 }
 .coach-profile__info_numbers li span {
     display: block;
@@ -4338,6 +4379,7 @@ body.search {
     border-radius: 2px;
     background-color: #47be89;
     padding: 0 5px;
+    text-transform: uppercase;
 }
 .athletes-menu__list .list__item_info {
 
@@ -4435,32 +4477,32 @@ body.search {
 .athletes-menu__list .list__item_menu li:hover {
     background-color: #eee;
 }
-.athletes-menu__edit-modal .edit-photo {
+.athletes-menu__modal .edit-photo {
     display: flex;
     margin-bottom: 20px;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__img {
+.athletes-menu__modal .edit-photo .edit-photo__img {
     width: 180px;
     height: 180px;
     margin-right: 20px;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__img img {
+.athletes-menu__modal .edit-photo .edit-photo__img img {
     width: 180px;
     height: 180px;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts {
+.athletes-menu__modal .edit-photo .edit-photo__buts {
     text-align: center;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_upload {
     overflow: hidden;    
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload input {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_upload input {
     position: absolute;
     left: -10000px;
     top: -10000px;
     visibility: hidden;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload span {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_upload span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4479,10 +4521,10 @@ body.search {
     text-transform: uppercase;
     transition: all 200ms ease;    
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_upload span:hover {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_upload span:hover {
     background-color: #0e9ee3;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_delete {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_delete {
     margin-top: 30px;
     display: inline-block;
     font-size: 14px;
@@ -4497,24 +4539,24 @@ body.search {
     cursor: pointer;
     transition: all 200ms ease;
 }
-.athletes-menu__edit-modal .edit-photo .edit-photo__buts .edit-photo__but_delete:hover {
+.athletes-menu__modal .edit-photo .edit-photo__buts .edit-photo__but_delete:hover {
     color: #001a46;
 }
-.athletes-menu__edit-modal .edit-form {
+.athletes-menu__modal .edit-form {
 
 }
-.athletes-menu__edit-modal .edit-form__row {
+.athletes-menu__modal .edit-form__row {
     display: flex;
     justify-content: space-between;    
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__row_left {
+.athletes-menu__modal .edit-form__row .edit-form__row_left {
     padding-right: 10px;
     width: 54%;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__input {
+.athletes-menu__modal .edit-form__row .edit-form__input {
     position: relative;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__input.optional::after {
+.athletes-menu__modal .edit-form__row .edit-form__input.optional::after {
     content: "Optional";
     display: block;
     font-size: 10px;
@@ -4529,7 +4571,7 @@ body.search {
     right: 3px;
     bottom: -16px;
 }
-.athletes-menu__edit-modal .edit-form__input label:not(.custom-checkbox) {
+.athletes-menu__modal .edit-form__input label:not(.custom-checkbox) {
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -4540,7 +4582,7 @@ body.search {
     color: #c1c1c1;
     margin-bottom: 4px;
 }
-.athletes-menu__edit-modal .edit-form__input input {
+.athletes-menu__modal .edit-form__input input {
     width: 100%;
     height: 48px;
     border-radius: 4px;
@@ -4557,36 +4599,36 @@ body.search {
     outline: none;
     padding: 0 14px;
 }
-.athletes-menu__edit-modal .edit-form__input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.athletes-menu__modal .edit-form__input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(0, 0, 0, 0.25);
 }
-.athletes-menu__edit-modal .edit-form__input input::-moz-placeholder { /* Firefox 19+ */
+.athletes-menu__modal .edit-form__input input::-moz-placeholder { /* Firefox 19+ */
   color: rgba(0, 0, 0, 0.25);
 }
-.athletes-menu__edit-modal .edit-form__input input:-ms-input-placeholder { /* IE 10+ */
+.athletes-menu__modal .edit-form__input input:-ms-input-placeholder { /* IE 10+ */
   color: rgba(0, 0, 0, 0.25);
 }
-.athletes-menu__edit-modal .edit-form__input input:-moz-placeholder { /* Firefox 18- */
+.athletes-menu__modal .edit-form__input input:-moz-placeholder { /* Firefox 18- */
   color: rgba(0, 0, 0, 0.25);
 }
-.athletes-menu__edit-modal .edit-form__input.last-position {
+.athletes-menu__modal .edit-form__input.last-position {
     margin-top: 19px;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__input.date {
+.athletes-menu__modal .edit-form__row .edit-form__input.date {
     margin-top: 27px;
     margin-bottom: 48px;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__input.sex {
+.athletes-menu__modal .edit-form__row .edit-form__input.sex {
     margin-top: 59px;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__input.sex label {
+.athletes-menu__modal .edit-form__row .edit-form__input.sex label {
     margin-right: 45px;
 }
-.athletes-menu__edit-modal .edit-form__row .edit-form__row_right {
+.athletes-menu__modal .edit-form__row .edit-form__row_right {
     padding-left: 10px;
     width: 46%;
 }
-.athletes-menu__edit-modal h3 {
+.athletes-menu__modal h3 {
     margin: 0 0 16px 0;
     padding: 0;
     font-size: 19px;
@@ -4597,7 +4639,7 @@ body.search {
     letter-spacing: normal;
     color: #2c333e;
 }
-.athletes-menu__edit-modal h3 i {
+.athletes-menu__modal h3 i {
     display: inline-block;
     font-size: 15px;
     font-weight: normal;
@@ -4608,23 +4650,23 @@ body.search {
     color: #cfcfcf;
     margin-left: 5px;
 }
-.athletes-menu__edit-modal .edit-form__input_weight {
+.athletes-menu__modal .edit-form__input_weight {
     margin: 0 0 24px 0;
     padding: 0;
     list-style: none;
     display: flex;
     justify-content: space-between;
 }
-.athletes-menu__edit-modal .edit-form__input_weight li {
+.athletes-menu__modal .edit-form__input_weight li {
     width: 50%;
 }
-.athletes-menu__edit-modal .edit-form__input_weight li.left {
+.athletes-menu__modal .edit-form__input_weight li.left {
     padding-right: 13px;
 }
-.athletes-menu__edit-modal .edit-form__input_weight li.right {
+.athletes-menu__modal .edit-form__input_weight li.right {
     padding-left: 13px;
 }
-.athletes-menu__edit-modal .edit-form__description label {
+.athletes-menu__modal .edit-form__description label {
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -4635,16 +4677,16 @@ body.search {
     color: #c1c1c1;
     margin-bottom: 4px;
 }
-.athletes-menu__edit-modal .edit-form__description .scrollbar-inner {
+.athletes-menu__modal .edit-form__description .scrollbar-inner {
     height: 375px;
     border-radius: 4px;
     background-color: #ffffff;
     border: solid 1px #b0b0b0;    
 }
-.athletes-menu__edit-modal .edit-form__description .scrollbar-inner .scrollbar-inner__wrapper {
+.athletes-menu__modal .edit-form__description .scrollbar-inner .scrollbar-inner__wrapper {
     padding: 11px 50px 11px 14px;
 }
-.athletes-menu__edit-modal .edit-form__description textarea {
+.athletes-menu__modal .edit-form__description textarea {
     width: 100%;
     height: auto;
     outline: none;
@@ -4657,30 +4699,30 @@ body.search {
     letter-spacing: normal;
     color: #2c333e;
 }
-.athletes-menu__edit-modal .edit-form__characteristics {
+.athletes-menu__modal .edit-form__characteristics {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.athletes-menu__edit-modal .edit-form__characteristics li {
+.athletes-menu__modal .edit-form__characteristics li {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
 }
-.athletes-menu__edit-modal .edit-form__characteristics li:last-child {
+.athletes-menu__modal .edit-form__characteristics li:last-child {
     margin-bottom: 0;
 }
-.athletes-menu__edit-modal .edit-form__characteristics .edit-form__characteristics_slik {
+.athletes-menu__modal .edit-form__characteristics .edit-form__characteristics_slik {
     flex-grow: 1;
 }
-.athletes-menu__edit-modal .edit-form__characteristics .edit-form__characteristics_value {
+.athletes-menu__modal .edit-form__characteristics .edit-form__characteristics_value {
     margin-left: 20px;
     width: 25%;
 }
-.athletes-menu__edit-modal .edit-form__characteristics_remove {
+.athletes-menu__modal .edit-form__characteristics_remove {
     margin-left: 16px;
 }
-.athletes-menu__edit-modal .edit-form__characteristics_remove i {
+.athletes-menu__modal .edit-form__characteristics_remove i {
     display: block;
     width: 40px;
     height: 40px;
@@ -4688,10 +4730,10 @@ body.search {
     margin-top: 20px;
     cursor: pointer;
 }
-.athletes-menu__edit-modal li:first-child .edit-form__characteristics_remove i {
+.athletes-menu__modal li:first-child .edit-form__characteristics_remove i {
     visibility: hidden;
 }
-.athletes-menu__edit-modal .edit-form__characteristics_add {
+.athletes-menu__modal .edit-form__characteristics_add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4712,41 +4754,41 @@ body.search {
     transition: all 200ms ease;
     margin: 24px 56px 0 0;
 }
-.athletes-menu__edit-modal .edit-form__characteristics_add:hover {
+.athletes-menu__modal .edit-form__characteristics_add:hover {
     color: #0e9ee3;
     border-color: #0e9ee3;
 }
-.athletes-menu__edit-modal .edit-form__notable-achievements {
+.athletes-menu__modal .edit-form__notable-achievements {
     margin-top: 32px;
 }
-.athletes-menu__edit-modal .notable-achievements__list {
+.athletes-menu__modal .notable-achievements__list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.athletes-menu__edit-modal .notable-achievements__list li {
+.athletes-menu__modal .notable-achievements__list li {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
 }
-.athletes-menu__edit-modal .notable-achievements__list li:last-child {
+.athletes-menu__modal .notable-achievements__list li:last-child {
     margin-bottom: 0;
 }
-.athletes-menu__edit-modal .notable-achievements__list li .year {
+.athletes-menu__modal .notable-achievements__list li .year {
     flex-grow: 1;
 }
-.athletes-menu__edit-modal .notable-achievements__list li .title {
+.athletes-menu__modal .notable-achievements__list li .title {
     margin-left: 20px;
     width: 40%;
 }
-.athletes-menu__edit-modal .notable-achievements__list li .achievement {
+.athletes-menu__modal .notable-achievements__list li .achievement {
     margin-left: 20px;
     width: 40%;
 }
-.athletes-menu__edit-modal .notable-achievements__list li .remove {
+.athletes-menu__modal .notable-achievements__list li .remove {
     margin-left: 16px;
 }
-.athletes-menu__edit-modal .notable-achievements__list li .remove i {
+.athletes-menu__modal .notable-achievements__list li .remove i {
     display: block;
     width: 40px;
     height: 40px;
@@ -4754,10 +4796,10 @@ body.search {
     margin-top: 20px;
     cursor: pointer;
 }
-.athletes-menu__edit-modal .notable-achievements__list li:first-child .remove i {
+.athletes-menu__modal .notable-achievements__list li:first-child .remove i {
     visibility: hidden;
 }
-.athletes-menu__edit-modal .edit-form__notable-achievements_add {
+.athletes-menu__modal .edit-form__notable-achievements_add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4778,14 +4820,14 @@ body.search {
     transition: all 200ms ease;
     margin: 24px 56px 0 0;
 }
-.athletes-menu__edit-modal .edit-form__notable-achievements_add:hover {
+.athletes-menu__modal .edit-form__notable-achievements_add:hover {
     color: #0e9ee3;
     border-color: #0e9ee3;
 }
-.athletes-menu__edit-modal .edit-form__video {
+.athletes-menu__modal .edit-form__video {
     margin-top: 40px;    
 }
-.athletes-menu__edit-modal .edit-form__video .edit-form__video_add {
+.athletes-menu__modal .edit-form__video .edit-form__video_add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4806,27 +4848,27 @@ body.search {
     transition: all 200ms ease;
     margin: 24px 56px 0 0;
 }
-.athletes-menu__edit-modal .edit-form__video .edit-form__video_add:hover {
+.athletes-menu__modal .edit-form__video .edit-form__video_add:hover {
     color: #0e9ee3;
     border-color: #0e9ee3;   
 }
-.athletes-menu__edit-modal .edit-form__video_list {
+.athletes-menu__modal .edit-form__video_list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.athletes-menu__edit-modal .edit-form__video_list li {
+.athletes-menu__modal .edit-form__video_list li {
     display: flex;
     align-items: center;
     margin-bottom: 24px;
 }
-.athletes-menu__edit-modal .edit-form__video_list li .edit-form__input {
+.athletes-menu__modal .edit-form__video_list li .edit-form__input {
     flex-grow: 1;
 }
-.athletes-menu__edit-modal .edit-form__video .remove {
+.athletes-menu__modal .edit-form__video .remove {
     margin-left: 16px;
 }
-.athletes-menu__edit-modal .edit-form__video .remove i {
+.athletes-menu__modal .edit-form__video .remove i {
     display: block;
     width: 40px;
     height: 40px;
@@ -4834,9 +4876,734 @@ body.search {
     margin-top: 20px;
     cursor: pointer;
 }
-.athletes-menu__edit-modal .edit-form__video li:first-child .remove i {
+.athletes-menu__modal .edit-form__video li:first-child .remove i {
     visibility: hidden;
 }
 .coach-profile__edit-modal .modal__body {
     margin-top: 8px;
+}
+
+.coach-profile__edit-modal .coach-profile__edit-modal {
+
+}
+.coach-profile__edit-modal .coach-profile__edit-modal h2 {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-profile__edit-modal .edit-modal__wrapper {
+    margin-top: 24px;
+    display: flex;
+}
+.coach-profile__edit-modal .edit-modal__photo {
+    padding-left: 9px;
+    margin-right: 42px;
+}
+.coach-profile__edit-modal .edit-modal__photo_img {
+    width: 120px;
+    width: 120px;
+    margin: auto;
+}
+.coach-profile__edit-modal .edit-modal__photo_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.coach-profile__edit-modal .edit-modal__photo label {
+    overflow: hidden;
+    margin-top: 20px;
+    display: block;
+}
+.coach-profile__edit-modal .edit-modal__photo label span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-profile__edit-modal .edit-modal__photo label span:hover {
+    background-color: #0e9ee3;
+}
+.coach-profile__edit-modal .edit-modal__photo label input {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+    visibility: hidden;
+}
+.coach-profile__edit-modal .edit-modal__photo_delete {
+    display: block;
+    width: 121px;
+    height: 32px;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 32px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    margin: 8px auto 0 auto;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-profile__edit-modal .edit-modal__photo_delete:hover {
+    color: #001a46;
+}
+.coach-profile__edit-modal .edit-modal__form {
+    flex-grow: 1;
+}
+.coach-profile__edit-modal .edit-modal__form_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 19px;
+}
+.coach-profile__edit-modal .edit-modal__form_item {
+    width: 50%;
+    position: relative;
+}
+.coach-profile__edit-modal .edit-modal__form_item:first-child {
+    margin-right: 10px;
+}
+.coach-profile__edit-modal .edit-modal__form_item:last-child {
+    margin-left: 10px;
+}
+.coach-profile__edit-modal .edit-modal__form_item label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.coach-profile__edit-modal .edit-modal__form_item input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    transition: all 200ms ease;
+    outline: none;
+    padding: 0 14px;
+}
+.coach-profile__edit-modal .edit-modal__form_item.optional::after {
+    content: "Optional";
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #cfcfcf;
+    position: absolute;
+    right: 3px;
+    bottom: -16px;
+}
+.coach-profile__edit-modal .edit-modal__form_description {
+    margin-top: -2px;
+}
+.coach-profile__edit-modal .edit-modal__form_description label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 4px;
+}
+.coach-profile__edit-modal .edit-modal__form_description .scrollbar-inner {
+    height: 375px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+}
+.coach-profile__edit-modal .edit-modal__form_description .scrollbar-inner .scrollbar-inner__wrapper {
+    padding: 11px 50px 11px 14px;
+}
+.coach-profile__edit-modal .edit-modal__form_description .scrollbar-inner textarea {
+    width: 100%;    
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+
+
+.coach-athlete .admin__body__title,
+.coach-college .admin__body__title,
+.athletes-details .admin__body__title {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 0 20px 0 15px;
+    align-items: center;
+}
+.coach-athlete__title_left {
+    display: flex;
+    align-items: center;
+}
+.coach-athlete__title_right {
+    display: flex;
+    align-items: center;
+}
+.coach-athlete .admin__body__title .unlink,
+.coach-college .admin__body__title .unlink,
+.athletes-details .admin__body__title .unlink {
+    width: 151px;
+    height: 48px;    
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease;    
+    text-transform: uppercase;
+}
+.coach-athlete .admin__body__title .unlink:hover,
+.coach-college .admin__body__title .unlink:hover,
+.athletes-details .coach-college .admin__body__title .unlink:hover {
+    color: #001a46;
+}
+.coach-athlete .admin__body__title .send,
+.coach-college .admin__body__title .send,
+.athletes-details .admin__body__title .send {
+    width: 164px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-left: 14px;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-athlete .admin__body__title .send:hover,
+.coach-college .admin__body__title .send:hover,
+.athletes-details .admin__body__title .send:hover {
+    background-color: #0e9ee3;
+}
+.coach-athlete .admin__article {
+    margin-bottom: 32px;
+}
+.coach-athlete__list_title {
+    display: flex;
+    align-items: center;
+    padding: 0 40px 0 20px;
+}
+.coach-athlete__list_title b {
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);    
+    margin-top: 3px;
+}
+.coach-athlete__list_title span {
+    font-family: 'Open Sans';
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-left: 18px;
+}
+.coach-college__about {
+    margin-top: 32px;
+}
+.coach-college__about_title {
+    margin-left: 20px;
+    margin-bottom: 8px;
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.coach-college__about_body {
+    margin: 0px 20px 0px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.coach-college__about_body .about__info {
+    width: 34%;
+    border-right: 2px solid #d2d2d2;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 57px;
+}
+.coach-college__about_body .about__info_photo {
+    margin: auto;
+    width: 80px;
+    height: 80px;
+}
+.coach-college__about_body .about__info_photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.coach-college__about_body .about__info_title {
+    margin: 12px auto 0 auto;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #484f59;
+}
+.coach-college__about_body .about__info_link {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00acff;
+    text-align: center;
+}
+.coach-college__about_body .about__info_link a {
+    color: #00acff;
+}
+.coach-college__about_body .about__info_location {
+    margin: 16px auto 0 auto;
+    width: 180px;
+}
+.coach-college__about_body .about__description {
+    width: 66%;
+    padding: 0 32px 22px 32px;
+}
+.coach-college__about_body .about__description_title {
+    margin: 9px 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.coach-college__about_body .about__description_text {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-college__scholarships {
+    margin: 32px 20px 70px 20px;
+}
+.coach-college__scholarships_title {    
+    margin-bottom: 8px;
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.athletes-details .admin__body__title {
+
+}
+
+.athletes-details__info {
+    padding-left: 6px;
+    width: 34%;
+    border-right: 2px solid #d2d2d2;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 57px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.athletes-details__info_pfoto {
+    width: 224px;
+    height: 224px;    
+}
+.athletes-details__info_pfoto img {
+    width: 100%;
+    height: 100%;
+}
+.athletes-details__info_name {
+    margin-top: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.athletes-details__info_sports {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.athletes-details__info_characteristics {
+    margin-top: 24px;
+    width: 224px;
+    text-align: left;
+}
+.athletes-details__info_characteristics .characteristics__title {    
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-details__info_characteristics .characteristics__list {
+    width: 224px;
+    list-style: none;
+    margin: 13px 0 0 0;
+    padding: 0;
+}
+.athletes-details__info_characteristics .characteristics__list li {
+    display: flex;
+    margin-bottom: 16px;
+}
+.athletes-details__info_characteristics .characteristics__list li:last-child {
+    margin-bottom: 0;
+}
+.athletes-details__info_characteristics .characteristics__list_item:first-child {
+    width: 80px;
+}
+.athletes-details__info_characteristics .characteristics__list_item b {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-details__info_characteristics .characteristics__list_item span {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.athletes-details__info_coach {
+    margin-top: 46px;
+    width: 224px;
+    text-align: left;
+}
+.athletes-details__info_coach .coach__title {
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-details__info_coach .coach__photo {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+}
+.athletes-details__info_coach .coach__photo_img {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+}
+.athletes-details__info_coach .coach__photo_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.athletes-details__info_coach .coach__photo_name a {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00acff;
+}
+.athletes-details__info_coach .coach__photo_name span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    display: block;
+}
+.athletes-details__info_coach .coach__organization {
+    width: 224px;
+    text-align: left;
+    margin-top: 16px;
+}
+.athletes-details__info_coach .coach__organization_name {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-details__info_coach .coach__organization_location {
+    background: url(../img/icon-location.svg) no-repeat left 3px;
+    padding-left: 18px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-top: 4px;
+}
+.athletes-details__info_coach .coach__organization_location p {
+    margin: 0;
+    padding: 0;
+}
+.coach-profile__description {
+    padding: 32px 20px 0 33px;
+}
+.coach-profile__description label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.coach-profile__description_characteristics label {
+    margin-bottom: 8px;
+}
+.coach-profile__description_characteristics .description__characteristics_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.coach-profile__description_characteristics .description__characteristics_list li {
+    background: url('../img/check-mark.svg') no-repeat left 11px;
+    padding-left: 26px;
+    display: flex;
+}
+.coach-profile__description_characteristics .description__characteristics_list li span {
+    display: inline-block;
+    width: 224px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 12px;
+}
+.coach-profile__description_characteristics .description__characteristics_list li b {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-profile__description__text {
+    margin-top: 21px;
+}
+.coach-profile__description__text label {
+    margin-bottom: 6px;
+}
+.coach-profile__description__text .description__text_details {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-profile__description_achievements {
+    margin-top: 32px;
+}
+.coach-profile__description_achievements label {
+    margin-bottom: 16px;
+}
+.coach-profile__description_achievements .achievements__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.coach-profile__description_achievements .achievements__list li {
+    display: flex;
+    margin-bottom: 6px;
+}
+.coach-profile__description_achievements .achievements__list li:last-child {
+    margin-bottom: 0;
+}
+.coach-profile__description_achievements .achievements__list li .achievements__list_year {
+    width: 64px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-profile__description_achievements .achievements__list li .achievements__list_sport b {
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 1px;
+}
+.coach-profile__description_achievements .achievements__list li .achievements__list_sport span {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.coach-profile__description_video {
+    margin-top: 35px;
+}
+.coach-profile__description_video label {
+    margin-bottom: 16px;
+}
+.coach-college .admin__article ,
+.athletes-details .admin__article {
+    margin-bottom: 19px;
+}
+.athletes-details .admin__body__title .delete {
+    width: 151px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+}
+.athletes-details .admin__body__title .delete:hover {
+    color: #001a46;
+}
+.athletes-details .admin__body__title .edit {
+    width: 164px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-left: 14px;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.athletes-details .admin__body__title .edit:hover {
+    background-color: #0e9ee3;
 }

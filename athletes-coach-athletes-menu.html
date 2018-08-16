@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
   <link rel="stylesheet" href="css/normalize.css">  
-  <link rel="stylesheet" href="css/jquery.scrollbar.css">  
+  <link rel="stylesheet" href="css/jquery.scrollbar.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -401,7 +401,7 @@
 
 
     <!-- Athlete's Coach_Athletes_details_edit MODAL -->
-    <div class="modal athletes-menu__edit-modal">
+    <div class="modal athletes-menu__modal" id="athletes-menu__edit-modal">
       <div class="modal__body">
         <section class="modal__head">
           <div class="modal__head_title">EDIT - ATHLETE INFO</div>
@@ -595,6 +595,171 @@ Your scholarship offers will be valid for two years after attending a Showcase. 
       </section>
       </div>
     </div>
+
+
+
+
+    <!-- Athlete's Coach_Athletes_details_edit MODAL -->
+    <div class="modal athletes-menu__modal" id="athletes-menu__new-modal">
+      <div class="modal__body">
+        <section class="modal__head">
+          <div class="modal__head_title">NEW - ATHLETE INFO</div>
+          <div class="modal__head_buts">
+            <a href="" class="cancel">Cancel</a>
+            <a href="" class="save">Save</a>
+          </div>          
+        </section>
+        <section class="edit-photo">
+          <div class="edit-photo__img">
+            <img src="./img/profile-photo-default.svg" alt="">
+          </div>
+          <div class="edit-photo__buts">
+            <label class="edit-photo__but_upload">
+              <span>Upload the Photo</span>
+              <input type="file">
+            </label>
+            <!-- <div class="edit-photo__but_delete">Delete Photo</div> -->
+          </div>
+      </section>
+      <section class="edit-form">
+        <div class="edit-form__row">
+          <div class="edit-form__row_left">
+            <div class="edit-form__input">
+              <label>First Name</label>
+              <input type="text" placeholder="" value="">
+            </div>
+            <div class="edit-form__input last-position">
+              <label>Last Name</label>
+              <input type="text" placeholder="" value="">
+            </div>
+            <div class="edit-form__input date">
+              <label>Date of birth</label>
+              <input type="text" placeholder="" class="datepicker" id="datepicker" value="">
+            </div>            
+          </div>
+          <div class="edit-form__row_right">
+            <div class="edit-form__input">
+              <label>Sport</label>
+              <div data-value="" class="custom-select">
+                  <span data-placeholder="Choose the Sport">Choose the Sport</span>
+                  <div class="custom-select__list">
+                     <div class="custom-select__option" data-option="">Basketball</div>
+                     <div class="custom-select__option" data-option="">Boxing</div>
+                     <div class="custom-select__option" data-option="">Karate</div>
+                     <div class="custom-select__option" data-option="">Rowing</div>
+                     <div class="custom-select__option" data-option="">Soccer / football</div>
+                     <div class="custom-select__option" data-option="">Taekwondo</div>
+                  </div>
+               </div>
+            </div>
+            <div class="edit-form__input optional last-position">
+              <label>Position</label>
+              <input type="text" placeholder="" value="">
+            </div>
+            <div class="edit-form__input sex">
+              <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <i></i>
+                  <span>Male</span>
+               </label>
+               <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <i></i>
+                  <span>Famale</span>
+               </label>
+            </div>
+          </div>
+        </div>
+        <div class="edit-form__row">
+          <div class="edit-form__row_left">
+            <h3>Characteristics</h3>
+            <ul class="edit-form__input_weight edit-form__input">
+                <li class="left">
+                  <label>Height, sm</label>
+                  <input type="text" value="">
+                </li>
+                <li class="right">
+                  <label>Weight, kg</label>
+                  <input type="text" value="">
+                </li>
+              </ul>
+              <div class="edit-form__description">
+                <label>Description</label>
+                <div class="scrollbar-inner">
+                  <div class="scrollbar-inner__wrapper">
+                    <textarea name="" id=""></textarea>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="edit-form__row_right">
+            <h3>Additional Сharacteristics <i>Optional</i></h3>
+            <ul class="edit-form__characteristics">
+              <li>
+                <div class="edit-form__characteristics_slik edit-form__input">
+                  <label>Skill</label>
+                  <input type="text" value="">
+                </div>
+                <div class="edit-form__characteristics_value edit-form__input">
+                  <label>Value</label>
+                  <input type="text" value="">
+                </div>
+                <div class="edit-form__characteristics_remove">
+                  <i></i>
+                </div>
+              </li>              
+            </ul>
+            <div class="edit-form__characteristics_add">+ ADD Skill</div>
+          </div>
+        </div>
+        <div class="edit-form__notable-achievements">
+          <h3>Notable Achievements</h3>
+          <ul class="notable-achievements__list">
+            <li>
+              <div class="year edit-form__input">
+                <label>Year</label>
+                <input type="text" value="">
+              </div>
+              <div class="title edit-form__input">
+                <label>Title</label>
+                <input type="text" value="">
+              </div>
+              <div class="achievement edit-form__input">
+                <label>Achievement</label>
+                <input type="text" value="">
+              </div>
+              <div class="remove">
+                <i></i>
+              </div>
+            </li>            
+          </ul>
+          <div class="edit-form__notable-achievements_add">+ Add Notable Achievement</div>
+        </div>
+        <div class="edit-form__video">
+          <h3>Video </h3>
+          <ul class="edit-form__video_list">
+            <li>
+              <div class="edit-form__input">
+                <label>Links</label>
+                <input type="text" value="">
+              </div>
+              <div class="remove">
+                <i></i>
+              </div>
+            </li>
+          </ul>
+          <div class="edit-form__video_add">+ ADD link</div>
+        </div>
+      </section>
+      <section class="modal__footer">
+        <div class="modal__footer_buts">
+          <a href="" class="cancel">Cancel</a>
+          <a href="" class="save">Save</a>
+        </div>
+      </section>
+      </div>
+    </div>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>  

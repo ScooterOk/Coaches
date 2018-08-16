@@ -1,0 +1,711 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/normalize.css">  
+  <link rel="stylesheet" href="css/jquery.scrollbar.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="admin">  
+  <header>
+    <div class="header__logo">
+      <a href="">
+        <img src="./img/logo.svg" alt="">
+      </a>      
+    </div>
+    <div class="header__menu">
+      <div class="header__notifications_but"></div>      
+      <div class="header__user_photo">
+        <img src="./img/user.jpg" alt="">
+      </div>
+      <div class="header__user_name">
+        <b>Kevin Brown</b>
+        <span>Head Coach</span>
+      </div>      
+      <div class="header__user_arrow"></div>
+      <div class="header__notifications">
+        <div class="header__notifications_header">
+          <div class="new">New 1</div>
+          <a href="" class="markread">Mark all as read</a>
+        </div>
+        <div class="header__notifications_list scrollbar-inner">          
+          <div class="notifications__list_item new">
+            <div class="icon">
+              <img src="./img/notifocation-nominated.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">One of your athletes has received interest from a coach <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">3 min ago</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-link.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have <b>2</b> new coaching connection requests</b></a>
+            </div>
+            <div class="date">Yesterday at 10:04 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated-rejected.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have got a reject from <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">Yesterday at 08:30 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">One of your athletes has received interest from a coach <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">3 min ago</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-link.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have <b>2</b> new coaching connection requests</b></a>
+            </div>
+            <div class="date">Yesterday at 10:04 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated-rejected.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have got a reject from <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">Yesterday at 08:30 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+        </div>
+        <div class="header__notifications_all">
+          <a href="">See all</a>
+        </div>
+      </div>
+      <ul class="header__user_menu">
+        <li>
+          <a href="">Change Password</a>
+        </li>
+        <li>
+          <a href="">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="admin-wrapper college athletes-details">
+    <aside class="admin__nav">
+      <ul>
+        <li class="scholarships"></li>
+        <li class="messenger">
+          <div class="icon">
+            <i>1</i>
+          </div>
+          <div class="title">Messenger</div>
+        </li>
+        <li class="network">
+          <div class="icon"></div>
+          <div class="title">Network</div>
+        </li>
+        <li class="athletes current">
+          <div class="icon"></div>
+          <div class="title">Athletes</div>
+        </li>
+        <li class="profile">
+          <div class="icon"></div>
+          <div class="title">Profile</div>
+        </li>
+      </ul>
+    </aside>
+    <article class="admin__body">      
+      <div class="admin__body__title">
+        <div class="coach-athlete__title_left">
+          <a href="" class="title__back"></a>
+          <h1>Athlete details</h1>
+        </div>
+        <div class="coach-athlete__title_right">
+          <a href="" class="delete">Delete</a>
+          <a href="" class="edit">Edit</a>
+        </div>          
+      </div>
+      <!-- /.scholarships-detiles__title -->
+
+      <div class="admin__article">
+        <div class="athletes-details__info">
+          <div class="athletes-details__info_pfoto">
+            <img src="./img/user.jpg" alt="">
+          </div>
+          <div class="athletes-details__info_name">Arthur Pittman</div>
+          <div class="athletes-details__info_sports">Soccer, LFW</div>
+          <section class="athletes-details__info_characteristics">
+            <div class="characteristics__title">Characteristics</div>
+            <ul class="characteristics__list">
+              <li>
+                <div class="characteristics__list_item">
+                  <b>185 sm</b>
+                  <span>Height</span>
+                </div>
+                <div class="characteristics__list_item">
+                  <b>87 kg</b>
+                  <span>Weight</span>
+                </div>
+              </li>
+              <li>
+                <div class="characteristics__list_item">
+                  <b>16 years</b>
+                  <span>Age</span>
+                </div>
+                <div class="characteristics__list_item">
+                  <b>2019</b>
+                  <span>Graduating Class</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="athletes-details__info_coach">
+            <div class="coach__title">Coach Info</div>
+            <div class="coach__photo">
+              <div class="coach__photo_img">
+                <img src="./img/user.jpg" alt="">
+              </div>
+              <div class="coach__photo_name">
+                <a href="">Paul Flores</a>
+                <span>Head Coach</span>
+              </div>
+            </div>
+            <div class="coach__organization">
+              <div class="coach__organization_name">Capital SoccerAssociation</div>
+              <div class="coach__organization_location">
+                <p>Densmore Park Soccer Fields</p>
+                <p>6701 S 14th St</p>
+                <p>Lincoln, NE 68512</p>
+              </div>
+            </div>
+          </section>
+          
+
+          
+          
+        </div>
+        <div class="coach-profile__description">
+          <div class="coach-profile__description_characteristics">
+            <label>Additional Сharacteristics</label>
+            <ul class="description__characteristics_list">
+              <li>
+                <span>Running 30m from the place</span>
+                <b>3,6 s</b>
+              </li>
+              <li>
+                <span>Running 50m from the place</span>
+                <b>6,2 s</b>
+              </li>
+              <li>
+                <span>6-fold jump in length</span>
+                <b>14,5 m</b>
+              </li>
+            </ul>
+          </div>
+          <div class="coach-profile__description__text">
+            <label>Description</label>
+            <div class="description__text_details">
+              A dedicated and passionate leader with demonstrated success in sport, work, and education. I am goal-oriented, with strong interpersonal and creativity skills. With a positive attitude to identify winning approaches, I have the ability to accomplish objectives and lead teams to success. I posses a strong commitment to expand my knowledge and characteristics that will further my personal growth and I will apply this drive quickly to achieve positive results for a leadership company. 
+            </div>
+          </div>
+          <div class="coach-profile__description_achievements">
+            <label>Notable Achievements </label>
+            <ul class="achievements__list">
+              <li>
+                <div class="achievements__list_year">2017</div>
+                <div class="achievements__list_sport">
+                  <b>DASSA Football Competitions</b>
+                  <span>First place</span>
+                </div>
+              </li>
+              <li>
+                <div class="achievements__list_year">2013</div>
+                <div class="achievements__list_sport">
+                  <b>Dubai College Rugby Sevens Competitions</b>
+                  <span>First place</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="coach-profile__description_video">
+            <label>Video Links</label>
+            <div class="video__block">
+              <iframe width="350" height="221" src="https://www.youtube.com/embed/-NSvbGxzpKk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.admin__article -->
+      
+
+      <div class="coach-college__scholarships search__results">
+        <div class="coach-college__scholarships_title">Scholarships</div>
+        <ul class="search__results_scholarships">               
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body" style="display: none;">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>3 / 10</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body" style="display: none;">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body" style="display: none;">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>3 / 10</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>3 / 10</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->
+               <li class="scholarships__item">
+                  <div class="item__id">#124-345</div>
+                  <div class="df">
+                     <div class="item__info">
+                        <div class="title">Men Soccer Scholarship</div>
+                        <div class="school">
+                           <a href="">University of Miami</a>
+                        </div>
+                        <ul class="descrition">
+                           <li class="sport">Basketball</li>
+                           <li class="gender">Male, Female</li>
+                           <li class="rewards">NCJAA, D1</li>
+                        </ul>
+                     </div>
+                     <div class="item__status">
+                        <div class="title">Status</div>
+                        <div class="years">
+                           <div class="years__item full tooltip">
+                              <span>2018</span>
+                              <div class="tooltip__body">
+                                 <p>This scholarship is no longer</p>
+                                 <p>available in 2018</p>
+                              </div>
+                           </div>
+                           <div class="years__item">2019</div>
+                           <div class="more tooltip">
+                              <span>+3</span>
+                              <div class="tooltip__body">
+                                <span>2020</span>
+                                <span>2021</span>
+                                <span>2022</span>                             
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item__created">
+                        <div class="title">Created by</div>
+                        <div class="item__created_flex">
+                           <div class="created__photo">
+                              <img src="./img/user.jpg" alt="">
+                           </div>
+                           <div class="created__info">
+                              <b>Caleb Morales</b>
+                              <i>Head coach</i>
+                              <span>3 / 10</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <!-- /.scholarships__item -->               
+            </ul>
+      </div>
+
+      
+      
+    </article>
+  </main>  
+
+
+  <footer>
+      <div class="wrapper">
+        <div class="footer__copyright">2018  ©  Coaches Trust - All Rights Reserved</div>
+        <ul class="footer__list">
+          <li>
+            <a href="">Terms & Conditons</a>
+          </li>
+          <li>
+            <a href="">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </footer>   
+
+
+    
+    <!-- Athlete's Coach_Athletes_details MODAL -->
+    <div class="modal athletes-menu__modal" id="athletes-details__edit-modal">
+      <div class="modal__body">
+        <section class="modal__head">
+          <div class="modal__head_title">EDIT - ATHLETE INFO</div>
+          <div class="modal__head_buts">
+            <a href="" class="cancel">Cancel</a>
+            <a href="" class="save">Save</a>
+          </div>          
+        </section>
+        <section class="edit-photo">
+          <div class="edit-photo__img">
+            <img src="./img/user.jpg" alt="">
+          </div>
+          <div class="edit-photo__buts">
+            <label class="edit-photo__but_upload">
+              <span>Upload new Photo</span>
+              <input type="file">
+            </label>
+            <div class="edit-photo__but_delete">Delete Photo</div>
+          </div>
+      </section>
+      <section class="edit-form">
+        <div class="edit-form__row">
+          <div class="edit-form__row_left">
+            <div class="edit-form__input">
+              <label>First Name</label>
+              <input type="text" placeholder="" value="Arthur">
+            </div>
+            <div class="edit-form__input last-position">
+              <label>Last Name</label>
+              <input type="text" placeholder="" value="Pittman">
+            </div>
+            <div class="edit-form__input date">
+              <label>Date of birth</label>
+              <input type="text" placeholder="" class="datepicker hasDatepicker" id="datepicker" value="9 Jul 2002">
+            </div>            
+          </div>
+          <div class="edit-form__row_right">
+            <div class="edit-form__input">
+              <label>Sport</label>
+              <div data-value="" class="custom-select">
+                  <span data-placeholder="Choose the Sport">Choose the Sport</span>
+                  <div class="custom-select__list">
+                     <div class="custom-select__option" data-option="">Basketball</div>
+                     <div class="custom-select__option" data-option="">Boxing</div>
+                     <div class="custom-select__option" data-option="">Karate</div>
+                     <div class="custom-select__option" data-option="">Rowing</div>
+                     <div class="custom-select__option" data-option="">Soccer / football</div>
+                     <div class="custom-select__option" data-option="">Taekwondo</div>
+                  </div>
+               </div>
+            </div>
+            <div class="edit-form__input optional last-position">
+              <label>Position</label>
+              <input type="text" placeholder="" value="LFW">
+            </div>
+            <div class="edit-form__input sex">
+              <label class="custom-checkbox">
+                  <input type="checkbox" checked="">
+                  <i></i>
+                  <span>Male</span>
+               </label>
+               <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <i></i>
+                  <span>Famale</span>
+               </label>
+            </div>
+          </div>
+        </div>
+        <div class="edit-form__row">
+          <div class="edit-form__row_left">
+            <h3>Characteristics</h3>
+            <ul class="edit-form__input_weight edit-form__input">
+                <li class="left">
+                  <label>Height, sm</label>
+                  <input type="text" value="185">
+                </li>
+                <li class="right">
+                  <label>Weight, kg</label>
+                  <input type="text" value="87">
+                </li>
+              </ul>
+              <div class="edit-form__description">
+                <label>Description</label>
+                <div class="scroll-wrapper scrollbar-inner" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 373px;">
+                  <div class="scrollbar-inner__wrapper">
+                    <textarea name="" id="" style="overflow: hidden; word-wrap: break-word; resize: none; height: 580px;">The world’s most popular sport is quickly becoming a favourite in the United States as well. Football, or Soccer, as it’s called in the US, is played by men and women at schools of every size. Attending a university with a soccer scholarship will give you the chance to earn your degree while playing the sport you love.
+Students seeking a soccer scholarship will need to attend our 10-day Showcase (held every July in Florida). At the Showcase, you’ll play in front of college coaches from across the United States, and have the chance to discuss their programmes and the schools they represent. After the Showcase, you will receive a detailed report of scholarship offers from at least nine schools. More information on the annual Showcase can be found
+
+Best Time to Apply
+Your scholarship offers will be valid for two years after attending a Showcase. Since soccer is an autumn sport, we recommend you begin your application at age 16 and plan to attend the annual Showcase at age 17 (during year 12). This will allow you to enroll in a university at the beginning of the autumn term and compete your first year.
+</textarea>
+                  </div>
+                </div><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="left: 0px; width: 0px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 229px; top: 0px;"></div></div></div></div>
+              </div>
+          </div>
+          <div class="edit-form__row_right">
+            <h3>Additional Сharacteristics <i>Optional</i></h3>
+            <ul class="edit-form__characteristics">
+              <li>
+                <div class="edit-form__characteristics_slik edit-form__input">
+                  <label>Skill</label>
+                  <input type="text" value="Running 30m from the place">
+                </div>
+                <div class="edit-form__characteristics_value edit-form__input">
+                  <label>Value</label>
+                  <input type="text" value="3.6 s">
+                </div>
+                <div class="edit-form__characteristics_remove">
+                  <i></i>
+                </div>
+              </li>
+              <li>
+                <div class="edit-form__characteristics_slik edit-form__input">
+                  <label>Skill</label>
+                  <input type="text" value="Running 30m from the place">
+                </div>
+                <div class="edit-form__characteristics_value edit-form__input">
+                  <label>Value</label>
+                  <input type="text" value="3.6 s">
+                </div>
+                <div class="edit-form__characteristics_remove">
+                  <i></i>
+                </div>
+              </li>
+            </ul>
+            <div class="edit-form__characteristics_add">+ ADD Skill</div>
+          </div>
+        </div>
+        <div class="edit-form__notable-achievements">
+          <h3>Notable Achievements</h3>
+          <ul class="notable-achievements__list">
+            <li>
+              <div class="year edit-form__input">
+                <label>Year</label>
+                <input type="text" value="2017">
+              </div>
+              <div class="title edit-form__input">
+                <label>Title</label>
+                <input type="text" value="DASSA Football Competitions">
+              </div>
+              <div class="achievement edit-form__input">
+                <label>Achievement</label>
+                <input type="text" value="First place">
+              </div>
+              <div class="remove">
+                <i></i>
+              </div>
+            </li>
+            <li>
+              <div class="year edit-form__input">
+                <label>Year</label>
+                <input type="text" value="2017">
+              </div>
+              <div class="title edit-form__input">
+                <label>Title</label>
+                <input type="text" value="DASSA Football Competitions">
+              </div>
+              <div class="achievement edit-form__input">
+                <label>Achievement</label>
+                <input type="text" value="First place">
+              </div>
+              <div class="remove">
+                <i></i>
+              </div>
+            </li>
+          </ul>
+          <div class="edit-form__notable-achievements_add">+ Add Notable Achievement</div>
+        </div>
+        <div class="edit-form__video">
+          <h3>Video </h3>
+          <ul class="edit-form__video_list">
+            <li>
+              <div class="edit-form__input">
+                <label>Links</label>
+                <input type="text" value="www.youtube.com">                
+              </div>
+              <div class="remove">
+                <i></i>
+              </div>
+            </li>
+          </ul>
+          <div class="edit-form__video_add">+ ADD link</div>
+        </div>
+      </section>
+      <section class="modal__footer">
+        <div class="modal__footer_buts">
+          <a href="" class="cancel">Cancel</a>
+          <a href="" class="save">Save</a>
+        </div>
+      </section>
+      </div>
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>  
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/vendor/jquery.scrollbar.min.js"></script>
+  <script src="js/vendor/jquery.scrollbar.min.js"></script>
+  <script src="js/vendor/jquery-ui.min.js"></script>
+  <script src="js/vendor/autosize.min.js"></script>  
+  <script src="js/main.js"></script>
+  
+</body>
+
+</html>
