@@ -118,7 +118,7 @@
     </div>
   </header>
 
-  <main class="admin-wrapper college athletes-scholarships-details">
+  <main class="admin-wrapper athletes-scholarships-details">
     <aside class="admin__nav">
       <ul>
         <li class="scholarships current"></li>
@@ -148,7 +148,20 @@
           <a href="" class="title__back"></a>
           <h1>Scholarship details</h1>  
         </div>
-        <a href="" class="nominate">Nominate my athlete</a>
+        <div class="scholarships-details__title_right">
+          <div class="scholarships-details__title_nominated">
+            <ul class="nominated__pfotos">
+              <li>
+                <img src="./img/user.jpg" alt="">
+              </li>
+              <li>
+                <img src="./img/user-2.jpg" alt="">
+              </li>              
+            </ul>
+            <div class="nominated__text">You have already nominated some athletes for this scholarship</div>
+          </div>
+          <a href="" class="nominated__link">Nominate my athlete</a>  
+        </div>        
       </div>
       <div class="scholarships-detiles__body">
         <div class="scholarships-detiles__body_title">
@@ -214,6 +227,23 @@
               </div>
             </div>            
           </div>
+          <div class="body__description_created">
+            <div class="title">Created by</div>
+            <div class="name">Harvard University</div>
+            <div class="location">New Cityland, CA, USA</div>
+            <div class="coach">
+              <div class="coach__photo">
+                <img src="./img/user.jpg" alt="">
+              </div>
+              <div class="coach__name">
+                <div class="coach__name_links">
+                  <a href="">Caleb Morales</a>
+                  <a href="" class="message"></a>
+                </div>
+                <span>Head coach</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="scholarships-detiles__body_text">
           <div class="body_text_title">Description</div>
@@ -224,6 +254,9 @@
               Your scholarship offers will be valid for two years after attending a Showcase. Since soccer is an autumn sport, we recommend you begin your application at age 16 and plan to attend the annual Showcase at age 17 (during year 12). This will allow you to enroll in a university at the beginning of the autumn term and compete your first year.              
             <p></p>
           </div>
+        </div>
+        <div class="scholarships-detiles__notification">
+          Your athlete nomination was successful
         </div>
       </div>
     </article>
@@ -247,201 +280,73 @@
       </div>
     </footer>   
 
-
     
-    <!-- Athlete's Coach_Athletes_details MODAL -->
-    <div class="modal athletes-menu__modal" id="athletes-details__edit-modal">
+    
+    <!-- Athlete's Coach_Scholarships_Nominatiing MODAL -->
+    <div class="modal athletes-scholarships-details__modal" id="athletes-scholarships-nominatiing-modal">
       <div class="modal__body">
         <section class="modal__head">
-          <div class="modal__head_title">EDIT - ATHLETE INFO</div>
-          <div class="modal__head_buts">
+          <div class="modal__head_title">Nominate Athlete</div>          
+        </section>      
+        <section class="modal__choose-athlete">
+          <div class="modal__choose-athlete__title">Choose Athlete</div>
+          <ul class="modal__choose-athlete__list">
+            <li>
+              <div class="photo">
+                <img src="./img/user.jpg" alt="">
+              </div>
+              <div class="name">Pittman A.</div>
+            </li>
+            <li>
+              <div class="photo">
+                <img src="./img/user-2.jpg" alt="">
+              </div>
+              <div class="name">Cummings J.</div>
+            </li>
+            <li>
+              <div class="photo">
+                <img src="./img/user.jpg" alt="">
+              </div>
+              <div class="name">Williamson E.</div>
+            </li>
+            <li>
+              <div class="photo">
+                <img src="./img/user-2.jpg" alt="">
+              </div>
+              <div class="name">Bowers F.</div>
+            </li>
+            <li>
+              <div class="photo">
+                <img src="./img/user.jpg" alt="">
+              </div>
+              <div class="name">Knight B.</div>
+            </li>            
+          </ul>
+        </section>
+        <section class="modal__choose-year">
+          <div class="modal__choose-year_title">Choose the year of scholarship</div>
+          <ul class="modal__choose-year_list">
+            <li class="selected">2018</li>
+            <li>2019</li>
+            <li>2020</li>
+            <li>2021</li>
+            <li>2022</li>            
+          </ul>
+        </section>
+        <section class="modal__send-message">
+          <label>Message</label>
+          <textarea name="" placeholder="Type the message"></textarea>
+          <div class="modal__send-message_bot">
+            <span class="length">0 / 100</span>
+            <span>Optional</span>
+          </div>
+        </section>
+        <section class="modal__footer">
+          <div class="modal__footer_buts">
             <a href="" class="cancel">Cancel</a>
             <a href="" class="save">Save</a>
-          </div>          
+          </div>
         </section>
-        <section class="edit-photo">
-          <div class="edit-photo__img">
-            <img src="./img/user.jpg" alt="">
-          </div>
-          <div class="edit-photo__buts">
-            <label class="edit-photo__but_upload">
-              <span>Upload new Photo</span>
-              <input type="file">
-            </label>
-            <div class="edit-photo__but_delete">Delete Photo</div>
-          </div>
-      </section>
-      <section class="edit-form">
-        <div class="edit-form__row">
-          <div class="edit-form__row_left">
-            <div class="edit-form__input">
-              <label>First Name</label>
-              <input type="text" placeholder="" value="Arthur">
-            </div>
-            <div class="edit-form__input last-position">
-              <label>Last Name</label>
-              <input type="text" placeholder="" value="Pittman">
-            </div>
-            <div class="edit-form__input date">
-              <label>Date of birth</label>
-              <input type="text" placeholder="" class="datepicker hasDatepicker" id="datepicker" value="9 Jul 2002">
-            </div>            
-          </div>
-          <div class="edit-form__row_right">
-            <div class="edit-form__input">
-              <label>Sport</label>
-              <div data-value="" class="custom-select">
-                  <span data-placeholder="Choose the Sport">Choose the Sport</span>
-                  <div class="custom-select__list">
-                     <div class="custom-select__option" data-option="">Basketball</div>
-                     <div class="custom-select__option" data-option="">Boxing</div>
-                     <div class="custom-select__option" data-option="">Karate</div>
-                     <div class="custom-select__option" data-option="">Rowing</div>
-                     <div class="custom-select__option" data-option="">Soccer / football</div>
-                     <div class="custom-select__option" data-option="">Taekwondo</div>
-                  </div>
-               </div>
-            </div>
-            <div class="edit-form__input optional last-position">
-              <label>Position</label>
-              <input type="text" placeholder="" value="LFW">
-            </div>
-            <div class="edit-form__input sex">
-              <label class="custom-checkbox">
-                  <input type="checkbox" checked="">
-                  <i></i>
-                  <span>Male</span>
-               </label>
-               <label class="custom-checkbox">
-                  <input type="checkbox">
-                  <i></i>
-                  <span>Famale</span>
-               </label>
-            </div>
-          </div>
-        </div>
-        <div class="edit-form__row">
-          <div class="edit-form__row_left">
-            <h3>Characteristics</h3>
-            <ul class="edit-form__input_weight edit-form__input">
-                <li class="left">
-                  <label>Height, sm</label>
-                  <input type="text" value="185">
-                </li>
-                <li class="right">
-                  <label>Weight, kg</label>
-                  <input type="text" value="87">
-                </li>
-              </ul>
-              <div class="edit-form__description">
-                <label>Description</label>
-                <div class="scroll-wrapper scrollbar-inner" style="position: relative;"><div class="scrollbar-inner scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 373px;">
-                  <div class="scrollbar-inner__wrapper">
-                    <textarea name="" id="" style="overflow: hidden; word-wrap: break-word; resize: none; height: 580px;">The world’s most popular sport is quickly becoming a favourite in the United States as well. Football, or Soccer, as it’s called in the US, is played by men and women at schools of every size. Attending a university with a soccer scholarship will give you the chance to earn your degree while playing the sport you love.
-Students seeking a soccer scholarship will need to attend our 10-day Showcase (held every July in Florida). At the Showcase, you’ll play in front of college coaches from across the United States, and have the chance to discuss their programmes and the schools they represent. After the Showcase, you will receive a detailed report of scholarship offers from at least nine schools. More information on the annual Showcase can be found
-
-Best Time to Apply
-Your scholarship offers will be valid for two years after attending a Showcase. Since soccer is an autumn sport, we recommend you begin your application at age 16 and plan to attend the annual Showcase at age 17 (during year 12). This will allow you to enroll in a university at the beginning of the autumn term and compete your first year.
-</textarea>
-                  </div>
-                </div><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="left: 0px; width: 0px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 229px; top: 0px;"></div></div></div></div>
-              </div>
-          </div>
-          <div class="edit-form__row_right">
-            <h3>Additional Сharacteristics <i>Optional</i></h3>
-            <ul class="edit-form__characteristics">
-              <li>
-                <div class="edit-form__characteristics_slik edit-form__input">
-                  <label>Skill</label>
-                  <input type="text" value="Running 30m from the place">
-                </div>
-                <div class="edit-form__characteristics_value edit-form__input">
-                  <label>Value</label>
-                  <input type="text" value="3.6 s">
-                </div>
-                <div class="edit-form__characteristics_remove">
-                  <i></i>
-                </div>
-              </li>
-              <li>
-                <div class="edit-form__characteristics_slik edit-form__input">
-                  <label>Skill</label>
-                  <input type="text" value="Running 30m from the place">
-                </div>
-                <div class="edit-form__characteristics_value edit-form__input">
-                  <label>Value</label>
-                  <input type="text" value="3.6 s">
-                </div>
-                <div class="edit-form__characteristics_remove">
-                  <i></i>
-                </div>
-              </li>
-            </ul>
-            <div class="edit-form__characteristics_add">+ ADD Skill</div>
-          </div>
-        </div>
-        <div class="edit-form__notable-achievements">
-          <h3>Notable Achievements</h3>
-          <ul class="notable-achievements__list">
-            <li>
-              <div class="year edit-form__input">
-                <label>Year</label>
-                <input type="text" value="2017">
-              </div>
-              <div class="title edit-form__input">
-                <label>Title</label>
-                <input type="text" value="DASSA Football Competitions">
-              </div>
-              <div class="achievement edit-form__input">
-                <label>Achievement</label>
-                <input type="text" value="First place">
-              </div>
-              <div class="remove">
-                <i></i>
-              </div>
-            </li>
-            <li>
-              <div class="year edit-form__input">
-                <label>Year</label>
-                <input type="text" value="2017">
-              </div>
-              <div class="title edit-form__input">
-                <label>Title</label>
-                <input type="text" value="DASSA Football Competitions">
-              </div>
-              <div class="achievement edit-form__input">
-                <label>Achievement</label>
-                <input type="text" value="First place">
-              </div>
-              <div class="remove">
-                <i></i>
-              </div>
-            </li>
-          </ul>
-          <div class="edit-form__notable-achievements_add">+ Add Notable Achievement</div>
-        </div>
-        <div class="edit-form__video">
-          <h3>Video </h3>
-          <ul class="edit-form__video_list">
-            <li>
-              <div class="edit-form__input">
-                <label>Links</label>
-                <input type="text" value="www.youtube.com">                
-              </div>
-              <div class="remove">
-                <i></i>
-              </div>
-            </li>
-          </ul>
-          <div class="edit-form__video_add">+ ADD link</div>
-        </div>
-      </section>
-      <section class="modal__footer">
-        <div class="modal__footer_buts">
-          <a href="" class="cancel">Cancel</a>
-          <a href="" class="save">Save</a>
-        </div>
-      </section>
       </div>
     </div>
 

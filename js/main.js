@@ -173,7 +173,14 @@ $(document).ready(function(e) {
 				autosize.update($('textarea'));
 			});
 			e.preventDefault();
-		});		
+		});
+		$('.admin .athletes-scholarships-details a.nominated__link').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#athletes-scholarships-nominatiing-modal').fadeIn(200);
+			e.preventDefault();
+		});
+
+		
 
 
 		// Athletes-menu__edit-modal scripts
@@ -206,6 +213,45 @@ $(document).ready(function(e) {
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
 			});
+		});		
+
+
+		$('.athletes-scholarships-details__modal .modal__choose-athlete__list li').click(function(e) {
+			if($(this).hasClass('selected')){
+				$(this).removeClass('selected');
+			}else{
+				$(this).addClass('selected');
+			}			
+		});
+		$('.athletes-scholarships-details__modal .modal__choose-year_list li').click(function(e) {
+			$(this).closest('.modal__choose-year_list').find('li').removeClass('selected');			
+			$(this).addClass('selected');
+			
+		});
+		$('.athletes-scholarships-details__modal .modal__send-message textarea').keydown(function(event) {
+			var limit = 100;
+			var length = $(this).val().length; 
+			var val = $(this).val();
+			if(length >= limit){
+				$(this).val(val.slice(0, -1));
+			}
+		});
+		$('.athletes-scholarships-details__modal .modal__send-message textarea').keyup(function(event) {
+			var limit = 100;
+			var length = $(this).val().length; 
+			var val = $(this).val();			
+			if(length <= limit){
+				$(this).closest('.modal__send-message').find('span.length').html(length+' / 100');
+			}
+		});
+		$('.athletes-scholarships-details__modal .modal__footer a.save').click(function(e) {
+			$(this).closest('.modal').fadeOut(200);
+			$('body').removeClass('no-scroll');
+			$('.scholarships-detiles__notification').addClass('active');
+			setTimeout(function(){
+				$('.scholarships-detiles__notification').removeClass('active');
+			}, 3000);
+			e.preventDefault();
 		});
 		
 	}
@@ -245,8 +291,7 @@ $(document).ready(function(e) {
 				});
 				$('.search__filters_list').hide();
 				$('.search__filters_list.'+name).show();
-
-				console.log(name);
+				
 			}			
 		});
 
