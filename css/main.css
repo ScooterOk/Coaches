@@ -46,7 +46,9 @@ body.no-scroll {
 a {
     text-decoration: none;
 }
-
+ input {
+    color: #2c333e;
+ }
 .wrapper {
     width: 1000px;
     margin: auto;    
@@ -559,16 +561,16 @@ header {
     padding: 0 16px;
     outline: none;
 }
-.leanding__head_form-input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(0, 0, 0, 0.25);
 }
-.leanding__head_form-input input::-moz-placeholder { /* Firefox 19+ */
+input::-moz-placeholder { /* Firefox 19+ */
   color: rgba(0, 0, 0, 0.25);
 }
-.leanding__head_form-input input:-ms-input-placeholder { /* IE 10+ */
+input:-ms-input-placeholder { /* IE 10+ */
   color: rgba(0, 0, 0, 0.25);
 }
-.leanding__head_form-input input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder { /* Firefox 18- */
   color: rgba(0, 0, 0, 0.25);
 }
 .leanding__head_form-button {
@@ -1438,6 +1440,7 @@ footer .wrapper {
     top: 56px;
     right: 16px;
     display: none;
+    z-index: 10;
 }
 .header__menu .header__user_menu li {
     white-space: nowrap;
@@ -3548,6 +3551,18 @@ body.search {
     margin-top: 8px;
     width: 477px;
 }
+.coach-college .search__results .scholarships__item .item__info,
+.athletes-details .search__results .scholarships__item .item__info { 
+    width: 55%;
+}
+.coach-college .search__results .scholarships__item .item__status,
+.athletes-details .search__results .scholarships__item .item__status {
+    width: 28%;
+}
+.coach-college .search__results .scholarships__item .item__created,
+.athletes-details .search__results .scholarships__item .item__created {
+    width: 235px;
+}
 .search__results .scholarships__item .item__info .title {
     font-size: 22px;
     font-weight: 600;
@@ -4152,7 +4167,7 @@ body.search {
     color: #2c333e;
 }
 .coach-profile__info_school {
-    margin-top: 24px;
+    margin: 24px auto 0 auto;
     width: 200px;
 }
 .coach-athlete .coach-profile__info_school {
@@ -4293,8 +4308,8 @@ body.search {
 }
 .athletes-menu__list {
     list-style: none;
-    margin: 20px 0px 88px 20px;
-    padding: 0;
+    margin: 0;
+    padding: 0 0 0 20px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -5606,4 +5621,413 @@ body.search {
 }
 .athletes-details .admin__body__title .edit:hover {
     background-color: #0e9ee3;
+}
+
+.athletes-messenger h1 {
+    margin: 0;
+    padding: 0 20px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    font-family: 'SoccerLeague';
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.athletes-messenger__wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e6e7e8;;
+    height: calc(100vh - 64px - 88px - 72px);
+}
+.athletes-messenger__contacts {
+    width: 32%;
+    background-color: #fff;
+}
+.athletes-messenger__contacts_search {
+    height: 46px;
+    overflow: hidden;
+    position: relative;
+}
+.athletes-messenger__contacts_search .search__wrapper {
+    width: 200%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 46px;
+    transition: all 200ms ease;
+}
+.athletes-messenger__contacts_search.active .search__wrapper {
+    transform: translate(-50%, 0);
+}
+.athletes-messenger__contacts_search .search__title {
+    width: 50%;
+    padding: 0 50px 0 20px;
+    font-family: SoccerLeague;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.athletes-messenger__contacts_search .search__button {
+    background: url('../img/bg-search-blue.svg') no-repeat center right 14px;
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    cursor: pointer;
+}
+.athletes-messenger__contacts_search .search__input {
+    padding-right: 9px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.athletes-messenger__contacts_search .search__input_back {
+    display: block;
+    width: 34px;
+    height: 34px;
+    background: url('../img/arrow-back.svg') no-repeat center / 21px 21px;
+}
+.athletes-messenger__contacts_search .search__input input {
+    flex-grow: 1;    
+    border-radius: 3px;
+    background-color: transparent;
+    border: solid 1px #dddddd;
+    outline: none;
+    height: 32px;
+    padding: 0 30px 0 8px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-messenger__contacts_list {
+    height: calc(100% - 46px);
+    overflow: hidden;
+}
+.athletes-messenger__contacts_list > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+}
+.athletes-messenger__contacts_list ul > li {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 0 20px;
+    transition: all 200ms ease;
+    cursor: default;
+}
+.athletes-messenger__contacts_list ul > li.current {
+    background-color: #00acff;
+}
+.athletes-messenger__contacts_list ul > li .photo {
+    width: 28px;
+    height: 28px;
+}
+.athletes-messenger__contacts_list ul > li .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.athletes-messenger__contacts_list ul > li .name {
+    flex-grow: 1;
+    width: 180px;
+    padding: 0 32px 0 16px;
+}
+.athletes-messenger__contacts_list ul > li .name b {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    display: block;
+}
+.athletes-messenger__contacts_list > ul > li .name span {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #6d777c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.athletes-messenger__contacts_list > ul > li .new {    
+    display: flex;    
+    height: 24px;
+    border-radius: 50%;
+    padding: 0 9px;
+    justify-content: center;
+    align-items: center;
+    background-color: #00acff;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+.athletes-messenger__list {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.athletes-messenger__list_head {
+    height: 46px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 1px solid #e6e7e8;
+    padding: 0 20px 0 18px;
+}
+.athletes-messenger__list_head .profile {
+    display: flex;
+    align-items: center;
+}
+.athletes-messenger__list_head .profile__photo {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+}
+.athletes-messenger__list_head .profile__photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.athletes-messenger__list_head .profile__name {
+
+}
+.athletes-messenger__list_head .profile__name b {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #2c333e;
+    display: block;
+}
+.athletes-messenger__list_head .profile__name span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+}
+.athletes-messenger__list_head .unlink {
+    display: block;
+    width: 94px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #00acff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.athletes-messenger__list_head .unlink:hover {
+    background-color: #0e9ee3;
+}
+.athletes-messenger__list_body {    
+    overflow: hidden;
+    height: calc(100% - 46px - 56px);
+    flex-grow: 1;
+}
+.athletes-messenger__list_current-date {
+    width: 100%;
+    height: 12px;
+    background-color: #dddddd;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 12px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    color: #3a4969;
+    text-transform: uppercase;    
+    z-index: 1;
+}
+.athletes-messenger__list_body .correspondence {
+    list-style: none;
+    margin: 0;
+    padding: 44px 0 18px 0;
+}
+.athletes-messenger__list_body .correspondence > li {
+    display: flex;
+    padding: 0 20px 0 16px;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+.athletes-messenger__list_body .correspondence > li:first-child {
+    margin-top: 0;
+}
+.athletes-messenger__list_body .correspondence > li.self {
+    justify-content: flex-start;
+}
+.athletes-messenger__list_body .correspondence__photo {
+    width: 36px;
+    height: 36px;
+    margin: 0 0 0 15px;
+    order: 1;
+}
+.athletes-messenger__list_body .self .correspondence__photo {
+    order: 0;
+    margin: 0 15px 0 0;
+}
+.athletes-messenger__list_body .correspondence__photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.athletes-messenger__list_body .correspondence__message {
+    max-width: 65%;    
+}
+.athletes-messenger__list_body .correspondence__message_block {
+    background-color: #cceef5;
+    position: relative;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.69;
+    letter-spacing: normal;
+    color: #3a3a3a;
+}
+.athletes-messenger__list_body .correspondence__message_block::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 4px solid #cceef5;
+    border-bottom: 4px solid transparent;
+    position: absolute;
+    top: 10px;
+    right: -4px;    
+    transform: rotate(180deg);
+}
+.athletes-messenger__list_body .self .correspondence__message_block {
+    background-color: #3a4969;
+    color: #fff;
+}
+.athletes-messenger__list_body .self .correspondence__message_block::after {
+    transform: rotate(0deg);
+    left: -4px;    
+    border-right: 4px solid #3a4969;    
+}
+.athletes-messenger__list_body .correspondence__message p {
+    margin: 0;
+    padding: 0;
+    min-height: 21px;
+}
+.athletes-messenger__list_body .correspondence__message img {
+    max-width: 250px;
+    display: block;
+    margin: auto;
+}
+.athletes-messenger__list_body .correspondence__message_date {
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    color: #636471;
+    text-align: right;
+}
+.athletes-messenger__list_body .self .correspondence__message_date {
+    text-align: left;
+}
+.athletes-messenger__list_footer {
+    height: 56px;
+    background-color: #3a4969;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 18px;
+}
+.athletes-messenger__list_footer .add {
+    width: 32px;
+    height: 32px;
+    background: url('../img/bg-attach.svg') no-repeat center;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.athletes-messenger__list_footer .add:hover {
+    background: url('../img/bg-attach-hover.svg') no-repeat center;
+}
+.athletes-messenger__list_footer .input {
+    flex-grow: 1;
+    margin: 0 8px 0 12px;
+}
+.athletes-messenger__list_footer .input input {
+    width: 100%;
+    height: 32px;
+    padding: 0 20px 0 11px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;    
+}
+.athletes-messenger__list_footer .send {
+    width: 32px;
+    height: 32px;
+    background: url('../img/send.svg') no-repeat center;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.athletes-messenger__list_footer .send:hover {
+    background: url('../img/send-hover.svg') no-repeat center;
 }
