@@ -3564,15 +3564,18 @@ body.search {
     width: 477px;
 }
 .coach-college .search__results .scholarships__item .item__info,
-.athletes-details .search__results .scholarships__item .item__info { 
+.athletes-details .search__results .scholarships__item .item__info,
+.athletes-scholarships .search__results .scholarships__item .item__info { 
     width: 55%;
 }
 .coach-college .search__results .scholarships__item .item__status,
-.athletes-details .search__results .scholarships__item .item__status {
+.athletes-details .search__results .scholarships__item .item__status,
+.athletes-scholarships .search__results .scholarships__item .item__status {
     width: 28%;
 }
 .coach-college .search__results .scholarships__item .item__created,
-.athletes-details .search__results .scholarships__item .item__created {
+.athletes-details .search__results .scholarships__item .item__created,
+.athletes-scholarships .search__results .scholarships__item .item__created {
     width: 235px;
 }
 .search__results .scholarships__item .item__info .title {
@@ -6425,4 +6428,98 @@ body.search {
     top: 50%;
     left: 16px;
     transform: translate(0, -50%);
+}
+.athletes-scholarships__title {
+    background-color: #ffffff;
+    display: flex;    
+    flex-wrap: wrap;
+    padding: 20px 55px 0 20px;
+    align-items: center;
+}
+.athletes-scholarships__title h1 {
+    margin: 0 117px 0 0;
+    padding: 0;
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.athletes-scholarships__title input {
+    width: 437px;
+    height: 48px;
+    border-radius: 4px;
+    border: solid 1px #c8c9c9;
+    outline: none;
+    color: #2c333e;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 0 48px 0 16px;
+    display: inline-block;
+    margin-right: 38px;
+    background: #fff url(../img/icon-search-grey.svg) no-repeat center right 11px / 24px 24px;
+}
+.athletes-scholarships__title a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.athletes-scholarships__title a:hover {
+    color: #001a46;
+}
+.athletes-scholarships_tabs {
+    list-style: none;
+    margin: 2px 0 0 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+}
+.athletes-scholarships_tabs li {
+    padding: 0 25px 10px 25px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3a3a3a;
+    cursor: pointer;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+}
+.athletes-scholarships_tabs li.current {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    cursor: default;
+    border-bottom: 2px solid #002767;
+}
+.athletes-scholarships_tabs li:hover {
+    color: #001a46;
+}
+.athletes-scholarships__tab {
+    padding: 24px 20px 100px 20px;
 }
