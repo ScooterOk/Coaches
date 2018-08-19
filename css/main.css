@@ -4927,6 +4927,21 @@ body.search {
     letter-spacing: normal;
     color: #2c333e;
 }
+.coach-profile__edit-modal h2 {
+    margin: 8px 0 24px 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.coach-profile__edit-modal h2.college-about {
+    margin-top: 56px;
+}
+
 .coach-profile__edit-modal .edit-modal__wrapper {
     margin-top: 24px;
     display: flex;
@@ -5015,6 +5030,10 @@ body.search {
 .coach-profile__edit-modal .edit-modal__form_item:last-child {
     margin-left: 10px;
 }
+.coach-profile__edit-modal .college-name .edit-modal__form_item {
+    margin: 0;
+    width: 100%;
+}
 .coach-profile__edit-modal .edit-modal__form_item label {
     display: block;
     font-size: 12px;
@@ -5073,10 +5092,13 @@ body.search {
     margin-bottom: 4px;
 }
 .coach-profile__edit-modal .edit-modal__form_description .scrollbar-inner {
-    height: 375px;
+    height: 254px;
     border-radius: 4px;
     background-color: #ffffff;
     border: solid 1px #b0b0b0;
+}
+.coach-profile__edit-modal .college-description .scrollbar-inner {
+    height: 192px;
 }
 .coach-profile__edit-modal .edit-modal__form_description .scrollbar-inner .scrollbar-inner__wrapper {
     padding: 11px 50px 11px 14px;
@@ -5197,6 +5219,10 @@ body.search {
 .coach-college__about {
     margin-top: 32px;
 }
+.coach-profile .coach-college__about {
+    margin-top: -45px;
+    margin-bottom: 94px;
+}
 .coach-college__about_title {
     margin-left: 20px;
     margin-bottom: 8px;
@@ -5261,8 +5287,23 @@ body.search {
     color: #00acff;
 }
 .coach-college__about_body .about__info_location {
-    margin: 16px auto 0 auto;
-    width: 180px;
+    margin: 16px 0 0 0;
+    max-width: 211px;
+    width: auto;    
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    padding-left: 31px;
+    background: url(../img/icon-location.svg) no-repeat left center / 24px 24px;
+    text-align: left;
+}
+.coach-profile .coach-college__about_body .about__info_location {
+
 }
 .coach-college__about_body .about__description {
     width: 66%;

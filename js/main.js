@@ -18,11 +18,13 @@ $(document).ready(function(e) {
 	}	
 	if($('.athletes-menu__modal').length)autosize($('.athletes-menu__modal textarea'));
 	if($('.coach-profile__edit-modal').length)autosize($('.coach-profile__edit-modal textarea'));
-	if($('.datepicker').length)$( ".datepicker" ).datepicker({
-		dateFormat: "dd M yy",
-	    changeMonth: true,
-	    changeYear: true
-	  });
+	if($('.datepicker').length){
+		$( ".datepicker" ).datepicker({
+			dateFormat: "dd M yy",
+			changeMonth: true,
+			changeYear: true
+		});
+	}
 	$('.gotop-buttom').click(function(e) {
 		var body = $("html, body");
 		body.stop().animate({scrollTop:0}, 300, 'swing');
