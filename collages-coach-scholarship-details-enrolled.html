@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/jquery.scrollbar.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -470,8 +472,153 @@
       </div>
     </div>
 
+    <!-- Collage's Coach_Scholarship Edit MODAL -->
+    <div class="modal athletes-menu__modal collages" id="collages-coach-scholarship-edit"">
+      <div class="modal__body">
+        <section class="modal__head">
+          <div class="modal__head_title">EDIT - ATHLETE INFO</div>
+          <div class="modal__head_buts">
+            <a href="" class="cancel">Cancel</a>
+            <a href="" class="save">Save</a>
+          </div>          
+        </section>        
+        <div class="coach-scholarship__id">#124-345</div>
+        <section class="edit-form">
+          <div class="edit-form__row">
+            <div class="edit-form__row_left">
+              <div class="edit-form__input">
+                <label>Scholarship Title</label>
+                <input type="text" placeholder="Scholarship Title" value="College Soccer Scholarship">
+              </div>
+              <div class="edit-form__input last-position">
+                <label>Kind of Sport</label>
+                <div data-value="" class="custom-select">
+                    <span data-placeholder="Choose the Sport">Basketball</span>
+                    <div class="custom-select__list">
+                       <div class="custom-select__option" data-option="">Basketball</div>
+                       <div class="custom-select__option" data-option="">Boxing</div>
+                       <div class="custom-select__option" data-option="">Karate</div>
+                       <div class="custom-select__option" data-option="">Rowing</div>
+                       <div class="custom-select__option" data-option="">Soccer / football</div>
+                       <div class="custom-select__option" data-option="">Taekwondo</div>
+                    </div>
+                 </div>
+              </div>
+               <div class="edit-form__input sex">
+                <label class="custom-checkbox">
+                    <input type="checkbox" checked="">
+                    <i></i>
+                    <span>Male</span>
+                 </label>
+                 <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <i></i>
+                    <span>Famale</span>
+                 </label>
+              </div>           
+            </div>
+            <div class="edit-form__row_right">
+              <div class="edit-form__input optional">
+                <label>Divisions</label>
+                <div data-value="" class="custom-select selected">
+                  <span data-placeholder="Choose the Divisions">NCAA, D1</span>
+                  <div class="custom-select__list">
+                     <div class="custom-select__option" data-option="">NCJAA</div>
+                     <div class="custom-select__option" data-option="">NCAA</div>
+                     <div class="custom-select__option" data-option="">D1</div>
+                     <div class="custom-select__option" data-option="">D2</div>
+                     <div class="custom-select__option" data-option="">D3</div>                                          
+                  </div>
+               </div>
+              </div>
+              <div class="edit-form__input optional last-position">
+                <label>Position</label>
+                <input type="text" placeholder="Enter the Position" value="LFW">
+              </div>              
+            </div>
+          </div>
+          <div class="edit-form__row">
+            <div class="edit-form__row_left">              
+                <div class="edit-form__description ">
+                  <label>Description</label>
+                  <div class="scrollbar-inner">
+                    <div class="scrollbar-inner__wrapper">
+                      <textarea name="" placeholder="Type more about the scholarship" id="">The world’s most popular sport is quickly becoming a favourite in the United States as well. Football, or Soccer, as it’s called in the US, is played by men and women at schools of every size. Attending a university with a soccer scholarship will give you the chance to earn your degree while playing the sport you love.
+  Students seeking a soccer scholarship will need to attend our 10-day Showcase (held every July in Florida). At the Showcase, you’ll play in front of college coaches from across the United States, and have the chance to discuss their programmes and the schools they represent. After the Showcase, you will receive a detailed report of scholarship offers from at least nine schools. More information on the annual Showcase can be found
+
+  Best Time to Apply
+  Your scholarship offers will be valid for two years after attending a Showcase. Since soccer is an autumn sport, we recommend you begin your application at age 16 and plan to attend the annual Showcase at age 17 (during year 12). This will allow you to enroll in a university at the beginning of the autumn term and compete your first year.
+  </textarea>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="edit-form__row_right">
+              <h3>Available Scolarships</h3>
+              <ul class="edit-form__available">
+                <li>
+                  <div class="edit-form__available_year edit-form__input">
+                    <label>Year</label>
+                    <div data-value="" class="custom-select">
+                      <span data-placeholder="Choose the Sport">2018</span>
+                      <div class="custom-select__list">
+                         <div class="custom-select__option" data-option="">2019</div>
+                         <div class="custom-select__option" data-option="">2020</div>
+                         <div class="custom-select__option" data-option="">2021</div>
+                         <div class="custom-select__option" data-option="">2022</div>
+                         <div class="custom-select__option" data-option="">2023</div>                     
+                      </div>
+                   </div>
+                  </div>
+                  <div class="edit-form__available_qty edit-form__input">
+                    <label>Qty</label>
+                    <input type="text" value="10">
+                  </div>                  
+                  <div class="edit-form__available_remove">                    
+                    <span>There are 6 apruved athletes on thise year</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="edit-form__available_year edit-form__input">
+                    <label>Year</label>
+                    <div data-value="" class="custom-select">
+                      <span data-placeholder="Choose the Sport">2018</span>
+                      <div class="custom-select__list">
+                         <div class="custom-select__option" data-option="">2019</div>
+                         <div class="custom-select__option" data-option="">2020</div>
+                         <div class="custom-select__option" data-option="">2021</div>
+                         <div class="custom-select__option" data-option="">2022</div>
+                         <div class="custom-select__option" data-option="">2023</div>                     
+                      </div>
+                   </div>
+                  </div>
+                  <div class="edit-form__available_qty edit-form__input">
+                    <label>Qty</label>
+                    <input type="text" value="10">
+                  </div>                  
+                  <div class="edit-form__available_remove">                    
+                    <i></i>
+                  </div>
+                </li>
+              </ul>
+              <div class="edit-form__available_add">+ ADD Year</div>
+            </div>
+          </div>          
+        </section>
+        <section class="modal__footer">
+          <div class="modal__footer_buts">
+            <a href="" class="cancel">Cancel</a>
+            <a href="" class="save">Save</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>  
+  <script src="js/vendor/jquery.scrollbar.min.js"></script>
+  <script src="js/vendor/jquery-ui.min.js"></script>
+  <script src="js/vendor/autosize.min.js"></script>
   <script src="js/main.js"></script>
   
 </body>

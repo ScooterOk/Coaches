@@ -191,7 +191,7 @@ $(document).ready(function(e) {
 			$('#delete-modal').fadeIn(200);
 			e.preventDefault();
 		});
-		$('.scholarships .item__head_edit a.edit').click(function(e) {
+		$('.scholarships .item__head_edit a.edit, .scholarships-detiles .title__edit').click(function(e) {
 			$('body').addClass('no-scroll');
 			$('#collages-coach-scholarship-edit').fadeIn(200, function(e){
 				autosize.update($('textarea'));
