@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/jquery.scrollbar.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -26,7 +28,7 @@
       </a>      
     </div>
     <div class="header__menu">
-      <div class="header__notifications"></div>      
+      <div class="header__notifications_but"></div>      
       <div class="header__user_photo">
         <img src="./img/user.jpg" alt="">
       </div>
@@ -35,6 +37,85 @@
         <span>Head Coach</span>
       </div>      
       <div class="header__user_arrow"></div>
+      <div class="header__notifications">
+        <div class="header__notifications_header">
+          <div class="new">New 1</div>
+          <a href="" class="markread">Mark all as read</a>
+        </div>
+        <div class="header__notifications_list scrollbar-inner">          
+          <div class="notifications__list_item new">
+            <div class="icon">
+              <img src="./img/notifocation-nominated.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">One of your athletes has received interest from a coach <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">3 min ago</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-link.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have <b>2</b> new coaching connection requests</b></a>
+            </div>
+            <div class="date">Yesterday at 10:04 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated-rejected.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have got a reject from <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">Yesterday at 08:30 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">One of your athletes has received interest from a coach <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">3 min ago</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-link.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have <b>2</b> new coaching connection requests</b></a>
+            </div>
+            <div class="date">Yesterday at 10:04 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+          <div class="notifications__list_item">
+            <div class="icon">
+              <img src="./img/notifocation-nominated-rejected.svg" alt="">
+            </div>
+            <div class="message">
+              <a href="">You have got a reject from <b>College Soccer Scholarship</b></a>
+            </div>
+            <div class="date">Yesterday at 08:30 am</div>
+          </div>
+          <!-- /.notifications__list_item -->
+        </div>
+        <div class="header__notifications_all">
+          <a href="">See all</a>
+        </div>
+      </div>
+      <ul class="header__user_menu">
+        <li>
+          <a href="">Change Password</a>
+        </li>
+        <li>
+          <a href="">Logout</a>
+        </li>
+      </ul>
     </div>
   </header>
 
@@ -450,6 +531,9 @@
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>  
+  <script src="js/vendor/jquery.scrollbar.min.js"></script>
+  <script src="js/vendor/jquery-ui.min.js"></script>
+  <script src="js/vendor/autosize.min.js"></script>
   <script src="js/main.js"></script>
   
 </body>

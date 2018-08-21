@@ -259,6 +259,54 @@ $(document).ready(function(e) {
 			}			
 		});
 
+		$('.athletes-messenger__contacts_search .search__button').click(function(e) {
+			if($('.athletes-messenger__contacts_search').hasClass('active')){
+				$('.athletes-messenger__contacts_search').removeClass('active');
+				$('.athletes-messenger__results_list').fadeOut(100, function(){
+					$('.athletes-messenger__contacts_list').fadeIn(100);
+				});
+			}else{
+				$('.athletes-messenger__contacts_search').addClass('active');
+				$('.athletes-messenger__contacts_list').fadeOut(100, function(){
+					$('.athletes-messenger__results_list').fadeIn(100);
+				});
+			}
+		});
+		$('.athletes-messenger__contacts_search .search__input_back').click(function(e) {
+			$('.athletes-messenger__contacts_search').removeClass('active');
+			$('.athletes-messenger__results_list').fadeOut(100, function(){
+				$('.athletes-messenger__contacts_list').fadeIn(100);
+			});
+			e.preventDefault();			
+		});
+		$('.athletes-messenger__contacts_search .search__input input').keyup(function(e) {			
+			// Retrieve the input field text and reset the count to zero
+			var filter = $(this).val(), count = 0;
+			if(filter.length){
+				$('.results__list_letter-block .letter').fadeOut(100);
+			}else{
+				$('.results__list_letter-block .letter').fadeIn(100);
+			}
+
+			// Loop through the comment list
+			$(".athletes-messenger__results_list .results__list_item").each(function(){
+				// If the list item does not contain the text phrase fade it out
+				if ($(this).find('.name p').text().search(new RegExp(filter, "i")) < 0) {
+					$(this).fadeOut(100);
+
+					// Show the list item if the phrase matches and increase the count by 1
+				} else {
+					console.log($(this).find('.name p').text());
+					$(this).show();
+					count++;
+				}
+			});
+
+			// Update the count
+			var numberItems = count;
+			$("#filter-count").text("Number of Filter = "+count);
+		});
+
 		
 
 

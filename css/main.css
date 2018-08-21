@@ -1672,6 +1672,9 @@ footer .wrapper {
     top: -9px;
     right: -12px;    
 }
+.admin__nav ul li.messenger.current .icon i {
+    background-color: #002767;
+}
 .admin__nav ul li .title {
     font-size: 12px;
     font-weight: normal;
@@ -5924,7 +5927,7 @@ body.search {
 }
 .athletes-messenger__contacts_list {
     height: calc(100% - 46px);
-    overflow: hidden;
+    overflow: hidden;    
 }
 .athletes-messenger__contacts_list > ul {
     list-style: none;
@@ -5998,6 +6001,95 @@ body.search {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.athletes-messenger__results_list {
+    height: calc(100% - 46px);
+    display: none;
+}
+.athletes-messenger__results_list .results__title {
+    height: 34px;
+    font-family: SoccerLeague;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+    padding: 12px 12px 0 12px;    
+}
+.athletes-messenger__results_list .results__list {
+    height: calc(100% - 34px);
+}
+.athletes-messenger__results_list .results__list_letter-block {
+    
+}
+.athletes-messenger__results_list .results__list_letter-block .letter {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin: 16px 0 16px 12px;
+}
+.athletes-messenger__results_list .results__list_letter-block:first-child .letter {
+    margin-top: 0;
+}
+.athletes-messenger__results_list .results__list_item {
+    border-bottom: 1px solid #dbdddf;
+    height: 56px;
+    display: flex;    
+    align-items: center;
+    padding: 0 16px 0 20px;
+    transition: all 200ms ease;
+    cursor: default;
+}
+.athletes-messenger__results_list .results__list_item .photo {
+    width: 30px;
+    height: 30px;
+    margin-right: 16px;
+}
+.athletes-messenger__results_list .results__list_item .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.athletes-messenger__results_list .results__list_item .name {
+
+}
+.athletes-messenger__results_list .results__list_item .name p {
+    margin: 0 0 3px 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.athletes-messenger__results_list .results__list_item .name span {
+    display: block;
+    width: 102px;
+    height: 16px;
+    border-radius: 2px;    
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.athletes-messenger__results_list .results__list_item .name span.athletes {
+    background-color: #dd8307;
+}
+.athletes-messenger__results_list .results__list_item .name span.college {
+    background-color: #9c68b7;
+}
 
 
 
@@ -6795,4 +6887,60 @@ body.search {
 }
 .coach-scholarship-delete-modal ul li a.no:hover {
     color: #001a46;
+}
+.notifications__title {
+    background-color: #fff;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+.notifications__title h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'SoccerLeague';
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+}
+.notifications__body {
+    margin: 20px 20px 26px 20px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 20px;
+}
+.notifications__body .notifications__list {
+    width: 75%;
+}
+.notifications__body .notifications__list_item a {
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #00acff;
+    transition: all 200ms ease;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.notifications__body .notifications__list_item a:hover {
+    color: #0e9ee3;
+}
+.notifications__body .notifications__list_item p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
 }
