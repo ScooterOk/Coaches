@@ -312,6 +312,18 @@ a {
 .modal__head {
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+.athletes-menu__modal .coach-scholarship__id {
+    margin-top: -10px;    
+    margin-bottom: 41px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
 }
 .modal__head_title {
     font-family: 'SoccerLeague';
@@ -1604,18 +1616,23 @@ footer .wrapper {
 }
 .admin__nav ul li.current {
     background-color: #00acff;
-    cursor: default;
+    cursor: default;    
 }
 .admin__nav ul li.current .title {
     display: none;
 }
 .admin__nav ul li.current .icon {
     margin-top: 21px;
+    background-size: 40px 40px!important;
 }
 .admin__nav ul li.scholarships {    
     background-image: url('../img/icon-scholarship.svg');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 24px 24px;
+}
+.admin__nav ul li.scholarships.current {
+    background-size: 40px 40px;   
 }
 .admin__nav ul li.messenger {
     
@@ -1626,16 +1643,16 @@ footer .wrapper {
     text-align: center;    
 }
 .admin__nav ul li.messenger .icon {    
-    background: url('../img/icon-messager.svg') no-repeat center;
+    background: url('../img/icon-messager.svg') no-repeat center / 24px 24px;
 }
 .admin__nav ul li.network .icon {    
-    background: url('../img/icon-coaches.svg') no-repeat center;
+    background: url('../img/icon-coaches.svg') no-repeat center / 24px 24px;;
 }
 .admin__nav ul li.athletes .icon {
-    background: url('../img/icon-athletes.svg') no-repeat center;
+    background: url('../img/icon-athletes.svg') no-repeat center / 24px 24px;;
 }
 .admin__nav ul li.profile .icon {
-    background: url('../img/icon-profile.svg') no-repeat center;
+    background: url('../img/icon-profile.svg') no-repeat center / 24px 24px;;
 }
 .admin__nav ul li.messenger .icon i {
     height: 17px;
@@ -1698,6 +1715,7 @@ footer .wrapper {
     margin: 0;
     padding: 0;
     display: inline-flex;
+    justify-content: space-between;    
 }
 .scholarships__title_tabs li {
     padding: 0 25px 10px 25px;
@@ -1711,6 +1729,7 @@ footer .wrapper {
     color: #3a3a3a;
     cursor: pointer;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 .scholarships__title_tabs li.current {    
     font-size: 14px;
@@ -1750,6 +1769,9 @@ footer .wrapper {
 .scholarships__list {
     padding: 20px 20px 40px 20px;
 }
+.scholarships__list.closed {
+    display: none;
+}
 .scholarships__list_item {
     height: 180px;
     border-radius: 4px;
@@ -1782,7 +1804,7 @@ footer .wrapper {
     text-align: center; 
     text-transform: uppercase;   
 }
-.scholarships .item__head_edit a {
+.scholarships .item__head_edit a.edit {
     display: inline-block;
     height: 24px;
     line-height: 24px;
@@ -1791,9 +1813,23 @@ footer .wrapper {
     background: url('../img/icon-edit.svg') no-repeat right center;
     transition: all 200ms ease;
 }
-.scholarships .item__head_edit a:hover {
+.scholarships .item__head_edit a.edit:hover {
     color: #0e9ee3;
     background: url('../img/icon-edit-hover.svg') no-repeat right center;
+}
+.scholarships .item__head_edit a.delete {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding-right: 28px;
+    color: #002767;
+    background: url('../img/delete-darck-blue.svg') no-repeat right center;
+    transition: all 200ms ease;
+    margin-right: 13px;
+}
+.scholarships .item__head_edit a.delete:hover {
+    color: #001a46;
+    background: url('../img/delete-darck-blue-hover.svg') no-repeat right center;
 }
 
 .scholarships .item__body {
@@ -2095,6 +2131,27 @@ a.title__back:hover {
     display: flex;
     align-items: center;
 }
+.scholarships-detiles__title .title__delete_text {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
+}
+.scholarships-detiles__title .title__delete {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background: #00acff url('../img/icon-delete.svg') no-repeat center / 32px 32px;
+    display: block;
+    transition: all 200ms ease;
+    margin-left: 26px;
+}
+.scholarships-detiles__title .title__delete:hover {
+    background-color: #0e9ee3;
+}
 .scholarships-detiles__title .title__edit {
     width: 48px;
     height: 48px;
@@ -2102,6 +2159,7 @@ a.title__back:hover {
     background: #00acff url('../img/icon-edit-white.svg') no-repeat center / 32px 32px;
     display: block;
     transition: all 200ms ease;
+    margin-left: 16px;
 }
 .scholarships-detiles__title .title__edit:hover {
     background-color: #0e9ee3;
@@ -2353,12 +2411,19 @@ a.title__back:hover {
     margin-right: 24px;
     transition: all 200ms ease;
 }
+.scholarships-detiles__requests .requests__nav .requests__nav_years a:hover {
+    background-color: #0e9ee2;
+    color: #fff;
+}
 .scholarships-detiles__requests .requests__nav .requests__nav_years a.current {
     background-color: #00acff;
     color: #fff;
 }
-.scholarships-detiles__requests .requests__nav select {
+.scholarships-detiles__requests .requests__nav .custom-select {
     width: 341px;
+}
+.scholarships-detiles__requests .requests__nav select {
+    
     height: 48px;
     border-radius: 4px;
     background-color: #ffffff;
@@ -2379,7 +2444,7 @@ a.title__back:hover {
 .scholarships-detiles__requests .requests__nav_select {
     position: relative;
 }
-.scholarships-detiles__requests .requests__nav_select span {
+.scholarships-detiles__requests .requests__nav_select > span {
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -3547,6 +3612,12 @@ body.search {
 .search__results .scholarships__item:last-child {
     margin-bottom: 0;
 }
+.search__results_scholarships.collages {
+    margin-bottom: -43px;
+}
+.search__results_scholarships.collages .scholarships__item {
+    margin-bottom: 8px;
+}
 .search__results .scholarships__item .item__id {
     width: 100%;
     font-size: 15px;
@@ -4324,10 +4395,13 @@ body.search {
 }
 .athletes-menu__list {
     list-style: none;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0 0 0 20px;
     display: flex;
     flex-wrap: wrap;
+}
+.coach-athlete .athletes-menu__list {
+    margin-top: 16px;
 }
 .athletes-menu__list .athletes-menu__list_item {
     width: 310px;
@@ -4652,12 +4726,18 @@ body.search {
 .athletes-menu__modal .edit-form__row .edit-form__input.sex {
     margin-top: 59px;
 }
+.athletes-menu__modal.collages .edit-form__row .edit-form__input.sex {
+    margin-top: 29px;
+}
 .athletes-menu__modal .edit-form__row .edit-form__input.sex label {
     margin-right: 45px;
 }
 .athletes-menu__modal .edit-form__row .edit-form__row_right {
     padding-left: 10px;
     width: 46%;
+}
+.athletes-menu__modal.collages .edit-form__row .edit-form__row_right h3 {
+    margin-top: 45px;
 }
 .athletes-menu__modal h3 {
     margin: 0 0 16px 0;
@@ -4697,6 +4777,9 @@ body.search {
 .athletes-menu__modal .edit-form__input_weight li.right {
     padding-left: 13px;
 }
+.athletes-menu__modal.collages .edit-form__description {
+    margin-top: 26px;
+}
 .athletes-menu__modal .edit-form__description label {
     display: block;
     font-size: 12px;
@@ -4730,6 +4813,74 @@ body.search {
     letter-spacing: normal;
     color: #2c333e;
 }
+
+.athletes-menu__modal .edit-form__available {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.athletes-menu__modal .edit-form__available li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.athletes-menu__modal .edit-form__available_year {
+    width: 33%;
+    padding-right: 10px;
+}
+.athletes-menu__modal .edit-form__available_qty {
+    width: 33%;
+    padding-left: 10px;
+    padding-right: 8px;
+}
+.athletes-menu__modal .edit-form__available_remove {
+    width: 33%;
+    padding-left: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9b9b9b;
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+    height: 40px;
+    position: relative;
+}
+.athletes-menu__modal .edit-form__available_remove i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/icon-close.svg) no-repeat center / 40px 40px;    
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 9px;
+}
+.athletes-menu__modal .edit-form__available_add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: dashed 1px #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00acff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease;
+    margin: 29px 0px 0 0;
+    width: calc(66% - 8px);
+}
 .athletes-menu__modal .edit-form__characteristics {
     list-style: none;
     margin: 0;
@@ -4757,7 +4908,7 @@ body.search {
     display: block;
     width: 40px;
     height: 40px;
-    background: url('../img/icon-close.svg') no-repeat center / 30px 30px;
+    background: url('../img/icon-close.svg') no-repeat center / 40px 40px;
     margin-top: 20px;
     cursor: pointer;
 }
@@ -4823,7 +4974,7 @@ body.search {
     display: block;
     width: 40px;
     height: 40px;
-    background: url('../img/icon-close.svg') no-repeat center / 30px 30px;
+    background: url('../img/icon-close.svg') no-repeat center / 40px 40px;
     margin-top: 20px;
     cursor: pointer;
 }
@@ -4903,7 +5054,7 @@ body.search {
     display: block;
     width: 40px;
     height: 40px;
-    background: url(../img/icon-close.svg) no-repeat center / 30px 30px;
+    background: url(../img/icon-close.svg) no-repeat center / 40px 40px;
     margin-top: 20px;
     cursor: pointer;
 }
@@ -4953,7 +5104,7 @@ body.search {
 }
 .coach-profile__edit-modal .edit-modal__photo_img {
     width: 120px;
-    width: 120px;
+    height: 120px;
     margin: auto;
 }
 .coach-profile__edit-modal .edit-modal__photo_img img {
@@ -6478,6 +6629,12 @@ body.search {
     padding: 20px 55px 0 20px;
     align-items: center;
 }
+.athletes-scholarships__title.collages {
+    flex-wrap: nowrap;
+    height: 88px;
+    align-items: center;
+    padding-top: 0;
+}
 .athletes-scholarships__title h1 {
     margin: 0 117px 0 0;
     padding: 0;
@@ -6564,4 +6721,78 @@ body.search {
 }
 .athletes-scholarships__tab {
     padding: 24px 20px 100px 20px;
+}
+
+.coach-scholarship-delete-modal {
+
+}
+.coach-scholarship-delete-modal .modal__body {
+    width: 440px;
+    padding: 0 0 40px 0;
+}
+.coach-scholarship-delete-modal .modal__body_header {
+    height: 85px;
+    border-radius: 4px 4px 0 0;
+    background-color: #3a4969;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coach-scholarship-delete-modal .modal__body_header img {
+    width: 120px;
+}
+.coach-scholarship-delete-modal p {
+    margin: 20px 20px 0 20px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.coach-scholarship-delete-modal ul {
+    list-style: none;
+    margin: 40px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coach-scholarship-delete-modal ul li {
+    margin: 0 10px;
+    width: 170px;
+    height: 48px;    
+}
+.coach-scholarship-delete-modal ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.coach-scholarship-delete-modal ul li a.yes {
+    background-color: #00acff;
+    color: #fff;
+}
+.coach-scholarship-delete-modal ul li a.yes:hover {
+    background-color: #0e9ee3;
+}
+.coach-scholarship-delete-modal ul li a.no {
+    color: #002767;
+}
+.coach-scholarship-delete-modal ul li a.no:hover {
+    color: #001a46;
 }

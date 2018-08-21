@@ -181,6 +181,83 @@ $(document).ready(function(e) {
 			$('#athletes-scholarships-nominatiing-modal').fadeIn(200);
 			e.preventDefault();
 		});
+		$('.admin .athletes-scholarships-details a.nominated__link').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#athletes-scholarships-nominatiing-modal').fadeIn(200);
+			e.preventDefault();
+		});
+		$('.scholarships-detiles .scholarships-detiles__title .title__delete').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#delete-modal').fadeIn(200);
+			e.preventDefault();
+		});
+		$('.scholarships .item__head_edit a.edit').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#collages-coach-scholarship-edit').fadeIn(200, function(e){
+				autosize.update($('textarea'));
+			});
+			e.preventDefault();
+		});
+		$('.scholarships .scholarships__create a').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#collages-coach-scholarship-add').fadeIn(200, function(e){
+				autosize.update($('textarea'));
+			});
+			e.preventDefault();
+		});
+
+		$('.edit-modal__photo input[type="file"]').change(function(e) {
+			var reader = new FileReader();
+			var img = $(this).closest('.edit-modal__photo').find('.edit-modal__photo_img img');
+			if (this.files && this.files[0]) {
+            	var reader = new FileReader();
+	            reader.onload = function (e) {	            	
+	                img.attr('src', e.target.result);
+	            }
+            	reader.readAsDataURL(this.files[0]);
+            	$(this).closest('.edit-modal__photo').find('.edit-modal__photo_delete').show();
+        	}		
+
+		});
+		$('.edit-modal__photo_delete').click(function(e) {
+			var img = $(this).closest('.edit-modal__photo').find('.edit-modal__photo_img img');			
+			img.attr('src', './img/profile-photo-default.svg');
+			$(this).hide();
+			e.preventDefault();
+		});
+		$('.athletes-menu__modal .edit-photo input[type="file"]').change(function(e) {
+			var reader = new FileReader();
+			var img = $(this).closest('.edit-photo').find('.edit-photo__img img');
+			if (this.files && this.files[0]) {
+            	var reader = new FileReader();
+	            reader.onload = function (e) {	            	
+	                img.attr('src', e.target.result);
+	            }
+            	reader.readAsDataURL(this.files[0]);
+            	$(this).closest('.edit-photo').find('.edit-photo__but_delete').show();
+        	}		
+
+		});
+		$('.edit-photo__but_delete').click(function(e) {
+			var img = $(this).closest('.edit-photo').find('.edit-photo__img img');			
+			img.attr('src', './img/profile-photo-default.svg');
+			$(this).hide();
+			e.preventDefault();
+		});
+		
+
+		
+		$('.scholarships .scholarships__title_tabs li').click(function(e) {
+			if(!$(this).hasClass('current')){
+				var name = $(this).attr('data-name');
+				$('.search__results').attr('data-current', name);
+				$('.scholarships__title_tabs li').removeClass('current');
+				$(this).addClass('current');
+				$('.scholarships__list').fadeOut(150, function() {
+					$('.scholarships__list.'+name).fadeIn(150);
+				});				
+			}			
+		});
 
 		
 
@@ -191,7 +268,12 @@ $(document).ready(function(e) {
 			$('.edit-form__characteristics').append(item);
 			$('.edit-form__characteristics li:last-child').slideDown(150);
 		});
-		$('.admin').on('click', '.athletes-menu__modal .edit-form__characteristics_remove i', function(e){
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__available_add', function(){
+			var item = '<li style="display: none;"><div class="edit-form__available_year edit-form__input"><label>Year</label><div data-value="" class="custom-select"><span data-placeholder="Choose the Sport">2018</span><div class="custom-select__list"><div class="custom-select__option" data-option="">2019</div><div class="custom-select__option" data-option="">2020</div><div class="custom-select__option" data-option="">2021</div><div class="custom-select__option" data-option="">2022</div><div class="custom-select__option" data-option="">2023</div></div></div></div><div class="edit-form__available_qty edit-form__input"><label>Qty</label><input type="text" value="10"></div><div class="edit-form__available_remove"><i></i></div></li>';
+			$('.edit-form__available').append(item);
+			$('.edit-form__available li:last-child').slideDown(150);
+		});
+		$('.admin').on('click', '.athletes-menu__modal .edit-form__characteristics_remove i, .athletes-menu__modal .edit-form__available_remove i', function(e){
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
 			});
@@ -294,7 +376,7 @@ $(document).ready(function(e) {
 				$('.search__filters_list').hide();
 				$('.search__filters_list.'+name).show();
 				
-			}			
+			}
 		});
 
 		$('.search__form .search__form_filter-but').click(function(e) {
