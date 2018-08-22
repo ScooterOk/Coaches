@@ -13,7 +13,10 @@ $(document).ready(function(e) {
 	if($('.scrollbar-inner').length){
 		$('.scrollbar-inner').scrollbar({
 			autoScrollSize : true,
-			autoUpdate : true
+			autoUpdate : true,
+			onInit : function(e){
+				$('.athletes-messenger__list_body').scrollTop(100000);
+			}
 		});
 	}	
 	if($('.athletes-menu__modal').length)autosize($('.athletes-menu__modal textarea'));
@@ -244,6 +247,15 @@ $(document).ready(function(e) {
 			$(this).hide();
 			e.preventDefault();
 		});
+
+		$('.scholarships-detiles .requests__table_item').click(function(e) {
+			if($(e.target).closest('.athlete__share').length){
+				return false;
+			}
+			$('body').addClass('no-scroll');
+			$('#сolllegs-сoach-athlete-details-modal').fadeIn(200);
+			e.preventDefault();
+		});
 		
 
 		
@@ -293,7 +305,6 @@ $(document).ready(function(e) {
 				// If the list item does not contain the text phrase fade it out
 				if ($(this).find('.name p').text().search(new RegExp(filter, "i")) < 0) {
 					$(this).fadeOut(100);
-
 					// Show the list item if the phrase matches and increase the count by 1
 				} else {
 					console.log($(this).find('.name p').text());
@@ -440,8 +451,7 @@ $(document).ready(function(e) {
 				$(this).closest('.search__filters-selected-item').find('.selects__list').slideDown(70);
 			}else{
 				$(this).closest('.search__filters-selected-item').find('.selects__list').slideUp(70);
-			}
-			
+			}			
 		});
 
 

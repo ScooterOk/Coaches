@@ -2506,6 +2506,7 @@ a.title__back:hover {
     width: 100%;
     padding: 0 39px 0 25px;
     transition: all 200ms ease;
+    cursor: pointer;
 }
 .scholarships-detiles__requests .requests__table_item:hover {
     background-color: #f6f6f6;
@@ -6384,6 +6385,12 @@ body.search {
     width: 100%;
     height: 100%;    
 }
+.scholarships-details__title_nominated .nominated__label {
+    margin: 0;
+    display: flex;
+    transition: all 200ms ease;
+    
+}
 .scholarships-details__title_nominated .nominated__text {
     max-width: 210px;
     font-size: 12px;
@@ -6682,7 +6689,7 @@ body.search {
     display: flex;
     justify-content: space-between;
 }
-.athletes-scholarships-details .scholarships-detiles__notification {
+.scholarships-detiles__notification {
     position: fixed;
     top: 72px;
     right: 0;
@@ -6699,10 +6706,10 @@ body.search {
     transform: translate(100%, 0);
     transition: all 200ms ease;
 }
-.athletes-scholarships-details .scholarships-detiles__notification.active {
+.scholarships-detiles__notification.active {
     transform: translate(0, 0);
 }
-.athletes-scholarships-details .scholarships-detiles__notification::before {
+.scholarships-detiles__notification::before {
     content: "";
     width: 40px;
     height: 40px;
@@ -6943,4 +6950,278 @@ body.search {
     line-height: normal;
     letter-spacing: normal;
     color: #2c333e;
+}
+.сolllegs-сoach-athlete-details-modal .modal__head {
+    flex-wrap: wrap;
+    align-items: center;
+}
+.сolllegs-сoach-athlete-details-modal .modal__head_scholarship {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 13px;
+}
+.сolllegs-сoach-athlete-details-modal .modal__head_scholarship b {
+    font-size: 22px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 16px;
+}
+.сolllegs-сoach-athlete-details-modal .modal__head_scholarship span {
+    width: 64px;
+    height: 24px;
+    border-radius: 15.8px;
+    background-color: #018800;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 8px;    
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat {
+    margin-top: 16px;
+    background-color: #eef1f3;
+    padding: 16px 24px 24px 40px;
+    display: flex;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat .modal-chat__photo {
+    width: 42px;
+    height: 42px;
+    margin-right: 13px;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat .modal-chat__photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat .modal-chat__body {
+    flex-grow: 1;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .name {
+    display: flex;
+    align-items: center;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .name b {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-right: 18px;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .name span {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.3);
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .link {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;    
+    text-transform: uppercase;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .link a {
+    color: #002767;
+    transition: all 200ms ease;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_title .link a:hover {
+    color: #001a46;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_message {
+    border-radius: 0 5px 5px 5px;
+    background-color: #ffffff;
+    margin-left: 18px;
+    padding: 17px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-top: 10px;
+    position: relative;
+}
+.сolllegs-сoach-athlete-details-modal .modal-chat__body_message::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-right: 20px solid #fff;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    top: 0;
+    left: -20px;
+}
+.modal-athlete-details {
+
+}
+.modal-athlete-details__head {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+.modal-athlete-details__head .title {
+    display: flex;
+    align-items: center;    
+}
+.modal-athlete-details__head .title b {
+    font-family: SoccerLeague;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(72, 79, 89, 0.2);
+    margin-right: 57px;
+}
+.modal-athlete-details__head .title span {
+    display: inline-flex;
+    height: 32px;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13.6px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 17.6px;
+}
+.modal-athlete-details__head .title span.interested {
+    background-color: #67ae19;
+}
+.modal-athlete-details__head .title span.declined {
+    background-color: #f88f2b;
+}
+.modal-athlete-details__head .links {
+    display: flex;
+    align-items: center;
+}
+.modal-athlete-details__head .links__link {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    margin-right: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 0 26px;
+    transition: all 200ms ease;
+}
+.modal-athlete-details__head .links__link:hover {
+    color: #001a46;
+}
+.modal-athlete-details__head .links__button {
+    min-width: 140px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 16px;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.modal-athlete-details__head .links__button:hover {
+    background-color: #0e9ee3;
+}
+.modal-athlete-details__body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.modal-athlete-details__footer {
+    margin-top: 47px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.modal-athlete-details__footer .footer__link {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    text-transform: uppercase;
+    margin-right: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 0 26px;
+    transition: all 200ms ease;
+}
+.modal-athlete-details__footer .footer__link:hover {
+    color: #001a46;
+}
+.modal-athlete-details__footer .footer__button {
+    min-width: 140px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #00acff;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 16px;
+    text-transform: uppercase;
+    transition: all 200ms ease;
+}
+.modal-athlete-details__footer .footer__button:hover {
+    background-color: #0e9ee3;
 }
