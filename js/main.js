@@ -21,6 +21,7 @@ $(document).ready(function(e) {
 	}	
 	if($('.athletes-menu__modal').length)autosize($('.athletes-menu__modal textarea'));
 	if($('.coach-profile__edit-modal').length)autosize($('.coach-profile__edit-modal textarea'));
+	if($('.share-modal').length)autosize($('.share-modal__form_message textarea'));
 	if($('.datepicker').length){
 		$( ".datepicker" ).datepicker({
 			dateFormat: "dd M yy",
@@ -531,3 +532,67 @@ function reverseScroller(){
 		return false;
 	}
 }
+function shareModalInit(){
+	var count = null;
+	$('.share-modal__form_to').click(function(e) {
+		var focus = $(e.target).hasClass('share-modal__form_to');
+		if(focus){
+			$(this).find('input').focus();
+		}
+	});
+
+	$('.share-modal__form_to input').keyup(function(e) {
+		var length = $(this).val().length;		
+		if(length){
+			$('.share-modal__form_to .results-list').fadeIn(150);
+		}else{
+			$('.share-modal__form_to .results-list').fadeOut(150);
+		}
+		$(this).width(length == 0 ? 15 : length * 15);		
+	});
+
+	$('.share-modal__form_to input').keydown(function(e) {
+		if($(this).val().length){
+			switch (e.keyCode) {
+				case 38:
+					console.log('Up');
+					e.preventDefault();
+				break;
+				case 40:
+					if(count != null && count == 0){
+						count++;
+						console.log(count);
+						$($('.results__list_item')[count]).addClass('active');
+					}else{
+						count = 0;
+						console.log(count);
+						$($('.results__list_item')[count]).addClass('active');
+					}
+					e.preventDefault();
+				break;			
+				default:
+				// statements_def
+				break;
+			}
+		}		
+	});
+
+	$('body').on('click', '.share-modal .select-list__item i', function(e){
+		$(this).closest('.select-list__item').remove();
+		if(!$('.share-modal .select-list__item').length){
+			$('.share-modal__form_to input').attr('placeholder', 'Type the Name').width(120);
+		}
+	});
+
+	$('body').on('click', '.share-modal .results__list_item', function(e){
+		var val = $(this).find('.name p').text();
+		var label = '<div class="select-list__item"><span>'+val+'</span><i></i></div>';
+		$('.share-modal__form_to input').attr('placeholder', '').val('');
+		$('.share-modal .share-modal__form_to input').before(label);
+		$('.share-modal .results-list').fadeOut(150);
+	});	
+}
+shareModalInit();
+
+
+

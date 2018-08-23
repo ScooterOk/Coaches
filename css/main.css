@@ -378,7 +378,8 @@ a {
     text-transform: uppercase;
     transition: all 200ms ease;
 }
-.modal__head_buts .save:hover {
+.modal__head_buts .save:hover,
+.modal__footer_buts .save:hover {
     background-color: #0e9ee3;
 }
 .modal__footer {
@@ -7224,4 +7225,296 @@ body.search {
 }
 .modal-athlete-details__footer .footer__button:hover {
     background-color: #0e9ee3;
+}
+
+
+.share-modal .modal__body {
+    width: 640px;
+}
+.share-modal__body {
+    margin-bottom: -14px;
+}
+.share-modal__form {
+    margin-top: 27px;
+}
+.share-modal__form_to {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+    padding: 5px 4px 5px 50px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: text;
+}
+.share-modal__form_to::before {
+    content: "To:";
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #00acff;
+    position: absolute;
+    top: 12px;
+    left: 14px;
+}
+.share-modal__form_to .select-list {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.share-modal__form_to .select-list__item {
+    height: 28px;
+    border-radius: 3px;
+    background-color: #d8d8d8;
+    padding: 0 32px 0 10px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+    color: #2c333e;
+    white-space: nowrap;
+    position: relative;
+    margin: 5px 10px 5px 0;
+    transition: all 200ms ease;
+}
+.share-modal__form_to .select-list__item:hover {
+    background-color: #ddd;
+}
+.share-modal__form_to .select-list__item i {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(../img/icon-selected-cencel.svg) no-repeat center;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    cursor: pointer;
+}
+.share-modal__form_to input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    height: 28px;
+    margin: 5px 0px;
+    max-width: 500px;
+}
+.share-modal__form_to .results-list {    
+    margin: 0;
+    padding: 8px 0;
+    min-width: 330px;
+    position: absolute;
+    top: 100%;
+    left: 55px;    
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    display: none;
+}
+.share-modal__form_to .results-list .results__list_item {
+    padding: 0 16px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.share-modal__form_to .results-list .results__list_item:hover {
+    background-color: #eee;
+}
+.share-modal__form_to .results-list .results__list_item .wrapper {
+    padding: 12px 0;
+    border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+.share-modal__form_to .results-list .results__list_item .photo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.share-modal__form_to .results-list .results__list_item .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.share-modal__form_to .results-list .results__list_item .name p {
+    margin: 0 0 3px 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.share-modal__form_to .results-list .results__list_item .name span {
+    display: block;
+    width: 102px;
+    height: 16px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.share-modal__form_to .results-list .results__list_item .name span.athletes {
+    background-color: #dd8307;
+}
+.share-modal__form_to .results-list .results__list_item .name span.college {
+    background-color: #9c68b7;
+}
+
+
+
+
+.share-modal__form_message {
+    margin-top: 24px;
+}
+.share-modal__form_message label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #c1c1c1;
+    margin-bottom: 8px;
+}
+.share-modal__form_message .scrollbar-inner {
+    height: 88px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #b0b0b0;
+}
+.share-modal__form_message .scrollbar-inner .scrollbar-inner__wrapper {
+    padding: 11px 50px 11px 14px;
+}
+.share-modal__form_message textarea {
+    width: 100%;
+    height: auto;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.share-modal__form_card {
+    margin-top: 16px;
+    padding: 24px;
+    display: inline-flex;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #eaeaea;
+    min-width: 310px;
+}
+.share-modal__form_card .card__photo {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.share-modal__form_card .card__photo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;    
+}
+.share-modal__form_card .card__photo .nominated {    
+    margin-top: 7px;
+    display: inline-block;
+    height: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 2px;
+    background-color: #47be89;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+.share-modal__form_card .card__info {
+
+}
+.share-modal__form_card .card__info_name {
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 2px;
+}
+.card__info_age {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    margin-bottom: 5px;
+}
+.card__info_sports {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+}
+.card__info_params {
+    list-style: none;
+    margin: 18px 0 0 0;
+    padding: 0;
+    display: flex;    
+}
+.card__info_params li {
+    margin-right: 32px;
+}
+.card__info_params li b {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2c333e;
+    display: block;
+}
+.card__info_params li span {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cfcfcf;
 }
