@@ -116,26 +116,64 @@
         </li>
       </ul>
     </div>
+    <div class="header__menu_but">
+      <i></i>
+    </div>
+    <!-- Mobile menu -->
+    <div class="header__mobile_menu">
+      <div class="header__menu">
+        <div class="header__user_photo">
+          <img src="./img/user.jpg" alt="">
+        </div>
+        <div class="header__user_name">
+          <b>Kevin Brown</b>
+          <span>Head Coach</span>
+        </div>
+        <div class="header__notifications_but"></div>
+      </div>
+      <ul class="nav">
+        <li class="">
+          <a href="">Home page</a>
+        </li>
+        <li>
+          <a href="">Contact us</a>
+        </li>
+        <li class="current">
+          <a href="">Scholarships</a>
+        </li>
+        <li>
+          <a href="">Messenger</a>
+        </li>
+        <li>
+          <a href="">Network</a>
+        </li>
+      </ul>
+      <ul class="login">
+        <li class="sign-in">
+          <a href="">Log Out</a>
+        </li>        
+      </ul>
+    </div>
+    <!-- /Mobile menu -->
   </header>
 
   <main class="admin-wrapper coach-athlete">
     <aside class="admin__nav">
       <ul>
-        <li class="scholarships"></li>
+        <li class="scholarships current">
+          <div class="icon"></div>
+          <div class="title">Scholarships</div>
+        </li>
         <li class="messenger">
           <div class="icon">
             <i>1</i>
           </div>
           <div class="title">Messenger</div>
         </li>
-        <li class="network current">
+        <li class="network">
           <div class="icon"></div>
           <div class="title">Network</div>
-        </li>
-        <li class="athletes">
-          <div class="icon"></div>
-          <div class="title">Athletes</div>
-        </li>
+        </li>        
         <li class="profile">
           <div class="icon"></div>
           <div class="title">Profile</div>
@@ -151,7 +189,14 @@
         <div class="coach-athlete__title_right">
           <a href="" class="unlink">Unlink</a>
           <a href="" class="send">Send Message</a>
-        </div>          
+        </div>
+        <div class="coach-athlete__title_right-mobile">
+          <a href="">Unlink</a>
+          <a href="">Send Message</a>
+        </div>
+        <div class="admin__body__title-but">
+          <i></i>
+        </div>
       </div>
       <!-- /.scholarships-detiles__title -->
 
@@ -318,11 +363,12 @@ Current Coaching Positions<br>
               </div>            
           </li>
           <!-- /.athletes-menu__list_item -->          
-        </ul>
-
-      
-      
-    </article>
+        </ul>      
+        <div class="admin__body__footer">          
+          <a href="" class="send">Send Message</a>
+          <a href="" class="unlink">Unlink</a>
+        </div>
+    </article>    
   </main>  
 
 

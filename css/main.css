@@ -22,7 +22,9 @@
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
 
 html {
     color: #222;
@@ -33,11 +35,13 @@ html {
 }
 
 
-body.no-scroll {
+body.no-scroll,
+body.mobile-menu {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 
 
 /* ==========================================================================
@@ -377,6 +381,8 @@ a {
     align-items: center;
     text-transform: uppercase;
     transition: all 200ms ease;
+    border: none;
+    outline: none;
 }
 .modal__head_buts .save:hover,
 .modal__footer_buts .save:hover {
@@ -423,6 +429,20 @@ a {
 header {
     display: flex;
     justify-content: space-between;
+}
+.header__mobile_menu {    
+    position: fixed;
+    background-color: #3a4969;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;    
+    text-align: center;
+    z-index: 10;
+    transition: all 300ms ease;
+    overflow: auto;
+    position: fixed;
+    transform: translateX(-100%);
 }
 .header__logo {
     margin-top: 10px;
@@ -521,6 +541,58 @@ header {
 }
 .header__login li.sign-up a:hover {
     background-color: #0e9ee3;
+}
+.header__menu_but {
+    display: none;
+    position: relative;
+    width: 39px;
+    height: 39px;    
+    cursor: pointer;
+    z-index: 11;
+}
+.header__menu_but i {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 150ms ease;
+}
+.header__menu_but i::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: -7px;
+    transition: all 150ms ease;
+}
+.header__menu_but i::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    transition: all 150ms ease;
+}
+body.mobile-menu .header__menu_but i {
+    background-color: transparent;
+}
+body.mobile-menu .header__menu_but i::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+body.mobile-menu .header__menu_but i::after {
+    transform: rotate(-45deg);
+    bottom: 0;
 }
 .leanding__head_form {
     margin-top: 43vh;
@@ -735,6 +807,9 @@ main h3 {
 }
 .leanding__hiw_scheme {
     background: url('../img/how-it-works-way.svg') no-repeat center 134px;    
+}
+.leanding__hiw_scheme-mobile {
+    display: none;
 }
 .leanding__hiw_scheme-toplist {
     list-style: none;
@@ -1626,7 +1701,7 @@ footer .wrapper {
     margin-top: 21px;
     background-size: 40px 40px!important;
 }
-.admin__nav ul li.scholarships {    
+/*.admin__nav ul li.scholarships {    
     background-image: url('../img/icon-scholarship.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -1634,7 +1709,7 @@ footer .wrapper {
 }
 .admin__nav ul li.scholarships.current {
     background-size: 40px 40px;   
-}
+}*/
 .admin__nav ul li.messenger {
     
 }
@@ -1643,7 +1718,10 @@ footer .wrapper {
     height: 25px;
     text-align: center;    
 }
-.admin__nav ul li.messenger .icon {    
+.admin__nav ul li.scholarships .icon {
+    background: url('../img/icon-scholarship.svg') no-repeat center / 24px 24px;
+}
+.admin__nav ul li.messenger .icon {
     background: url('../img/icon-messager.svg') no-repeat center / 24px 24px;
 }
 .admin__nav ul li.network .icon {    
@@ -1777,11 +1855,12 @@ footer .wrapper {
     display: none;
 }
 .scholarships__list_item {
-    height: 180px;
+    min-height: 180px;
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 8px;
+    padding-bottom: 15px;
 }
 .scholarships__list_item .item__head {
     display: flex;
@@ -7329,7 +7408,7 @@ body.search {
     cursor: pointer;
     transition: all 200ms ease;
 }
-.share-modal__form_to .results-list .results__list_item:hover {
+.share-modal__form_to .results-list .results__list_item.active {
     background-color: #eee;
 }
 .share-modal__form_to .results-list .results__list_item .wrapper {
@@ -7517,4 +7596,1471 @@ body.search {
     line-height: normal;
     letter-spacing: normal;
     color: #cfcfcf;
+}
+.share-modal-confirm .modal__body {
+    width: 640px;
+}
+.share-modal-confirm .share-modal__body {
+    margin-top: 48px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #2c333e;
+}
+.share-modal-confirm .modal__footer {
+    margin-top: 59px;
+    text-align: center;
+}
+.share-modal-confirm .modal__footer .cancel {
+    width: 85px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.share-modal-confirm .modal__footer .cancel:hover {
+    color: #001a46;
+}
+.admin__body__title-but {
+    width: 36px;
+    height: 36px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;    
+}
+.admin__body__title-but i {
+    width: 4px;
+    height: 4px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    position: relative;
+}
+.admin__body__title-but i::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -7px;
+}
+.admin__body__title-but i::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: -7px;    
+}
+.coach-athlete__title_right-mobile {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    min-width: 100px;
+    z-index: 1;
+    display: none;
+}
+.coach-athlete__title_right-mobile a {
+    display: block;
+    white-space: nowrap;
+    height: 47px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 47px;
+    letter-spacing: normal;
+    color: #2c333e;
+    transition: background-color 200ms ease;
+    cursor: pointer;
+}
+.coach-athlete__title_right-mobile a:hover {
+    background-color: #eee;
+}
+.admin__body__footer {
+    height: 72px;    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #fff;
+    display: none;
+}
+.admin__body__footer .send {
+    height: 48px;
+    width: 50%;
+    max-width: 250px;
+    border-radius: 4px;
+    background-color: #00acff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;    
+    text-transform: uppercase;
+    transition: all 200ms ease;
+    margin-right: 16px;
+}
+.admin__body__footer .unlink {
+    width: 50%;
+    height: 48px;
+    max-width: 250px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #002767;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+    margin-left: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+    MOBILE
+   ========================================================================== */
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: auto;
+        min-width: 320px;
+    }
+    .header__logo {
+        z-index: 11;
+    }
+    .header__nav,
+    .header__login {
+        display: none;
+    }
+    .header__menu_but {
+        display: block;
+    }
+    header {
+        padding: 0 16px;
+        align-items: center;
+    }
+    .header__mobile_menu {
+        
+    }
+    body.mobile-menu .header__mobile_menu {
+        visibility: visible;
+        transform: translateX(0);
+    }
+    .header__mobile_menu .nav {
+        list-style: none;
+        margin: 80px 0 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .header__mobile_menu .nav li {
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 40px;        
+    }
+    .header__mobile_menu .nav li a {
+        color: #ffffff;
+        display: inline-block;
+        padding: 0 8px;
+        transition: all 200ms ease;
+    }
+    .header__mobile_menu .nav li a:hover {
+        color: #00acff;
+    }
+    .header__mobile_menu .nav li.current a {
+        position: relative;
+        pointer-events: none;
+    }
+    .header__mobile_menu .nav li.current a::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #00acff;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+    }
+    .header__mobile_menu .login {
+        list-style: none;
+        margin: 44px 0 0 0;
+        padding: 0 16px;        
+    }
+    .header__mobile_menu .login .sign-in {
+        margin-bottom: 24px;
+    }
+    .header__mobile_menu .login .sign-in a {
+        display: block;
+        width: auto;
+        max-width: 320px;
+        height: 48px;
+        border-radius: 4px;
+        border: solid 2px #04a1f4;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 44px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        transition: all 200ms ease;
+        margin: auto;
+    }
+    .header__mobile_menu .login .sign-in a:hover {
+        background-color: #00acff;
+    }
+    .header__mobile_menu .login .sign-up a {
+        display: block;
+        width: auto;
+        max-width: 320px;
+        margin: auto;
+        height: 48px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        transition: all 200ms ease;
+        background-color: #00acff;
+    }
+    .header__mobile_menu .login .sign-up a:hover {
+        background-color: #0e9ee3;
+    }
+    .leanding__head {
+        background: url(../img/bg-head.jpg) no-repeat center top / cover;
+        width: 100%;
+        height: 400px;
+        min-height: 0;
+    }
+    .leanding__head_form {
+        margin-top: 156px;
+    }
+    .leanding__head_form h1 {
+        font-size: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .leanding__head_form-text {
+        font-size: 13px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .leanding__head_form-wrapper {
+        margin-top: 14px;
+        padding: 0 16px;
+    }
+    .leanding__wic {
+        padding: 64px 16px 0 16px;        
+    }
+    .leanding__wic_text {
+        width: auto;
+    }
+    main h2 {
+        font-size: 24px;
+    }
+    main h3 {
+        font-size: 18px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    .leanding__wuct {
+        margin-top: 64px;
+        padding: 0 16px;
+    }
+    .leanding__wuct_list {        
+        margin: 0;        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .leanding__wuct_list li {
+        margin-top: 24px;
+    }
+    .leanding__wuct_list li > h3 {
+        margin: 8px 0;
+    }
+    .leanding__wuct_button {
+        margin-top: 40px;        
+    }
+    .leanding__wuct_list li > p {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.85;
+        letter-spacing: normal;
+        text-align: center;
+    }
+    .leanding__hiw {
+        margin-top: 64px;
+    }
+    .leanding__hiw_text {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        width: auto;
+    }
+    .leanding__hiw_scheme {
+        display: none;
+    }
+    .leanding__hiw_scheme-mobile {
+        display: block;
+    }
+    .leanding__hiw_scheme-mobile {
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+    .leanding__hiw_scheme-mobile .coaches {
+        padding-bottom: 86px;
+        background: url('../img/arrow-down-mobile.svg') no-repeat center bottom 24px;
+    }
+    .leanding__hiw_scheme-mobile .coaches__img {
+        width: 27vw;
+        max-width: 165px;
+        margin: 0 auto 32px auto;
+    }
+    .leanding__hiw_scheme-mobile .coaches__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .leanding__hiw_scheme-mobile h4 {
+        margin: 0;
+        padding: 0;
+        font-family: 'SoccerLeague';
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #47b8eb;
+    }
+    .leanding__hiw_scheme-mobile .athletes {
+        padding-bottom: 95px;
+        background: url('../img/arrow-down-mobile.svg') no-repeat center bottom 24px;
+    }
+    .leanding__hiw_scheme-mobile .athletes__img {
+        text-align: center;
+        max-width: 550px;
+        margin: auto;
+    }
+    .leanding__hiw_scheme-mobile .athletes__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .leanding__hiw_scheme-mobile .athletes h4 {
+        margin: 24px 0 8px 0;
+    }
+    .leanding__hiw_scheme-mobile .athletes__text {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.85;
+        letter-spacing: normal;
+        text-align: center;
+        color: #2c333e;
+    }
+    .leanding__hiw_scheme-mobile .colleges {
+        padding-bottom: 95px;
+        background: url('../img/arrow-down-mobile.svg') no-repeat center bottom 24px;
+    }
+    .leanding__hiw_scheme-mobile .colleges__img {
+        text-align: center;
+        max-width: 550px;
+        margin: auto;
+    }
+    .leanding__hiw_scheme-mobile .colleges img {
+        width: 100%;
+        height: 100%;
+    }
+    .leanding__hiw_scheme-mobile .colleges h4 {
+        margin: 24px 0 8px 0;
+    }
+    .leanding__hiw_scheme-mobile .colleges__text {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.85;
+        letter-spacing: normal;
+        text-align: center;
+        color: #2c333e;
+    }
+    .leanding__hiw_scheme-mobile .search {
+
+    }
+    .leanding__hiw_scheme-mobile .search__img {
+        text-align: center;
+        max-width: 550px;
+        margin: auto;
+    }
+    .leanding__hiw_scheme-mobile .search__img img {
+        width: 100%;
+        height: 100%;
+    }
+    .leanding__hiw_scheme-mobile .search__text {
+        margin-top: 16px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.85;
+        letter-spacing: normal;
+        text-align: center;
+        color: #2c333e;
+    }
+    .leanding__hiw_athlete {
+        border-top: 1px solid #d8dbe1;
+        border-bottom: 1px solid #d8dbe1;
+        margin-top: 40px;
+    }
+    .leanding__hiw_athlete .wrapper {
+        display: none;
+    }
+    .leanding__hiw_athlete h3 {
+        margin: 0;
+        padding: 0;
+        height: 56px;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #002d47;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        background-color: rgba(58, 73, 105, 0.05);
+        text-transform: uppercase;        
+    }
+    .leanding__hiw_athlete h3::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #3a4969;
+        margin-left: 8px;
+        transition: all 200ms ease;
+    }
+    .leanding__hiw_athlete.active h3 {
+        background-image: linear-gradient(to bottom, rgba(108, 128, 162, 0.1), rgba(58, 73, 105, 0));
+        background-color: transparent;
+    }
+    .leanding__hiw_athlete.active h3::after {
+        transform: rotate(180deg);
+    }
+    .leanding__hiw_athlete .wrapper {
+
+    }
+    .leanding__hiw_athlete-text {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        text-align: center;
+        margin-top: 29px;
+        width: auto;
+        padding: 0 16px;        
+    }
+    .leanding__hiw_athlete-list {        
+        margin: 32px 0 -8px 0;
+        padding: 0 13px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .leanding__hiw_athlete-list li {
+        width: 48%;
+        margin: 0 0 48px 0;
+    }
+    .leanding__hiw_athlete-list li img {
+        width: 90%;
+        max-width: 250px;
+    }
+    .leanding__hiw_athlete-list li p {
+        margin-top: 17px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.69;
+        letter-spacing: normal;
+        text-align: center;
+        color: #2c333e;
+    }
+    .leanding__hiw_college {
+        margin-top: 0;                
+    }
+    .leanding__hiw_college .wrapper {
+        display: none;
+    }
+    .leanding__hiw_college h3 {
+        margin: 0;
+        padding: 0;
+        height: 56px;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #002d47;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(58, 73, 105, 0.05);
+        text-transform: uppercase;
+        border-bottom: 1px solid #d8dbe1;
+    }
+    .leanding__hiw_college.active h3 {
+        background-image: linear-gradient(to bottom, rgba(108, 128, 162, 0.1), rgba(58, 73, 105, 0));
+        background-color: transparent;
+        border-bottom: none;
+    }
+    .leanding__hiw_college h3::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #3a4969;
+        margin-left: 8px;
+        transition: all 200ms ease;
+    }
+    .leanding__hiw_college.active h3::after {
+        transform: rotate(180deg);
+    }
+    .leanding__hiw_college-text {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        text-align: center;
+        margin-top: 29px;
+        width: auto;
+        padding: 0 16px;
+    }
+    .leanding__hiw_college-list {
+        margin: 32px auto 0 auto;        
+        padding: 0 16px;
+        width: auto;
+        display: flex;
+        flex-direction: column;        
+    }
+    .leanding__hiw_college-list span {
+        text-align: left!important;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.69;
+        letter-spacing: normal;
+        color: #2c333e;
+    }
+    .leanding__hiw_college-list .list-item-1 {
+        background: #f6f6f6 url(../img/leanding-hiw-college-1-mobile.svg) no-repeat 20px center / auto 70%;
+        border-radius: 18px;
+        width: 100%;
+        height: auto;
+        min-height: 130px;
+        padding: 24px 8px 24px 110px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 0 auto 75px auto;
+        order: 1;
+    }
+    .leanding__hiw_college-list .list-item-1::after {     
+        width: 24px;
+        height: 24px;
+        background: url(../img/arrow-next.svg) no-repeat center / 30px 30px;
+        position: absolute;
+        top: auto;
+        bottom: -54px;
+        right: 50%;
+        transform: translate(50%, 0) rotate(90deg);
+    }
+    .leanding__hiw_college-list .list-item-2 {
+        background: #f6f6f6 url(../img/leanding-hiw-college-2-mobile.svg) no-repeat 20px center / auto 70%;
+        border-radius: 18px;
+        width: 100%;
+        height: auto;
+        min-height: 130px;
+        padding: 24px 8px 24px 110px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 0 auto 75px auto;
+        order: 2;
+    }
+    .leanding__hiw_college-list .list-item-2::after {     
+        width: 24px;
+        height: 24px;
+        background: url(../img/arrow-next.svg) no-repeat center / 30px 30px;
+        position: absolute;
+        top: auto;
+        bottom: -54px;
+        right: 50%;
+        transform: translate(50%, 0) rotate(90deg);
+    }
+    .leanding__hiw_college-list .list-item-3 {
+        background: #f6f6f6 url(../img/leanding-hiw-college-3-mobile.svg) no-repeat 20px center / auto 70%;
+        border-radius: 18px;
+        width: 100%;
+        height: auto;
+        min-height: 130px;
+        padding: 24px 8px 24px 110px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 0 auto 75px auto;
+        order: 3;
+    }
+    .leanding__hiw_college-list .list-item-3::after {
+        width: 24px;
+        height: 24px;
+        background: url(../img/arrow-next.svg) no-repeat center / 30px 30px;
+        position: absolute;
+        top: auto;
+        bottom: -54px;
+        right: 50%;
+        left: auto;
+        transform: translate(50%, 0) rotate(90deg);
+    }
+    .leanding__hiw_college-list .list-item-4 {
+        background: #f6f6f6 url(../img/leanding-hiw-college-4-mobile.svg) no-repeat center -18px / auto 80%;
+        border-radius: 18px;
+        width: 100%;
+        height: auto;
+        min-height: 130px;
+        padding: 130px 12px 27px 12px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 0 auto 0 auto;
+        order: 5;
+    }    
+    .leanding__hiw_college-list .list-item-4::after {
+        display: none;
+    }
+    .leanding__hiw_college-list .list-item-4 span {
+        margin: 0;
+        text-align: center!important;
+    }
+    .leanding__hiw_college-list .list-item-5 span {
+        margin: 0;
+    }
+    .leanding__hiw_college-list .list-item-5 {
+        background: #f6f6f6 url(../img/leanding-hiw-college-5-mobile.svg) no-repeat 20px center / auto 70%;
+        border-radius: 18px;
+        width: 100%;
+        height: auto;
+        min-height: 130px;
+        padding: 24px 8px 24px 110px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin: 0 auto 75px auto;
+        order: 4;
+    }
+    .leanding__hiw_college-list .list-item-5::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background: url(../img/arrow-next.svg) no-repeat center / 30px 30px;
+        position: absolute;
+        top: auto;
+        bottom: -54px;
+        right: 50%;
+        left: auto;
+        transform: translate(50%, 0) rotate(90deg);
+    }
+    .leanding__hiw_college-button {
+        margin-top: 40px;
+        text-align: center;
+        padding: 0 16px;
+    }
+    .leanding__hiw_college-button a {
+        display: block;
+        width: auto;
+        height: 48px;
+        border-radius: 4px;
+        background-color: #002767;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 48px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        transition: all 200ms ease;
+    }
+    .leanding__subscribe {
+        padding-bottom: 24px;
+        margin-top: 32px;
+    }
+    .leanding__subscribe h2 {
+        margin: 0;
+        padding: 56px 0 0 0;        
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;        
+        text-align: center;        
+        letter-spacing: 0.5px;
+    }
+    .leanding__subscribe_text {
+        margin: 16px auto 0 auto;
+        width: auto;
+        padding: 0 16px;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .leanding__subscribe_form {
+        margin-top: 32px;
+    }
+    .leanding__subscribe_form-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+    }
+    .leanding__subscribe_form-input {
+        width: 100%;
+        margin-right: 0;
+    }
+    .leanding__subscribe_form-input input {
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        outline: none;
+        border: none;
+        padding: 0 14px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2c333e;
+    }
+    .leanding__subscribe_form-submit {
+        margin-top: 24px;
+    }
+    .leanding__subscribe_form-submit input {
+        width: 100%;
+        height: 48px;
+        border-radius: 4px;
+        background-color: #002767;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        transition: all 200ms ease;
+        text-transform: uppercase;
+    }
+    footer {
+        height: 230px;
+    }
+    footer .wrapper {
+        display: flex;
+        padding: 24px 16px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .footer__copyright {
+        font-size: 12px;
+        order: 2;
+    }
+    .footer__list {
+        list-style: none;
+        margin: 0 0 20px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__list li {
+        margin-left: 0;
+    }
+    .footer__list li a {
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 3.43;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+    }
+    .contacts__body {
+        height: calc(100vh - 230px);
+        min-height: 615px;
+    }
+    .contacts main {
+        width: auto;
+        margin: 10px auto 0 auto;
+        padding: 0 16px;
+    }
+    .contacts main h1 {        
+        font-size: 40px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+    }
+    .contacts__text {
+        font-size: 13px;
+    }
+    .contacts__form {
+        margin-top: 16px;
+    }
+    .contacts__form_item input {
+        width: 100%;
+        height: 40px;
+        font-size: 13px;        
+    }
+    .contacts__form_item textarea {     
+        height: 100px;
+        font-size: 13px;        
+    }
+    .contacts .contacts__form_submit {
+        margin-top: 24px;
+    }
+    .contacts__form_submit input {        
+        height: 40px;
+    }
+    .contacts__bottom-text {
+        margin-top: 32px;        
+    }
+    .login header {
+        height: 54px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .login header > a {
+        display: none;
+    }
+    .login main {
+        padding-top: 0;
+        min-height: calc(100vh - 54px - 230px);
+        padding-bottom: 24px;
+    }
+    .login__logo img {
+        width: 180px;
+    }
+    .login__form.login {
+        margin-top: 24px;
+        width: auto;
+        padding: 0 16px;
+    }
+    .login__form_item {
+        margin-bottom: 16px;
+    }
+    .login__form_item > label > input {        
+        height: 40px;        
+        font-size: 13px;
+        padding-right: 46px;        
+    }
+    .login__form_item > .error > input {
+        background: #ffffff url(../img/icon-error-red.svg) no-repeat center right 8px;
+    }
+    .login__form_item .forgot-password {        
+        margin-top: 16px;
+    }
+    .login__form_item .error-text {
+        margin-top: 24px;
+    }
+    .login__form_submit {
+        margin-top: 24px;    
+    }
+    .login__form_submit button {        
+        width: 100%;
+        height: 40px;
+    }
+    .login__form_signin a {        
+        height: 40px;
+    }
+    .login h1 {
+        margin: 32px 0 0 0;        
+        font-size: 16px;        
+    }
+    .login__form {
+        width: auto;
+        padding: 0 16px;
+    }
+    .login__form.reset-password .login__form_submit {
+        margin-top: 24px;
+    }
+    .reset-password__login a {
+        width: 47%;
+    }
+    .login__comfirm_password {
+        margin-top: 32px;                
+        font-size: 16px;
+        margin-bottom: 57px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .login__signin_button {
+        margin-top: 57px;
+        padding: 0 16px;
+    }
+    .login__signin_button a {     
+        width: auto;        
+        height: 40px;        
+    }
+    .login__comfirm_password+.login__form_submit {
+        padding: 0 16px;
+    }
+    .login__error_password {
+        margin-top: 32px;
+        font-size: 16px;
+        margin-bottom: 57px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .login__error_password+.login__form_submit {
+        padding: 0 16px;
+    }
+    .login__comfirm_email {        
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .login__comfirm_email+.login__form_submit {
+        padding: 0 16px;
+    }
+    .login__signup_buttons {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+    }
+    .login__signup_buttons a {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .login__signup_buttons a:last-child {
+        margin-bottom: 0;
+    }
+    .login__signup_buttons+.login__signin_button {
+        margin-top: 24px;
+    }    
+}
+
+
+@media screen and (max-width: 1080px) {
+    .header__menu {
+        display: none;
+    }
+    .header__mobile_menu .header__menu {
+        display: flex;
+        margin-top: 64px;
+        min-height: 105px;
+        background-color: #151f35;
+        padding: 20px 90px 20px 20px;
+        position: relative;
+    }
+    .header__mobile_menu .header__user_photo {
+        margin-right: 16px;
+    }
+    .header__mobile_menu .header__user_name b {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    .header__mobile_menu .header__user_name span {
+        text-align: left;
+    }
+    .header__mobile_menu .header__notifications_but {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .admin .header__mobile_menu .nav {
+        margin-top: 40px;
+    }
+    .admin-wrapper {
+        min-width: auto;
+        flex-direction: column;
+    }
+    .admin__nav {
+        width: 100%;
+        height: 56px;
+        min-height: 56px;
+    }
+    .admin__nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .admin__nav ul li {
+        width: 33.33333333333333333333333333333333333333333333333%;
+        height: 56px;
+    }
+    .admin__nav ul .profile {
+        display: none;
+    }
+    .admin__nav ul li .icon {
+        margin-top: 6px;
+    }
+    .admin__nav ul li.current .icon {
+        margin-top: 16px;
+    }
+    .coach-athlete .admin__body__title,
+    .coach-college .admin__body__title,
+    .athletes-details .admin__body__title {
+        height: 46px;
+        position: relative;
+        padding: 0 0 0 15px;
+    }
+    .coach-athlete__title_right {
+        display: none;        
+    }    
+    .admin__body__title h1 {
+        font-size: 20px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    .admin__body__title-but {
+        display: flex;
+    }
+    .coach-profile .admin__article,
+    .coach-athlete .admin__article,
+    .coach-college .admin__article,
+    .athletes-details .admin__article {
+        margin: 7px 0px 24px 0px;
+        border-radius: 0px;        
+        box-shadow: none;
+        padding: 18px 16px;
+        flex-direction: column;        
+        justify-content: space-between;
+    }
+    .coach-profile__info {
+        width: 100%;
+        border-right: none;
+        text-align: left;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;        
+        flex-wrap: wrap;
+    }
+    .coach-profile__info_pfoto {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        order: 1;
+    }
+    .coach-profile__info_numbers {
+        order: 2;
+        text-align: center;
+        width: calc(100% - 100px);
+        margin-top: 9px;
+    }
+    .coach-profile__info_type {
+        order: 3;
+        margin-top: -7px;
+    }
+    .coach-profile__info_name {
+        order: 4;
+        width: 100%;
+        text-align: left;
+        margin-top: 16px;
+    }
+    .coach-profile__info_ststus {
+        order: 5;
+        margin-top: 4px;
+        width: 100%;
+        text-align: left;
+    }
+    .coach-profile__info_school {
+        order: 6;        
+        text-align: left;
+        margin: 24px 0 0 0;
+    }
+    .coach-athlete .coach-profile__info_school {
+        margin: 39px 0 0 0;           
+    }
+    .coach-profile__info_school b {
+        text-align: left;
+    }
+    .coach-profile__description {
+        width: 100%;
+        padding: 24px 0 8px 0;        
+    }
+    .coach-profile__description_text {
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+        transition: all 2000ms ease;
+    }
+    .coach-profile__description_text::after {
+        content: "Read more";
+        width: 100%;
+        height: 90px;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+77&0+0,1+77 */
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 77%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 77%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 77%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #00acff;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 65px;
+        transition: all 200ms ease;
+    }
+    .coach-profile__description_text.show {
+        max-height: 10000px;        
+    }
+    .coach-profile__description_text.show::after {
+        opacity: 0;
+    }
+    .coach-athlete__list_title {        
+        align-items: center;
+        padding: 0 16px;
+    }
+    .coach-athlete__list_title b {
+        font-size: 20px;
+    }
+    .coach-athlete__list_title span {        
+        font-size: 14px;        
+        margin-left: 17px;
+    }
+    .athletes-menu__list {
+        list-style: none;
+        margin: 16px 0 0 0;
+        padding: 0 16px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .athletes-menu__list .athletes-menu__list_item {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        min-height: 174px;
+        margin: 0 0 17px 0;
+    }
+    .admin__body__footer {
+        display: flex;
+    }
+    .coach-profile .admin__body__title a.edit-profile {
+        display: none;
+    }
+    .coach-profile .admin__body__title {
+        padding-right: 0;
+        position: relative;
+        height: 46px;
+    }
+    .coach-profile__info_rewards {
+        order: 5;
+        width: 100%;
+        text-align: left;
+    }
+    .coach-profile .coach-college__about {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .coach-college__about_title {
+        font-size: 20px;
+    }
+    .coach-college__about_body {
+        margin: 0;
+        flex-wrap: wrap;
+        padding: 28px 0 0 0;
+    }
+    .coach-college__about_body .about__info {
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 24px;
+    }
+    .coach-college__about_body .about__description {
+        width: 100%;
+    }
+    .coach-college__about_body .about__description_text {
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+        transition: all 2000ms ease;
+    }
+    .coach-college__about_body .about__description_text::after {
+        content: "Read more";
+        width: 100%;
+        height: 90px;
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 77%);
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 77%);
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 77%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #00acff;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 65px;
+        transition: all 200ms ease;
+    }
+    .coach-college__about_body .about__description_text.show {
+        max-height: 10000px;
+    }
+    .coach-college__about_body .about__description_text.show::after {
+        opacity: 0;
+    }
+    .coach-college__scholarships {
+        margin: 24px 16px 70px 16px;
+    }
+    .coach-college__scholarships_title {
+        font-size: 20px;
+    }
+    .search__results .scholarships__item .item__id {
+        display: none;
+    }
+    .search__results .scholarships__item .df {
+        flex-wrap: wrap;
+    }
+    .search__results .scholarships__item {
+        padding: 20px 16px 16px 16px;
+        height: auto;
+    }
+    .coach-college .search__results .scholarships__item .item__info,
+    .athletes-details .search__results .scholarships__item .item__info,
+    .athletes-scholarships .search__results .scholarships__item .item__info {
+        width: 100%;        
+        margin-top: 0;
+    }
+    .search__results .scholarships__item .item__info .title {
+        font-size: 16px;
+    }
+    .search__results .scholarships__item .item__info .school {
+        font-size: 13px;
+    }
+    .search__results .scholarships__item .item__info .descrition li {
+        width: 100%;
+    }
+    .coach-network__title {
+        height: 56px;
+        padding: 0;
+    }
+    .coach-network__title h1 {
+        display: none;
+    }
+    .coach-network__title a {
+        display: none;
+    }
+    .coach-network__title input {
+        width: 100%;
+        margin: 0;
+        border: none;
+        background: #fff url(../img/icon-search-grey.svg) no-repeat center right 16px / 24px 24px;
+    }
+    .coach-network__body {
+        margin: 16px 0 0 0;
+        padding: 0;        
+    }
+    .coach-network__list {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0 16px;
+    }
+    .coach-network__item {
+        display: block;
+        height: auto;
+        padding: 16px 0;
+    }
+    .coach-network__item .coache {
+        display: block;
+        width: auto;
+    }
+    .coach-network__item .df {
+        position: relative;
+    }
+    .coach-network__item .item__coache_title b {
+        
+    }
+    .coach-network__item .item__coache_title span {
+        position: absolute;
+        left: 70px;
+        bottom: 0;
+    }
+    .coach-network__item .item__coache_title .msg {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .coach-network__item .item__coache_title {
+
+    }
+    .coach-network__item .organisation {
+        display: none;
+    }
+    .coach-network__item .nominations {
+        display: none;
+    }
+    .coach-network__item .actions {
+        display: none;
+    }
+    .coach-network__list.top .coach-network__item .actions {
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        margin-top: 24px;
+    }
+    .coach-network__item .actions .actions__ignore {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+    .coach-network__item .actions .actions__connect {
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+    .coach-network__item .item__coache_info {
+        margin-bottom: 26px;
+    }
+    .coach-network__body h2 {
+        padding: 0 16px;
+    }
+    .gotop-buttom {
+        margin-right: 16px;
+    }
 }

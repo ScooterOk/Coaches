@@ -1,13 +1,17 @@
 var steps = {};
 
-$(document).ready(function(e) {	
+$(document).ready(function(e) {
+	console.log('Hello Scooter)Ok');
 	$(document).click(function(e) {
-		if($(e.target).closest('.custom-select').length || $(e.target).closest('.search__filters-selected-item').length || $(e.target).closest('.header__user_menu').length || $(e.target).closest('.header__notifications').length || $(e.target).closest('.list__item_menu').length) return;
+		if($(e.target).closest('.custom-select').length || $(e.target).closest('.search__filters-selected-item').length || $(e.target).closest('.header__user_menu').length || $(e.target).closest('.header__notifications').length || $(e.target).closest('.list__item_menu').length || $(e.target).closest('.results-list').length || $(e.target).closest('.coach-athlete__title_right-mobile').length) return;
 		$('.custom-select__list').slideUp(70);
 		$('.search__filters-selected .selects__list').slideUp(70);
 		if(!$(e.target).hasClass('header__user_arrow'))$('.header__user_menu').slideUp(70);
 		if(!$(e.target).hasClass('header__notifications_but'))$('.header__notifications').slideUp(70);
 		if(!$(e.target).hasClass('list__item_menu-but'))$('.list__item_menu').slideUp(70);
+		if(!$(e.target).hasClass('admin__body__title-but'))$('.coach-athlete__title_right-mobile').slideUp(70);
+		$('.share-modal__form_to .results-list').fadeOut(150);		
+		
 	});
 
 	if($('.scrollbar-inner').length){
@@ -34,7 +38,7 @@ $(document).ready(function(e) {
 		body.stop().animate({scrollTop:0}, 300, 'swing');
 	});
 
-	$('.custom-select').click(function(e) {
+	$('body').on('click', '.custom-select', function(e) {
 		$('.custom-select__list').slideUp(70);
 		if($(this).find('.custom-select__list').is(':hidden')){
 			$(this).find('.custom-select__list').slideDown(70);
@@ -42,7 +46,7 @@ $(document).ready(function(e) {
 			$(this).find('.custom-select__list').slideUp(70);
 		}
 	});
-	$('.custom-select__option').click(function(e) {
+	$('body').on('click', '.custom-select__option', function(e) {
 		var val = $(this).attr('data-option');
 		var text = $(this).text();
 		$(this).closest('.custom-select').addClass('selected');
@@ -51,18 +55,20 @@ $(document).ready(function(e) {
 		$(this).closest('.custom-select').attr('data-value', val);
 		$(this).closest('.custom-select').find('span').text(text);		
 	});
-	$('.modal').click(function(e) {
+	$('body').on('click', '.modal', function(e){		
 		if($(e.target).closest('.modal__body').length) return;
 		$(this).fadeOut(200);
 		$('body').removeClass('no-scroll');
-	});
+	});	
 	$('.modal .modal__head_buts .cancel, .modal .modal__footer_buts .cancel').click(function(e) {
 		$('.modal').fadeOut(200);
 		$('body').removeClass('no-scroll');
 		e.preventDefault();
 	});
 
-	
+	$('.header__menu_but').click(function(e) {
+		$('body').toggleClass('mobile-menu');
+	});
 
 	/*******************************************************************************
 								 Leanding scripts
@@ -106,6 +112,24 @@ $(document).ready(function(e) {
 				step4 : $('.leanding__hiw').offset().top - ($(window).height() / 3),
 				step5 : $('.leanding__subscribe').offset().top - ($(window).height() - 100 - 40)
 			};	
+		});		
+		$('.leanding__hiw_athlete h3').click(function(e) {
+			if($('.leanding__hiw_athlete').hasClass('active')){
+				$('.leanding__hiw_athlete').removeClass('active');
+				$('.leanding__hiw_athlete .wrapper').slideUp(200);
+			}else{
+				$('.leanding__hiw_athlete').addClass('active');
+				$('.leanding__hiw_athlete .wrapper').slideDown(200);
+			}
+		});
+		$('.leanding__hiw_college h3').click(function(e) {
+			if($('.leanding__hiw_college').hasClass('active')){
+				$('.leanding__hiw_college').removeClass('active');
+				$('.leanding__hiw_college .wrapper').slideUp(200);
+			}else{
+				$('.leanding__hiw_college').addClass('active');
+				$('.leanding__hiw_college .wrapper').slideDown(200);
+			}
 		});
 	}	
 
@@ -142,6 +166,10 @@ $(document).ready(function(e) {
 		$('.athletes-menu__list_item .list__item_menu-but').click(function(e) {
 			$('.list__item_menu').slideUp(70);
 			$(this).closest('.athletes-menu__list_item').find('.list__item_menu').slideDown(70);
+		});
+		$('.admin__body__title-but').click(function(e) {
+			$('.coach-athlete__title_right-mobile').slideUp(70);
+			$(this).closest('.admin__body__title').find('.coach-athlete__title_right-mobile').slideDown(70);
 		});
 		$('.athletes-menu .list__item_menu li').click(function(e) {
 			var action = $(this).attr('data-action');
@@ -257,20 +285,13 @@ $(document).ready(function(e) {
 			$('#сolllegs-сoach-athlete-details-modal').fadeIn(200);
 			e.preventDefault();
 		});
+		$('.coach-profile__description_text, .about__description .about__description_text').click(function(e) {
+			$(this).addClass('show');
+		});
+
 		
 
 		
-		$('.scholarships .scholarships__title_tabs li').click(function(e) {
-			if(!$(this).hasClass('current')){
-				var name = $(this).attr('data-name');
-				$('.search__results').attr('data-current', name);
-				$('.scholarships__title_tabs li').removeClass('current');
-				$(this).addClass('current');
-				$('.scholarships__list').fadeOut(150, function() {
-					$('.scholarships__list.'+name).fadeIn(150);
-				});				
-			}			
-		});
 
 		$('.athletes-messenger__contacts_search .search__button').click(function(e) {
 			if($('.athletes-messenger__contacts_search').hasClass('active')){
@@ -290,6 +311,11 @@ $(document).ready(function(e) {
 			$('.athletes-messenger__results_list').fadeOut(100, function(){
 				$('.athletes-messenger__contacts_list').fadeIn(100);
 			});
+			e.preventDefault();			
+		});
+		$('.scholarships-detiles__requests .athlete__share a').click(function(e) {
+			$('body').addClass('no-scroll');
+			$('#сolllegs-сoach-athlete-share-modal').fadeIn(200);
 			e.preventDefault();			
 		});
 		$('.athletes-messenger__contacts_search .search__input input').keyup(function(e) {			
@@ -329,6 +355,7 @@ $(document).ready(function(e) {
 			$('.edit-form__characteristics li:last-child').slideDown(150);
 		});
 		$('.admin').on('click', '.athletes-menu__modal .edit-form__available_add', function(){
+			return false;
 			var item = '<li style="display: none;"><div class="edit-form__available_year edit-form__input"><label>Year</label><div data-value="" class="custom-select"><span data-placeholder="Choose the Sport">2018</span><div class="custom-select__list"><div class="custom-select__option" data-option="">2019</div><div class="custom-select__option" data-option="">2020</div><div class="custom-select__option" data-option="">2021</div><div class="custom-select__option" data-option="">2022</div><div class="custom-select__option" data-option="">2023</div></div></div></div><div class="edit-form__available_qty edit-form__input"><label>Qty</label><input type="text" value="10"></div><div class="edit-form__available_remove"><i></i></div></li>';
 			$('.edit-form__available').append(item);
 			$('.edit-form__available li:last-child').slideDown(150);
@@ -336,6 +363,7 @@ $(document).ready(function(e) {
 		$('.admin').on('click', '.athletes-menu__modal .edit-form__characteristics_remove i, .athletes-menu__modal .edit-form__available_remove i', function(e){
 			$(this).closest('li').slideUp(150, function(e){
 				$(this).remove();
+				$(".edit-form__available_add").show();
 			});
 		});
 		$('.admin').on('click', '.athletes-menu__modal .edit-form__notable-achievements_add', function(){
@@ -399,6 +427,7 @@ $(document).ready(function(e) {
 		});
 		
 	}
+
 
 
 	/*******************************************************************************
@@ -542,32 +571,74 @@ function shareModalInit(){
 	});
 
 	$('.share-modal__form_to input').keyup(function(e) {
+		if(e.keyCode == 27)return false;
+		if(e.keyCode == 13){
+			$('.share-modal__form_to .results-list .active').click();
+			$('.share-modal__form_to .results-list').fadeOut(150);
+			$('.results__list_item').removeClass('active');
+			count = null;
+		}
 		var length = $(this).val().length;		
-		if(length){
+		if(length){			
+			if($('.share-modal__form_to .results-list').is(':hidden')){
+				count = null;
+				$('.results__list_item').removeClass('active');	
+			}
+			
+			$(this).width(length == 0 ? 15 : length * 15);
 			$('.share-modal__form_to .results-list').fadeIn(150);
 		}else{
 			$('.share-modal__form_to .results-list').fadeOut(150);
+			$('.results__list_item').removeClass('active');
+			if($('.share-modal__form_to .select-list__item').length){
+				$('.share-modal__form_to input').attr('placeholder', '');
+			}else{
+				$('.share-modal__form_to input').attr('placeholder', 'Type the Name').width(120);
+			}
+			count = null;
 		}
-		$(this).width(length == 0 ? 15 : length * 15);		
+		//$(this).width(length == 0 ? 15 : length * 15);
 	});
 
 	$('.share-modal__form_to input').keydown(function(e) {
 		if($(this).val().length){
+			var length = $('.results__list_item').length;
 			switch (e.keyCode) {
+				case 27:					
+					if($('.share-modal__form_to .results-list').is(':visible')){
+						$('.share-modal__form_to .results-list').fadeOut(150);
+						count = null;
+						$('.results__list_item').removeClass('active');
+					}					
+					e.preventDefault();
+				break;
 				case 38:
-					console.log('Up');
+					if(count == 0)return false;
+					count--;
+					$('.results__list_item').removeClass('active');
+					$($('.results__list_item')[count]).addClass('active');
 					e.preventDefault();
 				break;
 				case 40:
-					if(count != null && count == 0){
-						count++;
-						console.log(count);
+					if(count == null){
+						count = 0;
+						$('.results__list_item').removeClass('active');
 						$($('.results__list_item')[count]).addClass('active');
 					}else{
-						count = 0;
-						console.log(count);
+						if(count == (length-1))return false;
+						count++;
+						$('.results__list_item').removeClass('active');
 						$($('.results__list_item')[count]).addClass('active');
 					}
+					// if(count != null && count == 0){
+					// 	count++;
+					// 	console.log(count);
+					// 	$($('.results__list_item')[count]).addClass('active');
+					// }else{
+					// 	count = 0;
+					// 	console.log(count);
+					// 	$($('.results__list_item')[count]).addClass('active');
+					// }
 					e.preventDefault();
 				break;			
 				default:
@@ -590,9 +661,63 @@ function shareModalInit(){
 		$('.share-modal__form_to input').attr('placeholder', '').val('');
 		$('.share-modal .share-modal__form_to input').before(label);
 		$('.share-modal .results-list').fadeOut(150);
+	});
+	$('body').on('mouseenter', '.share-modal .results__list_item', function(e){
+		var t = this;
+		$('.share-modal .results__list_item').removeClass('active');
+		$('.share-modal .results__list_item').each(function(i, e) {
+			if(t == e){
+				count = i;
+				$(this).addClass('active');
+			}
+			
+		});
 	});	
-}
+};
+function scholarshipsInit(){
+	var pull = true;
+	var tab = 'current';
+	var count = $('.scholarships__list.'+tab+' .scholarships__list_item').length;
+	$('.scholarships .scholarships__title_tabs li').click(function(e) {
+		if(!$(this).hasClass('current')){
+			var name = $(this).attr('data-name');			
+			tab = name;
+			count = $('.scholarships__list.'+tab+' .scholarships__list_item').length;
+			console.log(count);
+			$('.scholarships__title_tabs li').removeClass('current');
+			$(this).addClass('current');
+			$('.scholarships__list').fadeOut(150, function() {
+				$('.scholarships__list.'+name).fadeIn(150);
+			});				
+		}			
+	});
+	
+	$(document).scroll(function(e) {
+		if(count < 10)return false;
+		var y = $($('.scholarships__list.'+tab+' .scholarships__list_item')[(count - 1)]).offset().top - $(window).height();
+
+		if($(document).scrollTop() > y && pull){
+			pull = false;
+			$.ajax({
+			  url: '/private/scholarships/more?offset='+count,
+			  dataType : 'html',
+			  success: function(data){
+				$('.scholarships__list.'+tab).append(data);
+				count = $('.scholarships__list.'+tab+' .scholarships__list_item').length;
+				pull = true;
+			  }
+			});
+
+			
+		}
+
+
+			
+	});
+};
+
 shareModalInit();
+scholarshipsInit();
 
 
 
